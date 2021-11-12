@@ -60,7 +60,7 @@
 	transition: all 0.3s ease-out 0s; }
 a:focus { text-decoration: none !important; }
 a:focus, a:hover { color: #ffbc05; text-decoration: none !important; }
-a, button, input { outline: medium none !important; color: #ffbc05; }
+/* a, button, input { outline: medium none !important; color: #ffbc05; } */
 h1, h2, h3, h4, h5, h6{font-family: 'Montserrat', sans-serif; font-weight:normal; margin-top: 0px; margin-bottom: 0px; text-transform: capitalize;}
 h1.title2,h2.title2,h3.title2,h4.title2,h5.title2,h6.title2{ font-weight: 600; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: inherit; }

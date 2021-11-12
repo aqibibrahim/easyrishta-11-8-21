@@ -291,12 +291,12 @@ ul.list li a:hover,
 .pagination > li.previous > a:hover,
 .pagination > li.next > a:hover,
 .text-yellow,
-.story-link > a:hover {
+/* .story-link > a:hover {
   color: #d96c94;
-}
+} */
 
 .sidebar-widget .tags li a:hover {
-  color: #d96c94 !important;
+  /* color: #d96c94 !important; */
 }
 
 .comment-list .reply {

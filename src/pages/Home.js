@@ -1,18 +1,20 @@
 // import react from "react";
 import React from "react";
+import { History } from "react-router-dom";
 // import { db } from "../firestore";
 /* import {BrowserRouter, Link, Switch} from 'react-router-dom'; */
 import { Link } from "react-router-dom";
 import preloader from "./../../src/pages/images/easyrishtapre.png";
 import logo from "./../../src/pages/images/350x150-logo.png";
-
+import crossIcon from "./images/cross-icons.png";
 import logo3 from "./../../src/pages/images/web-banner5.png";
+import avatar from "./../../src/pages/images/avatar5.png";
 // import crossIcon from "./images/cross-icons.png";
 // import OwlCarousel from "react-owl-carousel";
 // import "owl.carousel/dist/assets/owl.carousel.css";
-// import "./home.css";
+import "./home.css";
 // import "owl.carousel/dist/assets/owl.theme.default.css";
-
+import { Modal, Button ,Form} from 'react-bootstrap';
 import { auth, db } from "../../src/pages/firebase-config";
 class Home extends React.Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class Home extends React.Component {
       error: null,
       hidediv: false,
       LoginTab: false,
-      isSidebarOpen: false
+      isSidebarOpen: false,
+      showRegisterModal : false
     };
 
     this.openModal = this.openModal.bind(this);
@@ -41,13 +44,15 @@ class Home extends React.Component {
   //    });
   //  }
   openModal() {
+   
     this.setState({
       showModal: true,
     });
     //this.handleRegisterClick()
   }
+
   selectSection(){
-    alert("that is");
+ 
     this.setState({
         showModal: true,
       });
@@ -58,6 +63,16 @@ class Home extends React.Component {
       error: null,
     });
   }
+  showModal = () => {
+    this.setState({ show: true });
+  };
+ 
+  openRegisterModal() {
+    this.setState({  showRegisterModal: true });
+  }
+  hideModal = () => {
+    this.setState({ show: false });
+  };
 
   // let modal = document.getElementById("myModal");
 
@@ -69,11 +84,10 @@ class Home extends React.Component {
 
   // When the user clicks on the button, open the modal
    htmlModal = () => {
-alert("Hello world!");
-    this.setState({ isSidebarOpen: true });
+  
+   this.setState({ isSidebarOpen: true });
   }
-   htmlModalClose = () => {
-
+  registerModalClose = () => {
     this.setState({ isSidebarOpen: false });
   }
 
@@ -93,10 +107,12 @@ alert("Hello world!");
 
 
   async onLogin() {
+    
     console.log("__onLogin__");
     console.log("email: " + document.querySelector("#email").value);
     console.log("password: " + document.querySelector("#password").value);
-    this.setState({ loading: true });
+    // this.setState({ loading: true });
+  
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     await auth.signInWithEmailAndPassword(email, password);
@@ -105,30 +121,38 @@ alert("Hello world!");
       .where("email", "==", email)
       .get()
       .then((querySnapshot) => {
+       
+
+        window.location.href = '/profile';
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
-          this.setState({ loading: false });
+          // this.setState({ loading: false });
           console.log(doc.id, " => ", doc.data());
           localStorage.setItem("email", email);
-          localStorage.setItem("userid", doc.id);
-          this.props.history.push({
-            pathname: "/profile",
-            //data: doc.data() // your data array of objects
-          });
-        });
+          // this.props.history.push({
+          //   pathname: "/profile",
+          //   //data: doc.data() // your data array of objects
+          // });
+        });       
       })
       .catch((error) => {
         console.log("Error getting documents: ", error);
       });
+      
     //  getprofile(email);
     if (!email || !password) {
       this.setState({
         error: true,
       });
-    } else {
-      this.onLoginSuccess("form");
     }
+    //  else {
+    //   this.onLoginSuccess("form");
+    // }
   }
+  onLoginSuccess(method, response) {
+    console.log("logged successfully with " + method);
+  }
+
   // handleClick = () => {
   //   this.setState({
   //      hidediv: true,
@@ -230,9 +254,6 @@ alert("Hello world!");
     }
   }
 
-  onLoginSuccess(method, response) {
-    console.log("logged successfully with " + method);
-  }
 
   onLoginFail(method, response) {
     console.log("logging failed with " + method);
@@ -259,13 +280,7 @@ alert("Hello world!");
     });
   }
 
-  showModal = () => {
-    this.setState({ show: true });
-  };
 
-  hideModal = () => {
-    this.setState({ show: false });
-  };
 
   getprofile(email) {
     // db.collection("users").get((querysnapshot) => {
@@ -321,7 +336,7 @@ alert("Hello world!");
 
                         <li>
                           <button
-                            onClick={this.openModal}
+                            onClick={this.htmlModal}
                             style={mystyle}
                             class="registerMenuButton button btn-lg btn-colored full-rounded "
                             style={{
@@ -338,7 +353,7 @@ alert("Hello world!");
                           <li>
                             <button
                             //   onClick={this.openModal}
-                              onClick={this.selectSection}
+                            onClick={this.openModal}
                               // style={mystyle}
                               className="loginMenuButton button btn-lg btn-colored full-rounded "
                               style={{
@@ -348,11 +363,11 @@ alert("Hello world!");
                             >
                               Login
                             </button>
-                            <input type="button" onClick={()=> console.log("input button clicked")}/>
+                            {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
 
                           </li>
-                          <li><button onClick={()=>alert("That is")}>Click Me!</button></li>
-                          <p id="demo" onClick={this.selectSection}>Click me to change my text color.</p>
+                          {/* <li><button onClick={()=>alert("That is")}>Click Me!</button></li>
+                          <p id="demo" onClick={this.selectSection}>Click me to change my text color.</p> */}
                       </ul>
 
                     </div>
@@ -920,6 +935,10 @@ alert("Hello world!");
             </div>
           </div>
         </section>
+
+
+         
+      
         <section style={{ height: 650 }}>
           <div className="row">
             <div
@@ -1019,18 +1038,14 @@ alert("Hello world!");
             </div>
           </div>
         </section>
-        {/* <!--=================================
- Page Section --> */}
-        <section
-          class="page-section-ptb pb-130 sm-pb-6 grey-bg story-slider "
-          style={{
-            // background: "url(../../assets/images/pattern/01.png) no-repeat 0 0",
-            backgroundSize: "cover",
-          }}
-        >
-          <div class="wow fadeInUp" data-wow-offset="200">
-            <div class="container">
-              <div class="row justify-content-center">
+
+  {/* <!--================================= ---Reviews Section --> */}
+
+
+
+  <div className="custom-container">
+    <div id="demo" className="carousel slide" data-ride="carousel">
+    <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                   <h2 class="title divider-2" style={{ color: "#00bcd5" }}>
                     Success Stories
@@ -1038,265 +1053,45 @@ alert("Hello world!");
                   <p class="lead m-0">The stories of love that started right at our Easyrishta.</p>
                 </div>
               </div>
-              {/* <OwlCarousel className="owl-theme" loop margin={10} nav>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/marriage4.jpeg" alt="" />
+        <div className="carousel-inner">
+            <div className="carousel-item active">
+                <div className="carousel-caption">
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen. </p>
+                     <img src={avatar} alt="" />
+                    <div id="image-caption">Nick Doe</div>
                 </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/marriage3.jpeg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-                <div class="item">
-                  <img style={{ height: "260px", width: "100%" }} src="../../assets/images/story/01.jpg" alt="" />
-                </div>
-              </OwlCarousel> */}
             </div>
-            {/* <div class="owl-carousel" data-nav-dots="true" data-items="5" data-md-items="4" data-sm-items="2" data-xx-items="1" data-space="30">
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/01.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Quinnel &amp; Jonet</h5>
-                  </div>
+            <div className="carousel-item">
+                <div className="carousel-caption">
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <img src={avatar} alt="" className="img-fluid" />
+                    <div id="image-caption">Cromption Greves</div>
                 </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/02.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Adam &amp; Eve</h5>
-                  </div>
+            </div>
+            <div className="carousel-item">
+                <div className="carousel-caption">
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <img src={avatar} alt="" className="img-fluid" />
+                    <div id="image-caption">Harry Mon</div>
                 </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/03.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Bella &amp; Edward</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/04.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">DEMI &amp; HEAVEN</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/05.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">David &amp; Bathsheba</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/06.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Eros &amp; Psychi</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/07.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Hector &amp; Andromache</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/08.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Bonnie &amp; Clyde</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/09.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Henry &amp; Clare</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/10.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Casanova &amp; Francesca</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/11.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">Jack &amp; Sally</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="story-item">
-                  <div class="story-image clearfix">
-                    <img class="img-fluid" src="../../assets/images/story/12.jpg" alt="" />
-                    <div class="story-link">
-                      <a href="stories-details.html">
-                        <i class="glyph-icon flaticon-add"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="story-details text-center">
-                    <div class="about-des">Cras ultricies ligula sed magna dictum porta. Quisque velit nisi, pretium ut lacinia in</div>
-                  </div>
-                  <div class="yellow-bg story-text py-3 text-white text-center">
-                    <h5 class="title text-uppercase">James &amp; Lilly</h5>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-          </div>
-        </section>
+            </div>
+        </div> <a className="carousel-control-prev" href="#demo" data-slide="prev"> <i className='fas fa-arrow-left fa-arrow-left-custom'></i> </a> <a className="carousel-control-next" href="#demo" data-slide="next"> <i className='fas fa-arrow-right fa-arrow-right-custom'></i> </a>
+    </div>
+     </div>
+        {/* <!--================================= ---Reviews Section --> */}
+
+
+
+
+       
+
+
+
+
+      
+
+
+
         <section
           class="page-section pt-4 pb-4 bg fixed page-section--ps bg-overlay-black-50 text-white"
           style={{
@@ -1321,7 +1116,10 @@ alert("Hello world!");
                     <img class="img-center" src="../../assets/images/icons/advisor.png" alt="" />
                   </div>
                   <h4 class="title divider-3 mb-3">Personal Advisor</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis</p>
+                  <p>Here at easy Rishta, we provide a personal advisor to you to help you find an appropriate match.
+                     Our advisor makes sure to arrange proposals keeping in mind your specific wants and needs.
+                      There will be no more wasted time and no more uncomfortable or awkward meetings anymore. 
+                      Your personal advisor has you covered for finding a perfect match!</p>
                 </div>
               </div>
 
@@ -1330,8 +1128,8 @@ alert("Hello world!");
                   <div class="timeline-badge">
                     <img class="img-center" src="../../assets/images/icons/personal-matchmaking.png" alt="" />
                   </div>
-                  <h4 class="title divider-3 mb-3">Personal Matchmaking</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis</p>
+                  <h4 class="title divider-3 mb-3">Personal matchmaking </h4>
+<p>Easy Rishta intends to provide you with a variety of options when it comes to finding a life companion. We urge you to browse through the largest list of candidates seeking Pakistani matches for marriage, whether you are enrolling for yourself or on behalf of your children/siblings. We’ve also given those who want to marry, the power to make their own decisions. </p>
                 </div>
               </div>
               <div class="col-lg-4 col-md-6 text-center">
@@ -1340,7 +1138,8 @@ alert("Hello world!");
                     <img class="img-center" src="../../assets/images/icons/arrange-meeting.png" alt="" />
                   </div>
                   <h4 class="title divider-3 mb-3">Intro And Meeting</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis</p>
+<p>
+Get yourself registered with our system, either online or by visiting our office. Once you get registered, you can reach out to your favorite profile and chat by sending a request. Easy Rishta platform also helps arrange meetings with the proposal of your choice. </p>
                 </div>
               </div>
             </div>
@@ -1351,8 +1150,7 @@ alert("Hello world!");
           </div>
         </section>
 
-        {/* <!--=================================
-footer --> */}
+        {/* <!--================================= Foote-Start --> */}
         <footer
           class="page-section-pt contact-section text-center"
           style={{
@@ -1378,7 +1176,7 @@ footer --> */}
                     <div class="address-block">
                       <i class="fa fa-desktop" aria-hidden="true"></i>
                       <a href="mailto:info@Easyrishta.com " style={{ color: "black" }}>
-                        info@Easyrishta.com
+                        info@easyrishta.com
                       </a>
                     </div>
                   </div>
@@ -1406,7 +1204,7 @@ footer --> */}
 
               </div>
             </div>
-            {/* </div> */}
+          
           </div>
           <div class="footer-widget sm-mt-3">
             <div
@@ -1419,7 +1217,7 @@ footer --> */}
               <div class="container wow fadeIn" data-wow-offset="50">
                 <div class="row">
                   <div class="col-lg-2 offset-lg-1 col-sm-12">
-                    {/* <!--Column1--> */}
+                   
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Company</h4>
                       <ul class="list-unstyled">
@@ -1442,7 +1240,7 @@ footer --> */}
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                    {/* <!--Column1--> */}
+                   
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Policies</h4>
                       <ul class="list-unstyled">
@@ -1464,7 +1262,7 @@ footer --> */}
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                    {/* <!--Column1--> */}
+                  
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Partner Services</h4>
                       <ul class="list-unstyled">
@@ -1479,7 +1277,7 @@ footer --> */}
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                    {/* <!--Column1--> */}
+                  
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Help</h4>
                       <ul class="list-unstyled">
@@ -1495,7 +1293,7 @@ footer --> */}
 
 
                   <div class="col-lg-2 col-sm-12">
-                    {/* <!--Column1--> */}
+                   
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Contact Us</h4>
 
@@ -1549,33 +1347,107 @@ footer --> */}
             </div>
           </div>
         </footer>
+          {/* <!--=================================  Footer-End  --> */}
 
 
-          {    isSidebarOpen ?
-              <div id="myModal" class="modal" style={{display:"block"}} >
 
-              <div class="modal-content">
-                <span  onClick={this.htmlModalClose} class="close ml-auto">&times;</span>
-                <form>
-                <label for="email">Email:</label>
-                <input type="text"  className="ml-4" id="email" />
-
-
-              <div className="input-field mt-3 mb-3">
-              <label for="password">Password</label>
-              <input type="text" className="ml-4"  id="password" />
-              </div>
-              <button type="button" onClick={this.onLogin.bind(this)}> Submit</button>
-
-              </form>
-                            </div>
-
-                            </div> : ""
-
-          }
+       
 
 {/* Html-modal */}
+{/* Custom-modal */}
 
+<Modal  show={this.state.showModal} >
+        <Modal.Header >
+        <Button variant="secondary"  size="lg" >Login </Button> 
+     
+          <Button  variant="outline-light"  onClick={this.closeModal.bind(this)}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button> 
+        </Modal.Header>
+        <div>
+        
+        </div>
+        <Modal.Body>
+
+        <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" id="email" placeholder="Enter email" />
+ 
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" id="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  {/* onClick={this.onLogin.bind(this)} */}
+  <Button  style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onLogin}>
+    Submit
+  </Button>
+</Form>
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+         
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
+{/* Custom-register-modal */}
+
+<Modal  show={this.state.isSidebarOpen} >
+        <Modal.Header >
+          <Button variant="secondary" size="lg"  > Register</Button> 
+          <Button  variant="outline-light"  onClick={this.registerModalClose}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button> 
+        </Modal.Header>
+       
+        <Modal.Body>
+
+        <Form>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Username</Form.Label>
+    <Form.Control type="email" id="username" placeholder="Enter Username" />
+ 
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" id="email" placeholder="Enter email" />
+ 
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" id="password" placeholder="Password" />
+  </Form.Group>
+  <Form.Group className="mb-3" controlId="formBasicCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  {/* onClick={this.onLogin.bind(this)} */}
+  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onLogin}>
+    Submit
+  </Button>
+</Form>
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+         
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
 
       </div>
     );
