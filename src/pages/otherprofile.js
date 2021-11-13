@@ -29,7 +29,7 @@ export default function Otherprofile() {
   var loggedin_username = localStorage.getItem("username");
 
 
- 
+
   // console.log(query.userid);
   // const [state, setstate] = useState({
   //   username: "",
@@ -165,7 +165,7 @@ export default function Otherprofile() {
   //  function openModal() {
   //   document.getElementById("myModal").style.display = "block";
   // }
-  
+
   // function closeModal() {
   //   document.getElementById("myModal").style.display = "none";
   // }
@@ -179,39 +179,8 @@ var span = document.getElementsByClassName("close")[0];
 
 var modal = document.getElementById("myModal");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-// var img = document.getElementById("myImg");
-// var modalImg = document.getElementById("img01");
-// var captionText = document.getElementById("caption");
-// img.onclick = function(){
-//   modal.style.display = "block";
-//   modalImg.src = this.src;
-//   captionText.innerHTML = this.alt;
-// }
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
 
 
-  // const invites = useQuery(
-  //   "invites",
-  //   () => {
-  //     return db.collection("invites").where("recieverid", "==", docsid).get();
-  //   },
-  //   {
-  //     select: (querySnapshot) => {
-  //       const doc = querySnapshot.docs[0].data();
-  //       console.log("Invite docs", doc);
-  //     },
-  //     onError: (error) => console.log("Error getting documents: ", error)
-  //   }
-  // );
-    
   if (!Otherprofile.data)
     return (
       <div
@@ -231,10 +200,10 @@ var modal = document.getElementById("myModal");
 
   return (
     <div >
-      
+
       <body class="hold-transition sidebar-mini" />
       <div class="wrapper">
-        
+
 
 
 
@@ -278,85 +247,7 @@ var modal = document.getElementById("myModal");
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
-            {/* <!-- Messages Dropdown Menu --> */}
-            {/* <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 mr-3 img-circle"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        Brad Diesel
-                        <span class="float-right text-sm text-danger">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">Call me whenever you can...</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 img-circle mr-3"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        John Pierce
-                        <span class="float-right text-sm text-muted">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">I got your message bro</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 img-circle mr-3"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        Nora Silvester
-                        <span class="float-right text-sm text-warning">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">The subject goes here</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Messages
-                </a>
-              </div>
-            </li> */}
-            {/* <!-- Notifications Dropdown Menu --> */}
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
@@ -369,41 +260,9 @@ var modal = document.getElementById("myModal");
                   {localStorage.getItem("inviteslength")}
                 </span>
               </a>
-              {/* <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">
-                  15 Notifications
-                </span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-envelope mr-2"></i> 4 new messages
-                  <span class="float-right text-muted text-sm">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-users mr-2"></i> 8 friend requests
-                  <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-file mr-2"></i> 3 new reports
-                  <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Notifications
-                </a>
-              </div> */}
+
             </li>
-            {/* <li class="nav-item">
-              <a
-                class="nav-link"
-                data-widget="control-sidebar"
-                data-slide="true"
-                href="#"
-              >
-                <i class="fas fa-th-large"></i>
-              </a>
-            </li> */}
+
           </ul>
         </nav>
         {/*  <!-- /.navbar --> */}
@@ -537,19 +396,7 @@ var modal = document.getElementById("myModal");
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-                {/* <li class="nav-item">
-                  <Link
-                    to={"/notifications"}
-                    class="nav-link"
-                    style={{ color: "black" }}
-                  >
-                    <i class="nav-icon fas fa-user"></i>
-                    <p>Notifications</p>
-                    <MDBBadge color="danger" className="ml-2">
-                      {inviteslength}
-                    </MDBBadge>
-                  </Link>
-                </li> */}
+
               </ul>
             </nav>
             {/*  <!-- /.sidebar-menu --> */}
@@ -588,11 +435,11 @@ var modal = document.getElementById("myModal");
                   <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                       <div class="text-center">
-                     
+
 
                   {Otherprofile.data.profilepic == "loading"  || Otherprofile.data.profilepic == ""  ?  <img
                       class="profile-user-img img-fluid img-circle  "
-                      
+
                       src={male}
                       alt=" No Image"
                       style={{ height: 200, width: 200 }}
@@ -601,9 +448,9 @@ var modal = document.getElementById("myModal");
                         src={Otherprofile.data.profilepic}
                         alt=" My Profile picture dd"
                         style={{ height: 200, width: 200 }}
-                      /> 
-                      } 
-                  
+                      />
+                      }
+
                       </div>
 
                       <h3 class="profile-username text-center">
@@ -616,8 +463,8 @@ var modal = document.getElementById("myModal");
                       >
                         {Otherprofile.data.registration_token}
                       </p>
-                      {Otherprofile.friends ? (
-                        Otherprofile.friends.filter(
+                      {Otherprofile.data.friends ? (
+                        Otherprofile.data.friends.filter(
                           (row) => row.userid === localStorage.getItem("userid")
                         ) ? (
                           <button
@@ -904,14 +751,14 @@ var modal = document.getElementById("myModal");
                       </ul>
                     </div>
                     {/* <!-- /.card-header --> */}
-      
+
                     <div class="card-body">
-                      
+
                       <div class="tab-content">
-                        
+
                         <div class="active tab-pane" id="activity">
 
-                          
+
                           {/* <!-- Post --> */}
 
                           {/*  <!-- /.post --> */}
@@ -951,9 +798,9 @@ var modal = document.getElementById("myModal");
                             {/*  <!-- /.user-block --> */}
                             <div class="row mb-3">
                               <div class="col-sm-12">
-                               
-                               
-                           
+
+
+
 
                                 {Otherprofile.data.profile.gender === "female"
                                   ? Otherprofile.data.gallery.map((val) => (
@@ -966,17 +813,17 @@ var modal = document.getElementById("myModal");
                                   : Otherprofile.data.gallery.map((val) => (
                                     Otherprofile.data.photo_status === true  ?   <img
                                     class="img-fluid col-sm-6 image-blur"
-                                    src={val || male}  
-                                    alt="Pic"  
-                                  /> : 
+                                    src={val || male}
+                                    alt="Pic"
+                                  /> :
                                   <div>
 
                                    <img onClick={handleShow}
                                   class="img-fluid col-sm-6 "
                                   src={val || male}
                                   alt="Pic"
-                                  /> 
-   
+                                  />
+
                                   </div>
                                     ))}
 
@@ -1206,8 +1053,8 @@ var modal = document.getElementById("myModal");
                         {/* </div> */}
                         {/*  <!-- /.tab-pane --> */}
 
-                       
-   
+
+
 
       <Modal size="lg"
         show={show}
@@ -1231,22 +1078,22 @@ var modal = document.getElementById("myModal");
                                     Otherprofile.data.photo_status === true  ?   <img
                                     class="img-fluid col-sm-6 image-blur"
                                     src={val || male}
-                                    alt="Pic"  
+                                    alt="Pic"
                                   /> :  <img
                                   class="img-fluid col-sm-6 "
-                                  src={val || male} 
-                                  alt="Pic" 
-                                /> 
+                                  src={val || male}
+                                  alt="Pic"
+                                />
                                     ))}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-        
+
         </Modal.Footer>
       </Modal>
-                     
+
                   {/* <!-- /.nav-tabs-custom --> */}
                 </div>
                 {/* <!-- /.col --> */}
@@ -1254,7 +1101,7 @@ var modal = document.getElementById("myModal");
     </div>
   </div>
 </div>
-                
+
               {/* <!-- /.row --> */}
             </div>
             {/* <!-- /.container-fluid --> */}

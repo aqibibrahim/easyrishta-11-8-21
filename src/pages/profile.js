@@ -8,21 +8,8 @@ export default function Profile() {
   var docsid = "";
   let invites_array = [];
   var inviteslength = 0;
-
-  // const [state, setstate] = useState({
-  //   username: "",
-  //   profession: "",
-  //   education: "",
-  //   specialization: "",
-  //   address: "",
-  //   notificationlength: 0,
-  //   notificationdata: [],
-  //   gallery: [],
-  //   notificationid: "",
-  //   userid: "",
-  //   data: [],
-  // });
-
+  var favriouteslength = 0;
+  var friendslength = 0;
   const profiles = useQuery(
     "profile",
     () => {
@@ -36,7 +23,7 @@ export default function Profile() {
         docsid = querySnapshot.docs[0].id;
         console.log("DOC ::", doc);
         console.log("DOC ::", docsid);
-        localStorage.setItem("loggedin-userid", localStorage.getItem("userid"));
+        localStorage.setItem("loggedin-userid", docsid);
         localStorage.setItem("profilepic", doc.profilepic);
         localStorage.setItem("username", doc.profile.fullname);
 
@@ -85,7 +72,20 @@ export default function Profile() {
       </div>
     );
 
+  console.warn("profiles ::  ", profiles.data.favrioutes);
   console.warn("profiles ::  ", profiles.data);
+  if(profiles.data.favrioutes == undefined){
+    favriouteslength = 0;
+  }
+  else{
+    favriouteslength = profiles.data.favrioutes.length;
+  }
+  if(profiles.data.friends == undefined){
+    friendslength = 0
+  }
+  else{
+    friendslength = profiles.data.friends.length;
+  }
   console.warn("invites ::  ", invites.data);
 
   return (
@@ -133,63 +133,7 @@ export default function Profile() {
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
             {/* <!-- Messages Dropdown Menu --> */}
-            {/* <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 mr-3 img-circle"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        Brad Diesel
-                        <span class="float-right text-sm text-danger">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">Call me whenever you can...</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 img-circle mr-3"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        John Pierce
-                        <span class="float-right text-sm text-muted">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">I got your message bro</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
 
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Messages
-                </a>
-              </div>
-            </li> */}
             {/* <!-- Notifications Dropdown Menu --> */}
             <li class="nav-item dropdown">
               <a
@@ -203,41 +147,9 @@ export default function Profile() {
                   {localStorage.getItem("inviteslength")}
                 </span>
               </a>
-              {/* <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">
-                  15 Notifications
-                </span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-envelope mr-2"></i> 4 new messages
-                  <span class="float-right text-muted text-sm">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-users mr-2"></i> 8 friend requests
-                  <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-file mr-2"></i> 3 new reports
-                  <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Notifications
-                </a>
-              </div> */}
+
             </li>
-            {/* <li class="nav-item">
-              <a
-                class="nav-link"
-                data-widget="control-sidebar"
-                data-slide="true"
-                href="#"
-              >
-                <i class="fas fa-th-large"></i>
-              </a>
-            </li> */}
+
           </ul>
         </nav>
         {/*  <!-- /.navbar --> */}
@@ -665,7 +577,7 @@ export default function Profile() {
                             >
                               Favourites:
                             </span>{" "}
-                            {profiles.data.favrioutes.length}
+                            {favriouteslength}
                           </span>
                           <br />
                         </p>
@@ -687,7 +599,7 @@ export default function Profile() {
                             >
                               Total Friends:
                             </span>{" "}
-                            {profiles.data.friends.length}
+                            {friendslength}
                           </span>
                           <br />
                         </p>
@@ -704,7 +616,7 @@ export default function Profile() {
                 {/*   <!-- /.col --> */}
                 <div class="col-md-9">
 
-         
+
 
 
                   <div class="card">
@@ -787,23 +699,7 @@ export default function Profile() {
                                   ))
                                 : null}
 
-                              {/* <!-- /.col --> */}
-                              {/* <div class="col-sm-6">
-                                  <div class="row">
-                                    <div class="col-sm-6">
-                                      <img class="img-fluid mb-3" src={pic2} alt="Photo" />
-                                      <img class="img-fluid" src={pic3} alt="Photo" />
-                                    </div> */}
-                              {/*  <!-- /.col --> */}
-                              {/* <div class="col-sm-6">
-                                      <img class="img-fluid mb-3" src={pic4} alt="Photo" />
-                                      <img class="img-fluid" src={pic1} alt="Photo" />
-                                    </div> */}
-                              {/*  <!-- /.col --> */}
-                              {/* </div> */}
-                              {/*  <!-- /.row --> */}
-                              {/* </div> */}
-                              {/* <!-- /.col --> */}
+
                             </div>
                             {/*  <!-- /.row --> */}
                           </div>
@@ -829,7 +725,7 @@ export default function Profile() {
     <div class="card-footer">
       <small class="text-muted">Last updated 3 mins ago</small>
     </div>
-  </div> 
+  </div>
    ))
    : null}
 </div> */}
@@ -847,23 +743,23 @@ export default function Profile() {
                                         {val.address}
                                       </div>
 
-                 
+
                                       <div className="card-body pt-0">
                             <div className="row mt-2">
                               <div className="col-7">
                                 <h2 className="lead p-1">
                                 {val.name}
-                                
+
                                 </h2>
                                 <p className="text-muted text-sm text-center">
-                                  
+
                                   {val.education}
                                 </p>
                               </div>
                               <div className="col-5 text-center">
                                 <img
                                  src={val.profilepic}
-                                  
+
                                   alt=""
                                   className="img-circle  "
                                   style={{  width: "100px",height :"100px" }}
@@ -887,7 +783,7 @@ export default function Profile() {
                                       </span>{" "}
                                       <span style={{ fontWeight: "600" }}>
                                         {" "}
-                                      
+
                                         {val.address}
                                       </span>
                                     </span>
@@ -909,12 +805,12 @@ export default function Profile() {
                                       </span>{" "}
                                       <span style={{ fontWeight: "600" }}>
                                         {" "}
-                                      
+
                                         + 800 - 12 12 23 52
                                       </span>
                                     </span>
                                   </li>
-                               
+
                                 </ul>
                               </div>
 
@@ -922,7 +818,7 @@ export default function Profile() {
                             </div>
                           </div>
 
-                          
+
                                       {/* <div class="card-body pt-0">
                                         <div class="row">
                                           <div class="col-7">

@@ -3,94 +3,58 @@ import { Link } from "react-router-dom";
 import logo from "./images/150X150-LOGO.png";
 import logo1 from "./images/user1-128x128.jpg";
 import { db } from "../../src/pages/firebase-config";
-// import { useQuery } from "react-query";
+import { useQuery } from "react-query";
 export default function Friends() {
   var users_array = [];
-
-  useEffect(() => {
-    const userid = localStorage.getItem("userid");
-    //console.log(localStorage.getItem("userid"));
-    db.collection("users")
-      .doc(userid)
-      .get()
-      .then((res) => {
-        const doc = res.data().friends;
-        console.log("userData", doc);
-        users_array = doc;
-        return doc;
-      });
-  });
-  // const GetFriends = useQuery(
-  //   "getfriends",
+  var docsid = "";
+  // const profiles = useQuery(
+  //   "profile",
   //   () => {
-  //     const userid = localStorage.getItem("userid");
-  //     //console.log(localStorage.getItem("userid"));
-  //     return db.collection("users").doc(userid).get();
+  //     const email = localStorage.getItem("email");
+  //     console.log(localStorage.getItem("userid"));
+  //     return db.collection("users").where("email", "==", email).get();
   //   },
   //   {
   //     select: (querySnapshot) => {
-  //       const doc = querySnapshot.data().friends;
-  //       console.log("userData", doc);
-  //       users_array = doc;
+  //       const doc = querySnapshot.docs[0].data();
+  //       docsid = querySnapshot.docs[0].id;
+  //       console.log("DOC ::", doc);
+  //       // console.log("DOC ::", docsid);
+  //       localStorage.setItem("loggedin-userid", localStorage.getItem("userid"));
+  //       localStorage.setItem("profilepic", doc.profilepic);
+  //       localStorage.setItem("username", doc.profile.fullname);
+
   //       return doc;
   //     },
   //     onError: (error) => console.log("Error getting documents: ", error),
   //   }
   // );
 
-  //   const MatchMaking = useQuery(
-  //     "matchmaking",
-  //     () => {
-  //       // console.log(GetPreferences.data);
-  //       const citiesRef = db.collection("users");
-  //       console.log(preferences);
-  //       return citiesRef
-  //         .where("profile.gender", "==", preferences.gender)
-  //         .where("profile.caste", "==", preferences.cast)
-  //         .get();
+  const profiles = useQuery(
+    "profile",
+    () => {
+      const email = localStorage.getItem("email");
+      console.log(localStorage.getItem("userid"));
+      return db.collection("users").where("email", "==", email).get();
+    },
+    {
+      select: (querySnapshot) => {
+        const doc = querySnapshot.docs[0].data();
+        docsid = querySnapshot.docs[0].id;
+        console.log("DOC ::", doc);
+        console.log("DOC ::", docsid);
+        localStorage.setItem("loggedin-userid", docsid);
+        localStorage.setItem("profilepic", doc.profilepic);
+        localStorage.setItem("username", doc.profile.fullname);
 
-  //     },
-  //     {
-  //       select: (querySnapshot) => {
-  //         // const doc = querySnapshot;
-  //         const user_array = [];
-  //         console.log({ from: querySnapshot.docs[0].data() });
-  //         for (var i = 0; i < querySnapshot.docs.length; i++) {
-  //           if (preferences) {
-  //             if (
-  //               querySnapshot.docs[i].data().profile.height <=
-  //                 preferences.maximumheight &&
-  //               querySnapshot.docs[i].data().profile.height >=
-  //                 preferences.minmumheight &&
-  //               querySnapshot.docs[i].data().profile.age <=
-  //                 preferences.maximumage &&
-  //               querySnapshot.docs[i].data().profile.age >= preferences.minimumage
-  //             ) {
-  //               user_array.push({
-  //                 data: querySnapshot.docs[i].data(),
-  //                 userid: querySnapshot.docs[i].id,
-  //               });
-  //             }
-  //           } else {
-  //             user_array.push({
-  //               data: querySnapshot.docs[i].data(),
-  //               userid: querySnapshot.docs[i].id,
-  //             });
-  //           }
-  //         }
-  //         //console.log(user_array);
-  //         users_array = user_array;
-  //         console.log({ users_array });
-  //         // const docsid = querySnapshot.forEach((res) => {
-  //         //   console.log(res.data());.
-  //         // });
-  //         // console.log("DOC ::", doc);
-  //         // console.log("DOC ::", docsid);
-  //         // return docsid;
-  //       },
-  //       onError: (error) => console.log("Error getting documents: ", error),
-  //     }
-  //   );
+        return doc;
+      },
+      onError: (error) => console.log("Error getting documents: ", error),
+    }
+  );
+  console.warn("invites ::  ", profiles.data.friends);
+  users_array = profiles.data.friends;
+
 
   return (
     <div>
@@ -223,41 +187,9 @@ export default function Friends() {
                   {localStorage.getItem("inviteslength")}
                 </span>
               </a>
-              {/* <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">
-                  15 Notifications
-                </span>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-envelope mr-2"></i> 4 new messages
-                  <span class="float-right text-muted text-sm">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-users mr-2"></i> 8 friend requests
-                  <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <i class="fas fa-file mr-2"></i> 3 new reports
-                  <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Notifications
-                </a>
-              </div> */}
+
             </li>
-            {/* <li class="nav-item">
-              <a
-                class="nav-link"
-                data-widget="control-sidebar"
-                data-slide="true"
-                href="#"
-              >
-                <i class="fas fa-th-large"></i>
-              </a>
-            </li> */}
+
           </ul>
         </nav>
         {/* <!-- /.navbar -->
@@ -382,19 +314,7 @@ export default function Friends() {
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-                {/* <li class="nav-item">
-                  <Link
-                    to={"/notifications"}
-                    class="nav-link"
-                    style={{ color: "black" }}
-                  >
-                    <i class="nav-icon fas fa-bell"></i>
-                    <p>Notifications</p>
-                    <MDBBadge color="danger" className="ml-2">
-                      {inviteslength}
-                    </MDBBadge>
-                  </Link>
-                </li> */}
+
               </ul>
             </nav>
             {/* <!-- /.sidebar-menu --> */}

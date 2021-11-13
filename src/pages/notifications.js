@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import firebase from "firebase";
 import logo from "./images/150X150-LOGO.png";
+import chat from "./chat";
 import dots from "./images/three-dots.jpg";
 import preloader from "./../../src/pages/images/easyrishtapre.png";
 import dotsThree from "./images/dots-custom.png";
@@ -11,6 +12,7 @@ import { useQuery } from "react-query";
 
 import './notifications.css';
 export default function Notificatoins() {
+
   var docsid = "";
   let invites_array = [];
   var username1 = "";
@@ -123,6 +125,7 @@ export default function Notificatoins() {
 
   console.warn("profiles ::  ", profiles.data);
   console.warn("invites ::  ", invites.data);
+
   const handleAccept = async (senderData, inviteId) => {
     console.log({ fromAcceptHandle: senderData, inviteId: inviteId });
 
@@ -132,9 +135,7 @@ export default function Notificatoins() {
         .doc(localStorage.getItem("loggedin-userid"))
         .update({
           accepted_chat_request: firebase.firestore.FieldValue.arrayUnion({
-            userid: senderData.userid,
-            userpic: senderData.profilepic ? senderData.profilepic : "",
-            name: senderData.requestperson,
+            accepted_user_id: senderData.userid
           }),
         })
         .then(() => {
@@ -142,21 +143,35 @@ export default function Notificatoins() {
             .doc(senderData.userid)
             .update({
               accepted_chat_request: firebase.firestore.FieldValue.arrayUnion({
-                userid: senderData.recieverid,
-                userpic: localStorage.getItem("profilepic")
-                  ? localStorage.getItem("profilepic")
-                  : "",
-                name: localStorage.getItem("username"),
+                accepted_user_id: senderData.recieverid
               }),
             })
             .then(() => {
-              db.collection("invites").doc(inviteId).delete();
+              let chatids = senderData.userid + localStorage.getItem("loggedin-userid");
+              db.collection("users").doc(senderData.userid).update({
+                  chat_ids: firebase.firestore.FieldValue.arrayUnion({
+                    chatid: chatids,
+                    chatperson: localStorage.getItem("username")
+                  })
+              }).then(()=>{
+                db.collection("users").doc(senderData.recieverid).update({
+                  chat_ids: firebase.firestore.FieldValue.arrayUnion({
+                    chatid: chatids,
+                    chatperson: senderData.requestperson
+                  })
+              }).then(()=>{
+                db.collection("invites").doc(inviteId).delete().then((res)=>{
+                  alert("Accept Chat Suucesfully")
+                  window.location.href = '/chat';
+                });
+              })
+            })
             });
         });
     } else {
       console.log(senderData.type);
       db.collection("users")
-        .doc(localStorage.getItem("loggedin-userid"))
+        .doc(senderData.recieverid)
         .update({
           friends: firebase.firestore.FieldValue.arrayUnion({
             userid: senderData.userid,
@@ -178,6 +193,7 @@ export default function Notificatoins() {
             })
             .then(() => {
               db.collection("invites").doc(inviteId).delete();
+
             });
         });
     }
@@ -240,7 +256,7 @@ export default function Notificatoins() {
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
-            
+
             {/* <!-- Notifications Dropdown Menu --> */}
             <li class="nav-item dropdown">
               <a
@@ -255,7 +271,7 @@ export default function Notificatoins() {
                 </span>
               </a>
             </li>
-       
+
           </ul>
         </nav>
         {/*  <!-- /.navbar --> */}
@@ -446,9 +462,9 @@ export default function Notificatoins() {
                       <div class="tab-content">
                       <div class="tab-header d-flex justify-content-between ">
                       <h4>Notifications</h4>
-                   
-                  
-                        </div>               
+
+
+                        </div>
                                  <div
                                               >
                           <div class="d-flex  align-items-stretch flex-wrap justify-content-center overflow-y-scroll">
@@ -560,8 +576,8 @@ export default function Notificatoins() {
                     <div></div>
                   </div>
                 )}
-                           
-                         
+
+
                           </div>
                         </div>
                         {/* intrest: person name show some intrest in your profile
@@ -589,7 +605,7 @@ export default function Notificatoins() {
   <div></div>
 </div>
 )}
-  
+
                   {/* <!-- /.nav-tabs-custom --> */}
                 </div>
                 <div class="col-md-3"></div>

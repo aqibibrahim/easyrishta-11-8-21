@@ -44,7 +44,7 @@ class Home extends React.Component {
   //    });
   //  }
   openModal() {
-   
+
     this.setState({
       showModal: true,
     });
@@ -52,7 +52,7 @@ class Home extends React.Component {
   }
 
   selectSection(){
- 
+
     this.setState({
         showModal: true,
       });
@@ -66,7 +66,7 @@ class Home extends React.Component {
   showModal = () => {
     this.setState({ show: true });
   };
- 
+
   openRegisterModal() {
     this.setState({  showRegisterModal: true });
   }
@@ -84,7 +84,7 @@ class Home extends React.Component {
 
   // When the user clicks on the button, open the modal
    htmlModal = () => {
-  
+
    this.setState({ isSidebarOpen: true });
   }
   registerModalClose = () => {
@@ -107,12 +107,12 @@ class Home extends React.Component {
 
 
   async onLogin() {
-    
+
     console.log("__onLogin__");
     console.log("email: " + document.querySelector("#email").value);
     console.log("password: " + document.querySelector("#password").value);
     // this.setState({ loading: true });
-  
+
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     await auth.signInWithEmailAndPassword(email, password);
@@ -121,24 +121,25 @@ class Home extends React.Component {
       .where("email", "==", email)
       .get()
       .then((querySnapshot) => {
-       
 
-        window.location.href = '/profile';
+
+
         querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
           // this.setState({ loading: false });
           console.log(doc.id, " => ", doc.data());
           localStorage.setItem("email", email);
+          window.location.href = '/profile';
           // this.props.history.push({
           //   pathname: "/profile",
           //   //data: doc.data() // your data array of objects
           // });
-        });       
+        });
       })
       .catch((error) => {
         console.log("Error getting documents: ", error);
       });
-      
+
     //  getprofile(email);
     if (!email || !password) {
       this.setState({
@@ -153,18 +154,6 @@ class Home extends React.Component {
     console.log("logged successfully with " + method);
   }
 
-  // handleClick = () => {
-  //   this.setState({
-  //      hidediv: true,
-  //      LoginTab: true
-  //    });
-  //  }
-  //  handleLoginClick = () => {
-  //   this.setState({
-  //      hidediv: false,
-  //      LoginTab: false
-  //    });
-  //  }
 
   async onRegister() {
     console.log("__onRegister__");
@@ -211,9 +200,10 @@ class Home extends React.Component {
             });
             localStorage.setItem("email", email);
             localStorage.setItem("userid", user.uid);
-            this.props.history.push({
-              pathname: "/register",
-            });
+            // this.props.history.push({
+            //   pathname: "/register",
+            // });
+            window.location.href = '/register';
           } catch (error) {}
         }
         this.openModal();
@@ -937,8 +927,8 @@ class Home extends React.Component {
         </section>
 
 
-         
-      
+
+
         <section style={{ height: 650 }}>
           <div className="row">
             <div
@@ -1063,14 +1053,14 @@ class Home extends React.Component {
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p>
                     <img src={avatar} alt="" className="img-fluid" />
                     <div id="image-caption">Cromption Greves</div>
                 </div>
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p> 
+                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p>
                     <img src={avatar} alt="" className="img-fluid" />
                     <div id="image-caption">Harry Mon</div>
                 </div>
@@ -1083,12 +1073,12 @@ class Home extends React.Component {
 
 
 
-       
 
 
 
 
-      
+
+
 
 
 
@@ -1118,7 +1108,7 @@ class Home extends React.Component {
                   <h4 class="title divider-3 mb-3">Personal Advisor</h4>
                   <p>Here at easy Rishta, we provide a personal advisor to you to help you find an appropriate match.
                      Our advisor makes sure to arrange proposals keeping in mind your specific wants and needs.
-                      There will be no more wasted time and no more uncomfortable or awkward meetings anymore. 
+                      There will be no more wasted time and no more uncomfortable or awkward meetings anymore.
                       Your personal advisor has you covered for finding a perfect match!</p>
                 </div>
               </div>
@@ -1204,7 +1194,7 @@ Get yourself registered with our system, either online or by visiting our office
 
               </div>
             </div>
-          
+
           </div>
           <div class="footer-widget sm-mt-3">
             <div
@@ -1217,7 +1207,7 @@ Get yourself registered with our system, either online or by visiting our office
               <div class="container wow fadeIn" data-wow-offset="50">
                 <div class="row">
                   <div class="col-lg-2 offset-lg-1 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Company</h4>
                       <ul class="list-unstyled">
@@ -1240,7 +1230,7 @@ Get yourself registered with our system, either online or by visiting our office
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Policies</h4>
                       <ul class="list-unstyled">
@@ -1262,7 +1252,7 @@ Get yourself registered with our system, either online or by visiting our office
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                  
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Partner Services</h4>
                       <ul class="list-unstyled">
@@ -1277,7 +1267,7 @@ Get yourself registered with our system, either online or by visiting our office
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                  
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Help</h4>
                       <ul class="list-unstyled">
@@ -1293,7 +1283,7 @@ Get yourself registered with our system, either online or by visiting our office
 
 
                   <div class="col-lg-2 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Contact Us</h4>
 
@@ -1351,21 +1341,21 @@ Get yourself registered with our system, either online or by visiting our office
 
 
 
-       
+
 
 {/* Html-modal */}
 {/* Custom-modal */}
 
 <Modal  show={this.state.showModal} >
         <Modal.Header >
-        <Button variant="secondary"  size="lg" >Login </Button> 
-     
+        <Button variant="secondary"  size="lg" >Login </Button>
+
           <Button  variant="outline-light"  onClick={this.closeModal.bind(this)}>
            <img style={{width:"20px"}} src={crossIcon}></img>
-          </Button> 
+          </Button>
         </Modal.Header>
         <div>
-        
+
         </div>
         <Modal.Body>
 
@@ -1373,7 +1363,7 @@ Get yourself registered with our system, either online or by visiting our office
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" id="email" placeholder="Enter email" />
- 
+
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -1394,7 +1384,7 @@ Get yourself registered with our system, either online or by visiting our office
             Close
             </Button>
           */}
-         
+
         </Modal.Footer>
       </Modal>
 
@@ -1404,24 +1394,24 @@ Get yourself registered with our system, either online or by visiting our office
 
 <Modal  show={this.state.isSidebarOpen} >
         <Modal.Header >
-          <Button variant="secondary" size="lg"  > Register</Button> 
+          <Button variant="secondary" size="lg"  > Register</Button>
           <Button  variant="outline-light"  onClick={this.registerModalClose}>
            <img style={{width:"20px"}} src={crossIcon}></img>
-          </Button> 
+          </Button>
         </Modal.Header>
-       
+
         <Modal.Body>
 
         <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
+  {/* <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Username</Form.Label>
     <Form.Control type="email" id="username" placeholder="Enter Username" />
- 
-  </Form.Group>
+
+  </Form.Group> */}
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" id="email" placeholder="Enter email" />
- 
+
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -1432,7 +1422,7 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
   {/* onClick={this.onLogin.bind(this)} */}
-  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onLogin}>
+  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onRegister}>
     Submit
   </Button>
 </Form>
@@ -1442,7 +1432,7 @@ Get yourself registered with our system, either online or by visiting our office
             Close
             </Button>
           */}
-         
+
         </Modal.Footer>
       </Modal>
 

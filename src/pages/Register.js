@@ -41,6 +41,7 @@ class register extends React.Component {
     this.handleG4Change = this.handleG4Change.bind(this);
   }
   componentDidMount() {
+    localStorage.getItem("userid");
     this.setState({ loading: true });
     db.collection("users")
       .doc(localStorage.getItem("userid"))
@@ -1031,9 +1032,9 @@ class register extends React.Component {
                   </div>
                 </div> */}
 
-                    {/* <!-- 
+                    {/* <!--
                             <select name="RELIGION" id="RELIGION" size="1" onchange="makeDrequest1(this.value); _gaq.push(['_trackEvent', 'Bharathomepage-Desktop', 'Bharathomepage-Desktop-Default', 'Religion-SelectedFilled']); religioncountval(this.value);" style="color: rgb(0, 0, 0);">
-                               
+
                               </select>
 
                                -->
