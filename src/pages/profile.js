@@ -88,11 +88,7 @@ export default function Profile() {
     friendslength = profiles.data.friends.length;
   }
   console.warn("invites ::  ", invites.data);
-  function refreshPage(){
 
-    window.location.replace("http://localhost:3000/home");
-    window.location.href = "http://localhost:3000/home";
-  }
   return (
     <div>
       <body class="hold-transition sidebar-mini" />
