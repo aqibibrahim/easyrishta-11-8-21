@@ -292,14 +292,16 @@ export default function Char() {
                     )}
                   </div>
                 </div>
-              </div>
+                <div class="mesgs">
+                <div class="msg_history">
 
-              {chat_array.length > 0 ? (
+
+                  {chat_array.length > 0 ? (
                     chat_array.map((val) => (
                       <div
                         style={{
                           justifyContent:
-                            val.senderId === localStorage.getItem("loggedin-userid")
+                            val.senderId === localStorage.getItem("userid")
                               ? "right"
                               : "left",
                           display: "flex",
@@ -310,15 +312,15 @@ export default function Char() {
                             width: "fit-content",
                             // minWidth: "200px",
                             border:
-                              val.senderId === localStorage.getItem("loggedin-userid")
-                                ? "3px solid green"
-                                : "3px solid deeppink",
+                              val.senderId === localStorage.getItem("userid")
+                                ? "2px solid green"
+                                : "2px solid deeppink",
                             color:
-                              val.senderId === localStorage.getItem("loggedin-userid")
+                              val.senderId === localStorage.getItem("userid")
                                 ? "black"
                                 : "black",
                             backgroundColor:
-                              val.senderId === localStorage.getItem("loggedin-userid")
+                              val.senderId === localStorage.getItem("userid")
                                 ? "grey"
                                 : "grey",
 
@@ -331,62 +333,22 @@ export default function Char() {
                           {val.messageText}
                         </p>
                       </div>
+                    //    <div class="incoming_msg">
+                    //    <div class="incoming_msg_img">
+                    //      {" "}
+                    //      <img src={chatUser} alt="sunil" />{" "}
+                    //    </div>
+                    //    <div class="received_msg chat-bubble">
+                    //      <div class="received_withd_msg">
+                    //        <p> {val.messageText}</p>
+                    //        <span class="time_date"> 11:01 AM | June 9</span>
+                    //      </div>
+                    //    </div>
+                    //  </div>
                     ))
                   ) : (
                     <h1>No Message Found</h1>
                   )}
-
-
-              <div class="mesgs">
-                <div class="msg_history">
-                  <div class="incoming_msg">
-                    <div class="incoming_msg_img">
-                      {" "}
-                      <img src={chatUser} alt="sunil" />{" "}
-                    </div>
-                    <div class="received_msg chat-bubble">
-                      <div class="received_withd_msg">
-                        <p>Test which is a new approach to have all solutions</p>
-                        <span class="time_date"> 11:01 AM | June 9</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="outgoing_msg">
-                    <div class="sent_msg">
-                      <p>Test which is a new approach to have all solutions</p>
-                      <span class="time_date"> 11:01 AM | June 9</span>{" "}
-                    </div>
-                  </div>
-                  <div class="incoming_msg">
-                    <div class="incoming_msg_img">
-                      {" "}
-                      <img src={chatUser} alt="sunil" />{" "}
-                    </div>
-                    <div class="received_msg">
-                      <div class="received_withd_msg">
-                        <p>Test, which is a new approach to have</p>
-                        <span class="time_date"> 11:01 AM | Yesterday</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="outgoing_msg">
-                    <div class="sent_msg">
-                      <p>Apollo University, Delhi, India Test</p>
-                      <span class="time_date"> 11:01 AM | Today</span>{" "}
-                    </div>
-                  </div>
-                  <div class="incoming_msg">
-                    <div class="incoming_msg_img">
-                      {" "}
-                      <img src={chatUser} alt="sunil" />{" "}
-                    </div>
-                    <div class="received_msg">
-                      <div class="received_withd_msg">
-                        <p>We work directly with our designers and suppliers, and sell direct to you, which means quality, exclusive products, at a price anyone can afford.</p>
-                        <span class="time_date"> 11:01 AM | Today</span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="type_msg">
                   <div class="input_msg_write">
@@ -397,6 +359,12 @@ export default function Char() {
                   </div>
                 </div>
               </div>
+              </div>
+
+
+
+
+
             </div>
           ))}
         </div>

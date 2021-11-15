@@ -74,6 +74,7 @@ export default function Profile() {
 
   console.warn("profiles ::  ", profiles.data.favrioutes);
   console.warn("profiles ::  ", profiles.data);
+
   if(profiles.data.favrioutes == undefined){
     favriouteslength = 0;
   }
@@ -87,7 +88,11 @@ export default function Profile() {
     friendslength = profiles.data.friends.length;
   }
   console.warn("invites ::  ", invites.data);
+  function refreshPage(){
 
+    window.location.replace("http://localhost:3000/home");
+    window.location.href = "http://localhost:3000/home";
+  }
   return (
     <div>
       <body class="hold-transition sidebar-mini" />
@@ -291,6 +296,21 @@ export default function Profile() {
                   >
                     <i class="nav-icon fas fa-user"></i>
                     <p>Membership</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
