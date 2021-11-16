@@ -1173,7 +1173,7 @@ Get yourself registered with our system, either online or by visiting our office
 
                   <div class="col-md-4">
                     <div class="address-block">
-                      <i class="fa fa-home" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad
