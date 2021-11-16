@@ -18,35 +18,15 @@ class membership extends React.Component {
           <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             {/* <!-- Left navbar links --> */}
             <ul class="navbar-nav">
-              {/* <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#">
                   <i class="fas fa-bars"></i>
                 </a>
-              </li> */}
-              <li class="nav-item d-none d-sm-inline-block">
-                <a href="index.html" class="nav-link">
-                  Home
-                </a>
               </li>
-              <li class="nav-item d-none d-sm-inline-block">
-                <a href="findMatch.html" class="nav-link">
-                  Find Match
-                </a>
-              </li>
+           
             </ul>
 
-            {/* <!-- SEARCH FORM --> */}
-            <form class="form-inline ml-3">
-              <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search" />
-                <div class="input-group-append">
-                  <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-
+        
             {/* <!-- Right navbar links --> */}
             <ul class="navbar-nav ml-auto">
               {/* <!-- Messages Dropdown Menu --> */}
@@ -94,10 +74,14 @@ class membership extends React.Component {
 
           {/* <!-- Main Sidebar Container --> */}
           <aside class="main-sidebar sidebar-dark-primary elevation-4" style={{ background: "#EDCBBD " }}>
-            {/* <!-- Brand Logo --> */}
-            <a href="index.html" class="brand-link">
-              <img src={logo} alt="AdminLTE Logo" style={{ height: "auto", width: "100%" }} />
-            </a>
+              {/* <!-- Brand Logo --> */}
+              <a href="index.html" class="brand-link">
+            <img
+              src={logo}
+              alt="AdminLTE Logo"
+              style={{ height: "auto", width: "70%", paddingLeft: "30%" }}
+            />
+          </a>
 
             {/*  <!-- Sidebar --> */}
             <div class="sidebar">
