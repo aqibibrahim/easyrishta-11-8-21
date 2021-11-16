@@ -436,6 +436,7 @@ var modal = document.getElementById("myModal");
                     <div class="card-body box-profile">
                       <div class="text-center">
 
+                     
 
                   {Otherprofile.data.profilepic == "loading"  || Otherprofile.data.profilepic == ""  ?  <img
                       class="profile-user-img img-fluid img-circle  "
@@ -453,9 +454,9 @@ var modal = document.getElementById("myModal");
 
                       </div>
 
-                      <h3 class="profile-username text-center">
+                      <h4 class="profile-username text-center">
                         {Otherprofile.data.profile.fullname}
-                      </h3>
+                      </h4>
 
                       <p
                         class="text-muted text-center"
