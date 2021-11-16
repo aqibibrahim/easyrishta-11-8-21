@@ -117,11 +117,7 @@ export default function Search() {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" data-widget="pushmenu" href="#">
-                <i class="fas fa-bars"></i>
-              </a>
-            </li>
+           
          
           </ul>
 
@@ -255,6 +251,11 @@ export default function Search() {
                 <i class="fas fa-th-large"></i>
               </a>
             </li> */}
+             <li class="nav-item nav-item-mobile">
+              <a class="nav-link" data-widget="pushmenu" href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
           </ul>
         </nav>
         {/*  <!-- /.navbar --> */}
@@ -1063,8 +1064,8 @@ export default function Search() {
                                 pathname: "/searchResults",
                                 state: { preferences },
                               }}
-                              class="d-block"
-                              style={{ color: "black" }}
+                              class="d-block nav-link active  mx-auto"
+                              style={{ backgroundColor: "#ed225c", color: "white",borderRadius:"4px" }}
                             >
                               Search
                             </Link>

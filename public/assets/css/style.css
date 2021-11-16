@@ -69,7 +69,9 @@
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
 }
-
+.nav-sidebar>.nav-item .nav-icon {
+  margin-right: 13px !important;
+}
 /*Loading Effect */
 .loading-effect {
   width: 350px;
@@ -2775,3 +2777,29 @@ footer .footer-middle h4 {
   background: url(../images/appbanner.jpeg) 50% 100px no-repeat;
   background-size: 100% auto;
 }
+
+
+.nav-item-mobile {
+  display: none;
+}
+
+
+@media (max-width: 480px) { 
+  .nav-item-mobile {
+    display: block;
+  }
+  
+ }
+
+@media (max-width: 767px) { 
+  .nav-item-mobile {
+    display: block;
+  }
+ }
+
+
+@media (min-width: 768px) and (max-width: 979px) { 
+  .nav-item-mobile {
+    display: block;
+  }
+ }

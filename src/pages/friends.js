@@ -63,11 +63,7 @@ export default function Friends() {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/* <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" data-widget="pushmenu" href="#">
-                <i class="fas fa-bars"></i>
-              </a>
-            </li>
+            
             
           </ul>
 
@@ -164,7 +160,11 @@ export default function Friends() {
               </a>
 
             </li>
-
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link" data-widget="pushmenu" href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
           </ul>
         </nav>
         {/* <!-- /.navbar -->
@@ -348,10 +348,10 @@ export default function Friends() {
                 {users_array.length > 0 ? (
                   users_array.map((val) => (
                     <div
-                      class="card bg-light m-2"
+                      class="card col-12 col-md-3 bg-light m-2"
                       style={{
-                        width: "23%",
-                        height: "100%",
+                     
+                        height: "auto",
                         marginLeft: "2.5%",
                       }}
                     >
@@ -370,7 +370,9 @@ export default function Friends() {
                             <img
                               src={val.userpic}
                               alt=""
-                              class="img-circle img-fluid"
+                              class="img-circle "
+                              width="140px"
+                              height="100px"
                             />
                           </div>
                         </div>

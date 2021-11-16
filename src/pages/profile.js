@@ -97,11 +97,7 @@ export default function Profile() {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" data-widget="pushmenu" href="#">
-                <i class="fas fa-bars"></i>
-              </a>
-            </li>
+        
        
           </ul>
 
@@ -126,7 +122,11 @@ export default function Profile() {
               </a>
 
             </li>
-
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link" data-widget="pushmenu" href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
           </ul>
         </nav>
         {/*  <!-- /.navbar --> */}
