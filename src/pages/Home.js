@@ -1251,7 +1251,7 @@ Get yourself registered with our system, either online or by visiting our office
                     </div>
                   </div>
 
-                  <div class="col-lg-2 col-sm-12">
+                  {/* <div class="col-lg-2 col-sm-12">
 
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Partner Services</h4>
@@ -1264,7 +1264,7 @@ Get yourself registered with our system, either online or by visiting our office
 
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div class="col-lg-2 col-sm-12">
 
@@ -1332,7 +1332,7 @@ Get yourself registered with our system, either online or by visiting our office
 
             <div class="container-fluid footer-bottom" style={{ backgroundColor: "#ed225c" }}>
               <div class="justify-content-center">
-                <p class="text-white">© 2021 - QuellxCode Pvt Ltd All Right Reserved </p>
+                <p class="text-white">© 2021 - Easyrishta All Right Reserved </p>
               </div>
             </div>
           </div>
