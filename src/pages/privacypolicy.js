@@ -77,7 +77,7 @@ mega menu --> */}
         </header>
 
         {/* <!--=================================
- header --> 
+ header -->
 
 <!--=================================
  banner --> */}
@@ -247,7 +247,7 @@ mega menu --> */}
           </div>
         </section>
 
-        {/* <!-- 
+        {/* <!--
 <section class="page-section-ptb o-hidden grey-white">
   <div class="container">
     <div class="row justify-content-center mb-5 sm-mb-0">
@@ -259,7 +259,7 @@ mega menu --> */}
 
     <div class="row">
       <div class="col-lg-5 offset-lg-1">
-        
+
           <ul class="list list-mark">
               <li>randomised words which randomised words which</li>
               <li>making this the first randomised words which</li>
@@ -269,7 +269,7 @@ mega menu --> */}
             </ul>
       </div>
       <div class="col-lg-5 offset-lg-1">
-        
+
           <ul class="list list-mark">
               <li>randomised words which randomised words which</li>
               <li>making this the first randomised words which</li>
@@ -281,7 +281,7 @@ mega menu --> */}
     </div>
 
 
-   
+
   </div>
 </section>  -->
 
@@ -341,7 +341,7 @@ mega menu --> */}
 
               </div>
             </div>
-          
+
           </div>
           <div class="footer-widget sm-mt-3">
             <div
@@ -354,7 +354,7 @@ mega menu --> */}
               <div class="container wow fadeIn" data-wow-offset="50">
                 <div class="row">
                   <div class="col-lg-2 offset-lg-1 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Company</h4>
                       <ul class="list-unstyled">
@@ -377,7 +377,7 @@ mega menu --> */}
                   </div>
 
                   <div class="col-lg-2 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Policies</h4>
                       <ul class="list-unstyled">
@@ -398,8 +398,8 @@ mega menu --> */}
                     </div>
                   </div>
 
-                  <div class="col-lg-2 col-sm-12">
-                  
+                  {/* <div class="col-lg-2 col-sm-12">
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Partner Services</h4>
                       <ul class="list-unstyled">
@@ -411,10 +411,10 @@ mega menu --> */}
 
                       </ul>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div class="col-lg-2 col-sm-12">
-                  
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Help</h4>
                       <ul class="list-unstyled">
@@ -430,7 +430,7 @@ mega menu --> */}
 
 
                   <div class="col-lg-2 col-sm-12">
-                   
+
                     <div class="footer-pad">
                       <h4 style={{ color: "#ed225c" }}>Contact Us</h4>
 
@@ -479,7 +479,7 @@ mega menu --> */}
 
             <div class="container-fluid footer-bottom" style={{ backgroundColor: "#ed225c" }}>
               <div class="justify-content-center">
-                <p class="text-white">© 2021 - QuellxCode Pvt Ltd All Right Reserved </p>
+              <p class="text-white">© 2021 - Easyrishta All Right Reserved </p>
               </div>
             </div>
           </div>
@@ -943,13 +943,13 @@ mega menu --> */}
                     </div>
 
                     {/* <!-- <div class="section-field">
-          <div class="field-widget d-flex"> 
-            
+          <div class="field-widget d-flex">
+
             <input id="termsCheckbox" class="web" type="checkbox" />
             <span>
                 I agree to the Terms and Conditions
             </span>
-             
+
           </div>
         </div> --> */}
 
