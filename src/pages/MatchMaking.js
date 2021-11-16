@@ -465,6 +465,21 @@ export default function MatchMaking(props) {
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
                 {/* <li class="nav-item">
                   <Link
                     to={"/notifications"}
