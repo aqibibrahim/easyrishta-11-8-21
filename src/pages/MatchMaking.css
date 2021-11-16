@@ -125,3 +125,46 @@
     100% {
         z-index: 100;transform: rotate(315deg);}
 }
+
+.custom-card {
+    width: 21%;
+}
+@media (max-width: 480px) { 
+    .nav-item-mobile {
+      display: block;
+    }
+    .progress-circle {
+      border: unset;
+      border-radius: 50%;
+  }
+  .custom-card {
+    width: 100%;
+}
+   }
+  
+  @media (max-width: 767px) { 
+    .nav-item-mobile {
+      display: block;
+    }
+    .progress-circle {
+      border: unset;
+      border-radius: 50%;
+  }
+  .custom-card {
+    width: 100%;
+}
+   }
+  
+  
+  @media (min-width: 768px) and (max-width: 979px) { 
+    .nav-item-mobile {
+      display: block;
+    }
+    .progress-circle {
+      border: unset;
+      border-radius: 50%;
+  }
+  .custom-card {
+    width: 100%;
+}
+   }

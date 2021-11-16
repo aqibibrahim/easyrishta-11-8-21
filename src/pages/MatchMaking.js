@@ -549,9 +549,9 @@ export default function MatchMaking(props) {
                     users_array.map((val) => {
                       return (
                         <div
-                          class="card bg-light m-2"
+                          class="card custom-card bg-light m-2"
                           style={{
-                            width: "23%",
+                            // width: "23%",
                             height: "390px",
                             marginLeft: "2.5%",
                           }}

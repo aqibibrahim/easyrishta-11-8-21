@@ -2788,13 +2788,20 @@ footer .footer-middle h4 {
   .nav-item-mobile {
     display: block;
   }
-  
+  .progress-circle {
+    border: unset;
+    border-radius: 50%;
+}
  }
 
 @media (max-width: 767px) { 
   .nav-item-mobile {
     display: block;
   }
+  .progress-circle {
+    border: unset;
+    border-radius: 50%;
+}
  }
 
 
@@ -2802,4 +2809,8 @@ footer .footer-middle h4 {
   .nav-item-mobile {
     display: block;
   }
+  .progress-circle {
+    border: unset;
+    border-radius: 50%;
+}
  }
