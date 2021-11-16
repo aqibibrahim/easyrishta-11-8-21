@@ -87,7 +87,7 @@ export default function Char() {
                     timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
                   });
   };
-  // console.log(GetChats.data.chat_ids[0].chatid);
+  console.log(GetChats.data.chat_ids[0].chatid);
 
   return (
     <div>
@@ -348,7 +348,7 @@ export default function Char() {
 
 
             </div>
-          ))}
+          ))} 
         </div>
         {/* -------------------------------------------------------------chat-- */}
 

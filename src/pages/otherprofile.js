@@ -52,7 +52,7 @@ export default function Otherprofile() {
       //return db.collection("users").where("email", "==", email).get();
       //return db.collection("users" + "/" + query.userid).get();
       //return db.collection("users").doc(query.userid).get();
-      console.log(query.userid);
+      // console.log(query.userid);
       return db.doc(`users/${query.userid}`).get();
       // return db.collection("users").doc(query.userid).();
     },
@@ -178,8 +178,13 @@ var span = document.getElementsByClassName("close")[0];
 
 
 var modal = document.getElementById("myModal");
-
-
+      
+     function test() {
+console.log(docsid);
+// console.log(localStorage.getItem("userid"));
+// console.log(Otherprofile.data);
+     }
+    
 
   if (!Otherprofile.data)
     return (
@@ -443,20 +448,28 @@ var modal = document.getElementById("myModal");
                       >
                         {Otherprofile.data.registration_token}
                       </p>
+                      
+                      
+                      {/* {console.log(Otherprofile.data.friends)} */}
+                              
                       {Otherprofile.data.friends ? (
-                        Otherprofile.data.friends.filter(
-                          (row) => row.userid === localStorage.getItem("userid")
-                        ) ? (
+                                    //  debugger
+                          // Otherprofile.data.friends.filter( (row) => row.userid === localStorage.getItem("userid")  )
+                          Otherprofile.data.friends.filter( (item) => item.userid === localStorage.getItem("userid") ) ? (
+                            // docsid === localStorage.getItem("userid") ? (
                           <button
                             onClick={sendChatInvites}
+                          
                             class="btn btn-primary btn-block"
                             style={{ backgroundColor: "#ed225c", fontSize: 10 }}
                           >
                             <b>Send Chat Request</b>
                           </button>
+                          
                         ) : (
                           <button
                             onClick={sendinvites}
+                           
                             class="btn btn-primary btn-block"
                             style={{ backgroundColor: "#ed225c", fontSize: 10 }}
                           >
