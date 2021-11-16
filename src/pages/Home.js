@@ -1173,7 +1173,7 @@ Get yourself registered with our system, either online or by visiting our office
 
                   <div class="col-md-4">
                     <div class="address-block">
-                      <i class="fa fa-home" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad
@@ -1370,9 +1370,7 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" id="password" placeholder="Password" />
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+
   {/* onClick={this.onLogin.bind(this)} */}
   <Button  style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onLogin}>
     Submit
@@ -1418,9 +1416,7 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" id="password" placeholder="Password" />
   </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
+
   {/* onClick={this.onLogin.bind(this)} */}
   <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onRegister}>
     Submit
