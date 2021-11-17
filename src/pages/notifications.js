@@ -168,7 +168,7 @@ export default function Notificatoins() {
             })
             });
         });
-    } else {
+    } else if(senderData.type == "intrest") {
       console.log(senderData.type);
       db.collection("users")
         .doc(senderData.recieverid)
@@ -192,6 +192,31 @@ export default function Notificatoins() {
               }),
             })
             .then(() => {
+
+              db.collection("invites").doc(inviteId).delete();
+
+            });
+        });
+    }
+    else{
+      console.log(senderData.type)
+      db.collection("users")
+        .doc(senderData.recieverid)
+        .update({
+          accepted_photo_request: firebase.firestore.FieldValue.arrayUnion({
+            accepted_user_id: senderData.userid
+          }),
+        })
+        .then(() => {
+          db.collection("users")
+            .doc(senderData.userid)
+            .update({
+              accepted_photo_request: firebase.firestore.FieldValue.arrayUnion({
+                accepted_user_id: senderData.recieverid,
+              }),
+            })
+            .then(() => {
+
               db.collection("invites").doc(inviteId).delete();
 
             });
@@ -225,10 +250,10 @@ export default function Notificatoins() {
                 <i class="fas fa-bars"></i>
               </a>
             </li>
-        
+
           </ul>
 
-         
+
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
@@ -475,10 +500,10 @@ export default function Notificatoins() {
                             <b>{val.data.type} Request: </b>
                             {val.data.requestperson}
                             {val.data.type === "photo"
-                              ? "Wants to access your photos"
+                              ? " Wants to access your photos"
                               : val.data.type === "intrest"
-                              ? "Shows some interest in your profile"
-                              : "Wants to build to relation with you"}
+                              ? " Shows some interest in your profile"
+                              : " Wants to build to relation with you"}
                           </p>
                         </div>
                         <div
