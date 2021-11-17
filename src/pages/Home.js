@@ -897,7 +897,7 @@ class Home extends React.Component {
             <div class="row">
               <div class="col-md-4 sm-mb-3">
                 <div class="timeline-badge mb-2">
-                  <img class="img-center img-icon" src="../../assets/images/icons/Sign-Up.png" alt="" />
+                  <img class="img-center img-icon" src="../../assets/images/icons/sign-up.png" alt="" />
                 </div>
                 <h4 class="title divider-3 mb-3" style={{ color: "#00bcd5" }}>
                   CREATE PROFILE

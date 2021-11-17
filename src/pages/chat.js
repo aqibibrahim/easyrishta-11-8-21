@@ -290,7 +290,9 @@ export default function Char() {
                 <i class="fas fa-bars"></i>
               </a>
             </li> */}
-         
+          <li class="nav-items logout-btn">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            </li>
           </ul>
 
           {/* <!-- SEARCH FORM --> */}
@@ -347,15 +349,7 @@ export default function Char() {
                 </a>
               </div> */}
             </li>
-            <li class="nav-item">
-              <p
-                class="nav-link"
-                data-widget="control-sidebar"
-                data-slide="true"
-              >
-                <i class="fas fa-th-large"></i>
-              </p>
-            </li>
+           
           </ul>
         </nav>
         {/* <!-- /.navbar -->
@@ -515,7 +509,7 @@ export default function Char() {
                     refresh="true"
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
-                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
                     {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}

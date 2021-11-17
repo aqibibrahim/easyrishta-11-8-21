@@ -810,6 +810,17 @@ h1.title.divider {
   border: 2px solid #ff1810 !important;
  
 }
+.logout-btn {
+  color: #fff !important;
+  margin-left: 12px;
+  border-radius: 25px;
+  background-color: #ed225c !important;
+  cursor: pointer;
+  padding: 2px 12px;
+}
+.nav-link-custom {
+
+}
 /*---------------------------------------------------------------------
   Footer
 ---------------------------------------------------------------------*/

@@ -165,6 +165,9 @@ export default function Friends() {
                 <i class="fas fa-bars"></i>
               </a>
             </li>
+            <li class="nav-items logout-btn">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            </li>
           </ul>
         </nav>
         {/* <!-- /.navbar -->
@@ -320,7 +323,7 @@ export default function Friends() {
                     refresh="true"
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
-                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
                     {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
