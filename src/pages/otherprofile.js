@@ -431,7 +431,7 @@ console.log(docsid);
                     /> :  <img
                         class="profile-user-img img-fluid img-circle"
                         src={Otherprofile.data.profilepic}
-                        alt=" My Profile picture dd"
+                        alt=" My Profile picture"
                         style={{ height: 200, width: 200 }}
                       />
                       }
@@ -552,8 +552,8 @@ console.log(docsid);
                         <hr></hr>
 
                         <strong>
-                          <i class="fas fa-pencil-alt mr-1"></i> General
-                          Information
+                          <i class="fas fa-pencil-alt mr-1"></i> 
+                          General Information
                         </strong>
 
                         <p class="text-muted">
@@ -1058,7 +1058,7 @@ console.log(docsid);
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body >
         {Otherprofile.data.profile.gender === "female"
                                   ? Otherprofile.data.gallery.map((val) => (
                                       <img

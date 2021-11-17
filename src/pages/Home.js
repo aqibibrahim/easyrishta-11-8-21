@@ -27,9 +27,11 @@ class Home extends React.Component {
       hidediv: false,
       LoginTab: false,
       isSidebarOpen: false,
-      showRegisterModal : false
+      showRegisterModal : false,
+      signInPreloader : false
     };
 
+    this.showPreloader = this.showPreloader.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.startLoading = this.startLoading.bind(this);
@@ -50,7 +52,7 @@ class Home extends React.Component {
     });
     //this.handleRegisterClick()
   }
-
+ 
   selectSection(){
 
     this.setState({
@@ -103,16 +105,19 @@ class Home extends React.Component {
   //   }
   // }
 
-
-
+  
+  showPreloader = () => {
+    this.onLogin();
+    this.setState({ signInPreloader: true});
+   }
 
   async onLogin() {
-
+    // this.showPreloader();
     console.log("__onLogin__");
     console.log("email: " + document.querySelector("#email").value);
     console.log("password: " + document.querySelector("#password").value);
     // this.setState({ loading: true });
-
+  
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     await auth.signInWithEmailAndPassword(email, password);
@@ -1357,26 +1362,37 @@ Get yourself registered with our system, either online or by visiting our office
         <div>
 
         </div>
-        <Modal.Body>
+        <Modal.Body className="model-content-wrapper">
 
-        <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" id="email" placeholder="Enter email" />
+        {this.state.signInPreloader ? (
 
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" id="password" placeholder="Password" />
-  </Form.Group>
-
-  {/* onClick={this.onLogin.bind(this)} */}
-  <Button  style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onLogin}>
-    Submit
-  </Button>
-</Form>
-        </Modal.Body>
+ <div className="spinner-wrapper text-center" >
+ <div className="spinner-border" role="status">
+ <span className="sr-only">Loading...</span>
+</div>
+</div>
+        ) : (
+          
+          <Form>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" id="email" placeholder="Enter email" />
+          
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" id="password" placeholder="Password" />
+          </Form.Group>
+          
+          {/* onClick={this.onLogin.bind(this)} */}
+          <Button  style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.showPreloader}>
+          Submit
+          </Button>
+          </Form>
+        )
+        }
+       </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={}>
             Close
