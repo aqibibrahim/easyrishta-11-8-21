@@ -7,21 +7,21 @@
     /* padding: 2.25 rem0; */
     position: relative;
     border-radius: 20px;
-    overflow: hidden;
+
     /* will-change: transform; */
     margin-bottom: 25px;
     height: 100%;
     background-color: white;
 }
 .heart-custom {
- 
+
 }
 .tab-header h4 {
     font-size: 18px;
     font-weight: 700;
 }
 .notification-bar {
-   
+
     margin-bottom: 6px;
     margin-top: 5px;
     padding-top: 12px;
@@ -56,11 +56,11 @@
 }
 .dots-circle-btn {
     display: none !important;
-    
+
 }
 .notification-bar:hover  .dots-circle-btn {
     display: block!important;
-    
+
 }
 .dropdown-menu .dropdown-item {
 font-weight: bolder !important;
