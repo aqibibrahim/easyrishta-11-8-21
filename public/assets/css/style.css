@@ -789,7 +789,7 @@ h1.title.divider {
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   font-weight: normal;
-  font-size: 90px;
+  font-size: 60px;
   margin: 0;
 }
 
@@ -1701,7 +1701,7 @@ Comming soon Page
     line-height: 40px;
   }
   .intro-title .section-title .sub-title {
-    font-size: 70px !important;
+    font-size: 40px !important;
   }
   .inner-intro .container {
     width: 100%;
@@ -1906,6 +1906,7 @@ Action-box Page
     line-height: 18px;
     padding: 10px 20px;
   }
+  
 }
 
 /*-------------------------------------------------

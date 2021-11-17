@@ -91,13 +91,13 @@ mega menu --> */}
           <div class="container">
             <div class="row intro-title text-center">
               <div class="col-md-12">
-                <div class="section-title wow fadeIn">
+                <div class="section-title wow fadeIn" style={{marginTop:"120px"}}>
                   <h1
-                    class="position-relative divider"
+                    class="position-relative dividers mt-5"
                     style={{ color: "white" }}
                   >
-                    Terms &amp; Conditions
-                    {/* <span class="sub-title">Terms &amp; Conditions</span> */}
+                    {/* Terms &amp; Conditions */}
+                    <span class="sub-title">Terms &amp; Conditions</span>
                   </h1>
                 </div>
               </div>
@@ -123,304 +123,61 @@ mega menu --> */}
             <div class="row">
               <div class="col-md-12 termsParas">
                 <p class="text-justify">
-                  Welcome to Shaadeeghar.com, the No.1 Matrimonial Services
-                  Provider. In order to use the shaadeeghar.com ("Site"), you
-                  must register as a member of the Site ("Member"). The Member
-                  or any users using the site agree to be bound by these Terms
-                  of Use ("Agreement"). If you wish to become a Member and
-                  communicate with other Members and make use of the
-                  shaadeeghar.com service ("Service"), read these Terms of Use
-                  and follow the instructions in the Registration process. This
-                  Agreement sets out the legally binding terms for your
-                  membership. This Agreement may be modified by shaadeeghar.com
-                  from time to time.
+                Welcome to Easy Rishta, Pakistan's most popular matrimonial service. You must first register as a member(“Member”) of the Easy Rishta ("Site") before using it. These Terms of Use bind the Member and any other users of the site ("Agreement"). Read these Terms of Use and follow the steps in the Registration procedure if you want to become a Member and communicate with other Members while using the Easy Rishta service ("Service"). The terms of your membership are spelled forth in this contract. Easy Rishta reserves the right to modify this Agreement at any moment.
                 </p>
+                <span class="text-bold"> Eligibility:  </span> 
                 <p>
-                  <span class="text-bold"> Eligibility. </span> To register as a
-                  member of shaadeeghar.com or use this Site, you must be of
-                  legal marriageable age as per the laws of Pakistan (currently,
-                  18 years). The shaadeeghar.com Site is only to facilitate
-                  lawful marriages between persons who are legally competent to
-                  enter into matrimony under the laws to which they are subject.
-                  Membership in the Service is void where prohibited. By using
-                  this Site, you represent and warrant that you have the right,
-                  authority, and legal capacity to enter into this Agreement and
-                  that you are not prohibited or prevented by any applicable law
-                  for the time being in force or any order or decree or
-                  injunction from any court, tribunal or any such competent
-                  authority restraining you from entering into matrimony. You
-                  also agree to abide by all of the terms and conditions of this
-                  Agreement. If at any time shaadeeghar.com is of the opinion
-                  (in its sole discretion) or has any reason to believe that you
-                  are not eligible to become a member or that you have made any
-                  misrepresentation about your eligibility, shaadeeghar.com
-                  reserves the right to forthwith terminate your membership and
-                  / or your right to use the Service without any refund to you
-                  of any of your unutilized subscription fee.
+                You must be of legal marriageable age in Pakistan to register as a member of Easy Rishta or use this Site (currently, 18 years). The sole purpose of Easy Rishta is to enable legal marriages between those who are legally capable of doing so under the laws in their respective jurisdictions. Wherever it is illegal, membership in the service is void. You represent and warrant that you have the right, authority, and legal capacity to enter into this agreement by using this Site.
                 </p>
+                <p>You agree that you are not banned or prevented from entering into matrimony by any current or future applicable law, or any order, decree, or injunction issued by any court, tribunal, or other competent body.</p>
+               <p>You also agree to abide by all of this agreement's terms and conditions. If Easy Rishta believes (in its sole discretion) or has reason to believe that you are not eligible to become a member or that you have made any misrepresentation about your eligibility, Easy Rishta reserves the right to immediately terminate your membership and/or your right to use the service without refunding any portion of your subscription fee</p>
                 <p class="text-justify">
-                  <span class="text-bold"> 1. Term. </span> You may terminate
-                  your membership at any time, for any reason by writing to
-                  Shaadighar.pk. In the event you terminate your membership, you
-                  will not be entitled to a refund of any unutilized
-                  subscription fees. Shaadighar.pk may terminate your access to
-                  the Site and/or your membership for any reason effective upon
-                  sending notice to you at the email address you provide in your
-                  application for membership or such other email address as you
-                  may later provide to Shaadighar.pk. If Shaadighar.pk
-                  terminates your membership in the Shaadighar.pk Service
-                  because you have breached the Agreement, you will not be
-                  entitled to any refund of any unused Subscription fees. Even
-                  after this Agreement is terminated, certain provisions will
-                  remain in effect including sections 4,5,7,9 -14, inclusive, of
-                  this Agreement.
+                  <span class="text-bold"> Terms: </span> You can cancel your membership at any moment and for any reason by writing to Easy Rishta. You will not be entitled to a refund of any unused subscription payments if you cancel your membership. Easy Rishta reserves the right to cancel your access to the Site and/or membership for any reason by providing notice to you at the email address you provided in your membership application or at any other email address you may later provide to Easy Rishta.
                 </p>
+                <p>You will not be entitled to a refund of any unused Subscription costs if Easy Rishta terminates your membership because of breaching the Agreement. Certain aspects of this Agreement, including sections 4,5,7,9-14, inclusive, will remain in effect even if this Agreement is terminated.</p>
                 <p class="text-justify">
                   <span class="text-bold">
                     {" "}
-                    2. Non-Commercial Use by Members.{" "}
+                    Non-Commercial Use by Members:
+{" "}
                   </span>{" "}
-                  The shaadeeghar.com Site is for the personal use of individual
-                  members only, and cannot be used in connection with any
-                  commercial endeavors. This includes providing links to other
-                  web sites, whether deemed competitive to shaadeeghar.com or
-                  otherwise. Organizations, companies, and/or businesses cannot
-                  become Members of shaadeeghar.com and should not use the
-                  shaadeeghar.com Service or Site for any purpose. Illegal
-                  and/or unauthorized uses of the Site, including unauthorized
-                  framing of or linking to the Site will be investigated, and
-                  appropriate legal action will be taken, including without
-                  limitation, civil, criminal, and injunctive redress.
+                  Easy Rishta site is for individual members' personal use only and it cannot be used for any commercial purposes. This includes giving connections to other websites, whether or not they are considered competitors to Easy Rishta. Organizations, companies, and/or businesses are not permitted to join Easy Rishta and should not use the service or site for any reason. Illegal and/or unauthorized uses of the Site, including unauthorized framing or linking to the Site, will be investigated, and necessary legal action, including civil, criminal, and injunctive remedy, will be pursued.
                 </p>
                 <p class="text-justify">
                   <span class="text-bold">
                     {" "}
-                    3. Other Terms of Use by Members.{" "}
+                    Other Terms of Use by Members:{" "}
                   </span>
                 </p>
                 <p class="text-justify">
-                  shaadeeghar.com reserves the right in its sole discretion to
-                  review the activity &amp; status of each account &amp; block
-                  the account of a member based on such review.
+                Easy Rishta maintains the right, in its sole discretion, to assess each account's behavior and status, and to block a member's account based on that review.
+                </p>
+                <p>As long as you are a registered member of Easy Rishta, you certify that you have no objection to receiving emails, texts, and calls from Easy Rishta and its members as of the date of registration. This consent takes precedence over any preferences you've set or registrations you've made with the ‘Do Not Disturb’ service. This consent covers emails, messages, and phone calls for phone number verification, matching services, matrimonial inquiries, and promotions, among other things.</p>
+               
+               <p> Multiple profiles of the same person are not permitted on Easy Rishta. Without any reimbursement of subscription payments, Easy Rishta retains the right to terminate all duplicate profiles.
+</p>
+<p>You are not permitted to use the Service to advertise to or solicit other Members to buy or sell any items or services. You will not send other Easy Rishta members any chain letters or junk mails. Using any information obtained through the Service to harass, abuse, or damage another person, or to contact, advertise to, solicit, or sell to any Member without their prior explicit consent, is also a violation of these rules.</p>
+                <p class="text-justify">
+                Easy Rishta retains the right to review communications/messages sent to other Members and to regulate the same by deleting unwarranted/irrelevant communications at any time and without prior notification to any Member.
                 </p>
                 <p class="text-justify">
-                  You hereby confirm that as on date of this registration, you
-                  do not have any objection to receiving emails, messages and
-                  calls from shaadeeghar.com and members of shaadeeghar.com as
-                  long as you are a registered member of shaadeeghar.com. This
-                  consent shall supersede any preferences set by you with or
-                  registration done with the Do Not Disturb. This consent
-                  extends to emails, messages or calls relating but not limited
-                  to phone number verification, the provision of matchmaking
-                  service, matrimonial enquiries and promotions.
+                <span class="text-bold">
+                Proprietary Rights in Content on Easy Rishta: 
+                  </span>  Easy Rishta owns and retains all proprietary rights in the Site. The Site contains the copyrighted material, trademarks, and other proprietary information of Easy Rishta, and its licensors. Except for that information which is in the public domain or for which you have been given permission, you cannot copy, modify, publish, transmit, distribute, perform, display, or sell any such proprietary information. Any such act or an attempted act on your part shall constitute a violation of this Agreement and your membership is liable to be terminated forthwith by Easy Rishta without refund of any of your unused Subscription fees
                 </p>
                 <p class="text-justify">
-                  Multiple profiles of the same person are not allowed on
-                  shaadeeghar.com. shaadeeghar.com reserves the right to
-                  deactivate all multiple profiles without any refund of
-                  subscription fees.
+                You understand and agree that Easy Rishta may delete any content, messages, photos or profiles (collectively, "Content") that in the sole judgment which violate this Agreement, or which might be offensive, illegal, or that might violate the rights, harm, or threaten the safety of either Easy Rishta and/or its Members.
                 </p>
                 <p class="text-justify">
-                  You cannot engage in advertising to, or solicitation of, other
-                  Members to buy or sell any products or services through the
-                  Service. You will not transmit any chain letters or junk email
-                  to other shaadeeghar.com Members. Although shaadeeghar.com
-                  cannot monitor the conduct of its Members off the
-                  shaadeeghar.com Site, it is also a violation of these rules to
-                  use any information obtained from the Service in order to
-                  harass, abuse, or harm another person, or in order to contact,
-                  advertise to, solicit, or sell to any Member without their
-                  prior explicit consent. In order to protect shaadeeghar.com
-                  and/or our Members from any abuse / misuse, shaadeeghar.com
-                  reserves the right to restrict the number of communications /
-                  profile contacts &amp; responses / email which a Member may
-                  send to other Member in any 24-hour period to a number which
-                  shaadeeghar.com deems appropriate in its sole discretion.
+                You hereby grant to Easy Rishta the unconditional and irrevocable right to use, distribute, reproduce, modify, adapt, publicly perform, and publicly display such Content on the Site and to Easy Rishta members from time to time with respect to Content you submit or make available for inclusion on publicly accessible areas of the Site, including but not limited to your contact details.
                 </p>
                 <p class="text-justify">
-                  You cannot use any automated processes, including IRC Bots,
-                  EXE's, CGI or any other programs/scripts to view content on or
-                  communicate / contact / respond / interact with
-                  shaadeeghar.com and/or its members.
+                You understand and agree that all information, data, text, photographs, graphics, messages, tags, or other Content, whether publicly posted or privately transmitted is the sole responsibility of the person from whom such Content originated and is solely at the member's/risk person's and responsibility.
                 </p>
                 <p class="text-justify">
-                  shaadeeghar.com reserves the right to screen
-                  communications/messages that you may send to other Member(s)
-                  and also regulate the same by deleting unwarranted/obscene
-                  communications at any time at its sole discretion without
-                  prior notice to any Member.
+                This implies that all Content you upload, publish, email, transmit, or otherwise make available over the Service is totally your responsibility (and not Easy Rishta). Easy Rishta has no control over the Content submitted over the Service and so cannot guarantee its accuracy, integrity, or quality. Site will not be responsible in any manner for any Content, including any mistakes or omissions in any Content, or any loss or damage of any kind incurred as a result of the use of any Content posted, emailed, communicated, or otherwise made accessible through the Service.
                 </p>
-                <p class="text-justify">
-                  No Member is allowed to display his/her "Membership status" in
-                  the profile content. shaadeeghar.com reserves the right to
-                  delete any such reference from the profile content.
-                </p>
-                <p class="text-justify">
-                  The premium members shall be entitled to view only limited
-                  verified contact numbers depending on the type of membership
-                  they have availed of. For example, the maximum number of
-                  verified contact numbers, which can be viewed by (a) Gold
-                  Membership 40 (b) Diamond Membership - 60 and (c) Platinum
-                  Membership - 80 .
-                </p>
-                <p class="text-justify">
-                  shaadeeghar.com Members who subscribe to the shaadeeghar.com
-                  Select Service hereby, unconditionally and irrevocably confirm
-                  that you have read Terms &amp; Conditions and agree to abide
-                  by them.
-                </p>
-                <p>
-                  <span class="text-bold">
-                    Proprietary Rights in Content on shaadeeghar.com.
-                  </span>{" "}
-                  shaadeeghar.com owns and retains all proprietary rights in the
-                  shaadeeghar.com Site and the shaadeeghar.com Service. The Site
-                  contains the copyrighted material, trademarks, and other
-                  proprietary information of shaadeeghar.com, and its licensors.
-                  Except for that information which is in the public domain or
-                  for which you have been given permission, you cannot copy,
-                  modify, publish, transmit, distribute, perform, display, or
-                  sell any such proprietary information. Any such act or an
-                  attempted act on your part shall constitute a violation of
-                  this Agreement and your membership is liable to be terminated
-                  forthwith by shaadeeghar.com without refund of any of your
-                  unused Subscription fees. Content Posted on the Site.
-                </p>
-                <p class="text-justify">
-                  You understand and agree that shaadeeghar.com may delete any
-                  content, messages, photos or profiles (collectively,
-                  "Content") that in the sole judgment of shaadeeghar.com
-                  violate this Agreement or which might be offensive, illegal,
-                  or that might violate the rights, harm, or threaten the safety
-                  of either shaadeeghar.com and/or its Members.
-                </p>
-                <p class="text-justify">
-                  With respect to Content you submit or make available for
-                  inclusion on publicly accessible areas of the Site including
-                  but not limited to your contact details, you hereby
-                  unconditionally and irrevocably grant to shaadeeghar.com the
-                  license to use, distribute, reproduce, modify, adapt, publicly
-                  perform and publicly display such Content on the Site and to
-                  Shaadighar members from time to time. You understand and
-                  hereby agree that all information, data, text, photographs,
-                  graphics, messages, tags, or other Content whether publicly
-                  posted or privately transmitted or otherwise made available to
-                  shaadeeghar.com members, are the sole responsibility of the
-                  person from whom such Content originated and shall be at the
-                  member's/person's sole risks and consequences. This means that
-                  you (and not shaadeeghar.com ) is solely responsible for all
-                  Content that you upload, post, email, transmit or otherwise
-                  make available via the Service. shaadeeghar.com does not
-                  control the Content posted via the Service and, as such, does
-                  not guarantee the accuracy, integrity or quality of such
-                  Content. Under no circumstances will shaadeeghar.com be liable
-                  in any way for any Content, including, but not limited to, any
-                  errors or omissions in any Content, or any loss or damage of
-                  any kind incurred as a result of the use of any Content
-                  posted, emailed, transmitted or otherwise made available via
-                  the Service.
-                </p>
-                <p class="text-justify">
-                  You are solely responsible for the Content that you publish or
-                  display (hereinafter, "post") on the shaadeeghar.com service
-                  or on shaadeeghar.com Site or transmit to other
-                  shaadeeghar.com Members. shaadeeghar.com reserves the right to
-                  verify the authenticity of Content posted on the Site. In
-                  exercising this right, shaadeeghar.com may ask you to provide
-                  any documentary or other form of evidence supporting the
-                  Content you post on the Site. If you fail to produce such
-                  evidence, shaadeeghar.com may, in its sole discretion,
-                  terminate your Membership without a refund.
-                </p>
-                <p class="text-justify">
-                  By posting Content to any public area of shaadeeghar.com, you
-                  automatically grant, and you represent and warrant that you
-                  have the right to grant, to shaadeeghar.com, and other
-                  shaadeeghar.com Members, an irrevocable, perpetual,
-                  non-exclusive, fully-paid, worldwide license to use, copy,
-                  perform, display, and distribute such information and content
-                  and to prepare derivative works of, or incorporate into other
-                  works, such information and content, and to grant and
-                  authorize sublicenses of the foregoing.
-                </p>
-                <p class="text-justify">
-                  The following is an indicative list of the kind of Content
-                  that is illegal or prohibited on the Site. shaadeeghar.com
-                  will investigate and take appropriate legal action in its sole
-                  discretion against anyone who violates this Agreement,
-                  including without limitation, removing the offending
-                  communication / Content from the Service and terminating the
-                  Membership of such violators without a refund. Illegal and
-                  prohibitive Content includes Content that which:
-                </p>
-                <p class="text-justify">
-                  is patently offensive to the community, such as content that
-                  promotes racism, bigotry , hatred or physical harm of any kind
-                  against any group or individual;
-                </p>
-                <p class="text-justify">
-                  is patently offensive to the community, such as content that
-                  promotes racism, bigotry , hatred or physical harm of any kind
-                  against any group or individual;
-                </p>
-                <p class="text-justify">
-                  harasses or advocates harassment of another person;
-                </p>
-                <p class="text-justify">
-                  involves the transmission of "junk mail", "chain letters," or
-                  unsolicited mass mailing or "spamming";
-                </p>
-                <p class="text-justify">
-                  promotes information that you know is false, misleading or
-                  promotes illegal activities or conduct that is abusive,
-                  threatening, obscene, defamatory or libelous;
-                </p>
-                <p class="text-justify">
-                  promotes an illegal or unauthorized copy of another person's
-                  copyrighted work, such as providing pirated computer programs
-                  or links to them, providing information to circumvent
-                  manufacture-installed copy-protect devices, or providing
-                  pirated music or links to pirated music files;
-                </p>
-                <p class="text-justify">
-                  contains restricted or password only access pages, or hidden
-                  pages or images (those not linked to or from another
-                  accessible page) ;
-                </p>
-                <p class="text-justify">
-                  displays pornographic or sexually explicit material of any
-                  kind;
-                </p>
-                <p class="text-justify">
-                  provides material that exploits people under the age of 18 in
-                  a sexual or violent manner, or solicits personal information
-                  from anyone under 18;
-                </p>
-                <p class="text-justify">
-                  provides instructional information about illegal activities
-                  such as making or buying illegal weapons, violating someone's
-                  privacy, or providing or creating computer viruses;
-                </p>
-                <p class="text-justify">
-                  solicits passwords or personal identifying information for
-                  commercial or unlawful purposes from other users; and engages
-                  in commercial activities and/or sales without our prior
-                  written consent such as contests, sweepstakes, barter,
-                  advertising, and pyramid schemes.
-                </p>
-                <p class="text-justify">
-                  You must use the shaadeeghar.com Service in a manner
-                  consistent with any and all applicable local, state, and
-                  federal laws, rules and regulations.
-                </p>
-                <p class="text-justify">
-                  You cannot include in your Member profile, visible to other
-                  members, any telephone numbers, street addresses, last names,
-                  URL's, and email addresses. If you do this, shaadeeghar.com
-                  has authority to cancel your membership without giving any
-                  notice.
-                </p>
-              </div>
+            </div>
             </div>
           </div>
         </section>
@@ -441,7 +198,7 @@ mega menu --> */}
                       Contact Us
                     </h2>
                     <p class="lead" style={{ color: "black" }}>
-                      Contact the best matrimonial website ¬for any queries, issues or concerns you have.
+                      Contact the best matrimonial website for any queries, issues or concerns you have.
                     </p>
                   </div>
                 </div>

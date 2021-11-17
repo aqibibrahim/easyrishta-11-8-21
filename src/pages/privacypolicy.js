@@ -271,7 +271,7 @@ mega menu --> */}
                       Contact Us
                     </h2>
                     <p class="lead" style={{ color: "black" }}>
-                      Contact the best matrimonial website ¬for any queries, issues or concerns you have.
+                      Contact the best matrimonial website for any queries, issues or concerns you have.
                     </p>
                   </div>
                 </div>

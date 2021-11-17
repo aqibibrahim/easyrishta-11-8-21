@@ -160,7 +160,7 @@ class Home extends React.Component {
   }
 
 
-  async onRegister() {
+  async onRegister() {  
     console.log("__onRegister__");
     // console.log("login: " + document.querySelector("#login").value);
     console.log("email: " + document.querySelector("#email").value);
@@ -177,7 +177,6 @@ class Home extends React.Component {
     } else {
       //    ------------- Faizan's Code Start  -----------------
       ////////////// ---------------------   52PCT3d9zlT8FpAhourLZCsCmuB2
-
       await auth.createUserWithEmailAndPassword(email, password).then(async (res) => {
         let user = res.user;
 
@@ -258,9 +257,7 @@ class Home extends React.Component {
   }
 
   startLoading() {
-    this.setState({
-      loading: true,
-    });
+    this.setState({ loading: true, });
   }
 
   finishLoading() {
@@ -930,7 +927,7 @@ class Home extends React.Component {
 
 
 
-        <section style={{ height: 650 }}>
+        <section className="container"  style={{ height: 650 }}>
           <div className="row">
             <div
               className="col-12 font-weight-bolder size-50 text-center mt-5 mb-5"
@@ -954,9 +951,9 @@ class Home extends React.Component {
                 <img class="img-fluid" src="../../assets/images/story/blue.png" alt="" />
               </div>
               <div
-                className="ml-xl-n4 text-sm-screen mt-5"
+                className=" text-sm-screen mt-5"
                 style={{
-                  fontSize: "xx-large",
+                  fontSize: "22px",
                   fontFamily: "Montserrat",
                   fontWeight: "500",
                 }}
@@ -1034,7 +1031,7 @@ class Home extends React.Component {
 
 
 
-  <div className="custom-container">
+  <div className="container-fluid">
     <div id="demo" className="carousel slide" data-ride="carousel">
     <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
@@ -1047,23 +1044,23 @@ class Home extends React.Component {
         <div className="carousel-inner">
             <div className="carousel-item active">
                 <div className="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen. </p>
+                    <p>It was a fairly casual chit chat that we had on Easy Rishta, but we could tell right away that we shared the same sense of humour. Even though we were conversing online, we couldn't stop giggling.  </p>
                      <img src={avatar} alt="" />
-                    <div id="image-caption">Nick Doe</div>
+                    <div id="image-caption">Ahmed and Anaya</div>
                 </div>
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p>
+                    <p>For finding a Rishta via mobile application, why not attempt online matchmaking? You can meet the guy as an adult because there is no social baggage, says Haris. Married for 2 years, we are grateful for the Easy Rishta platform to have found each other.</p>
                     <img src={avatar} alt="" className="img-fluid" />
-                    <div id="image-caption">Cromption Greves</div>
+                    <div id="image-caption">Haris and Shumaila </div>
                 </div>
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>If Shai Reznik's TDD videos don't convince you to add automated testing your code, I don't know what will.This was the very best explanation of frameworks for brginners that I've ever seen.</p>
+                    <p>Being 28 but divorced made Rishta hunt impossible for me. Easy Rishta made it easier for me to find a perfect match even after my divorce I found my perfect soulmate </p>
                     <img src={avatar} alt="" className="img-fluid" />
-                    <div id="image-caption">Harry Mon</div>
+                    <div id="image-caption">Faisal and Alina </div>
                 </div>
             </div>
         </div> <a className="carousel-control-prev" href="#demo" data-slide="prev"> <i className='fas fa-arrow-left fa-arrow-left-custom'></i> </a> <a className="carousel-control-next" href="#demo" data-slide="next"> <i className='fas fa-arrow-right fa-arrow-right-custom'></i> </a>
@@ -1101,7 +1098,7 @@ class Home extends React.Component {
             {/* </div> */}
 
             <div class="row mt-7 mb-6">
-              <div class="col-lg-4 col-md-6 text-center">
+              <div class="col-lg-4 col-md-6 mt-3 text-center">
                 <div class="ss-box  wow fadeInLeft" data-wow-delay="0.2s" data-wow-offset="100">
                   <div class="timeline-badge">
                     <img class="img-center" src="../../assets/images/icons/advisor.png" alt="" />
@@ -1114,7 +1111,7 @@ class Home extends React.Component {
                 </div>
               </div>
 
-              <div class="col-lg-4 col-md-6 text-center">
+              <div class="col-lg-4 col-md-6 mt-3 text-center">
                 <div class="ss-box  wow fadeInLeft" data-wow-delay="0.7s" data-wow-offset="100">
                   <div class="timeline-badge">
                     <img class="img-center" src="../../assets/images/icons/personal-matchmaking.png" alt="" />
@@ -1123,7 +1120,7 @@ class Home extends React.Component {
 <p>Easy Rishta intends to provide you with a variety of options when it comes to finding a life companion. We urge you to browse through the largest list of candidates seeking Pakistani matches for marriage, whether you are enrolling for yourself or on behalf of your children/siblings. We’ve also given those who want to marry, the power to make their own decisions. </p>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 text-center">
+              <div class="col-lg-4 col-md-6 mt-3 text-center">
                 <div class="ss-box  wow fadeInLeft" data-wow-delay="1.1s" data-wow-offset="100">
                   <div class="timeline-badge">
                     <img class="img-center" src="../../assets/images/icons/arrange-meeting.png" alt="" />
@@ -1158,7 +1155,7 @@ Get yourself registered with our system, either online or by visiting our office
                       Contact Us
                     </h2>
                     <p class="lead" style={{ color: "black" }}>
-                      Contact the best matrimonial website ¬for any queries, issues or concerns you have.
+                      Contact the best matrimonial website for any queries, issues or concerns you have.
                     </p>
                   </div>
                 </div>
