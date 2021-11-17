@@ -231,8 +231,8 @@ export default function MatchMaking(props) {
             />
           </a>
 
-          {/* <!-- Sidebar --> */}
-          <div class="sidebar">
+           {/*  <!-- Sidebar --> */}
+           <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div
@@ -270,7 +270,8 @@ export default function MatchMaking(props) {
                 role="menu"
                 data-accordion="false"
               >
-
+                {/* <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library --> */}
 
                 <li class="nav-item">
                   <Link
@@ -288,7 +289,7 @@ export default function MatchMaking(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-search"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
@@ -309,7 +310,8 @@ export default function MatchMaking(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-envelope"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -329,7 +331,7 @@ export default function MatchMaking(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -340,7 +342,7 @@ export default function MatchMaking(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
                     <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -351,7 +353,8 @@ export default function MatchMaking(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -366,15 +369,29 @@ export default function MatchMaking(props) {
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
                     <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-
+                {/* <li class="nav-item">
+                  <Link
+                    to={"/notifications"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>Notifications</p>
+                    <MDBBadge color="danger" className="ml-2">
+                      {inviteslength}
+                    </MDBBadge>
+                  </Link>
+                </li> */}
               </ul>
             </nav>
-            {/* <!-- /.sidebar-menu --> */}
+            {/*  <!-- /.sidebar-menu --> */}
           </div>
-          {/* <!-- /.sidebar --> */}
+          {/*  <!-- /.sidebar --> */}
         </aside>
 
         {/* <!-- Content Wrapper. Contains page content --> */}
@@ -639,14 +656,14 @@ export default function MatchMaking(props) {
         </div>
         {/* <!-- /.content-wrapper --> */}
 
+       
         <footer class="main-footer">
           <strong>
             Copyright &copy; 2021{" "}
-            <a href="https://quellxcode.com/"> QuellxCode</a>.
+            <a href=""> Easyrishta</a>.
           </strong>
-          All rights reserved.
+      
         </footer>
-
         {/* <!-- Control Sidebar --> */}
         <aside class="control-sidebar control-sidebar-dark">
           {/* <!-- Control sidebar content goes here --> */}

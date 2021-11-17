@@ -290,35 +290,11 @@ export default function Char() {
                 <i class="fas fa-bars"></i>
               </a>
             </li> */}
-            <li class="nav-item d-none d-sm-inline-block">
-              <a href="/" class="nav-link">
-                Home
-              </a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-              <a href="/MatchMaking" class="nav-link">
-                {" "}
-                Match Making{" "}
-              </a>
-            </li>
+         
           </ul>
 
           {/* <!-- SEARCH FORM --> */}
-          <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-              <input
-                class="form-control form-control-navbar"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+      
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
@@ -402,8 +378,8 @@ export default function Char() {
             />
           </a>
 
-          {/* <!-- Sidebar --> */}
-          <div class="sidebar">
+            {/*  <!-- Sidebar --> */}
+            <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div
@@ -419,13 +395,13 @@ export default function Char() {
                   src={localStorage.getItem("profilepic")}
                   class="img-circle elevation-2"
                   alt="Profile"
-                  style={{ height: "2.1rem", width: "2.1rem" }}
+                  style={{ width: "2.1rem", height: "2.1rem" }}
                 />
               </div>
               <div class="info">
                 <Link
                   to={"/profile"}
-                  class="d-block topbar"
+                  class="d-block"
                   style={{ color: "black" }}
                 >
                   {localStorage.getItem("username")}
@@ -460,7 +436,7 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-heart"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
@@ -481,7 +457,8 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-comment"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -501,7 +478,7 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-refresh"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -512,7 +489,7 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
                     <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -523,8 +500,24 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
@@ -534,7 +527,7 @@ export default function Char() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-bell"></i>
+                    <i class="nav-icon fas fa-user"></i>
                     <p>Notifications</p>
                     <MDBBadge color="danger" className="ml-2">
                       {inviteslength}
@@ -543,9 +536,9 @@ export default function Char() {
                 </li> */}
               </ul>
             </nav>
-            {/* <!-- /.sidebar-menu --> */}
+            {/*  <!-- /.sidebar-menu --> */}
           </div>
-          {/* <!-- /.sidebar --> */}
+          {/*  <!-- /.sidebar --> */}
         </aside>
 
         {/* <!-- Content Wrapper. Contains page content --> */}
@@ -800,9 +793,9 @@ export default function Char() {
         <footer class="main-footer">
           <strong>
             Copyright &copy; 2021{" "}
-            <a href="https://quellxcode.com/"> QuellxCode</a>.
+            <a href=""> Easyrishta</a>.
           </strong>
-          All rights reserved.
+      
         </footer>
 
         {/* <!-- Control Sidebar --> */}

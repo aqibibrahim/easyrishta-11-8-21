@@ -295,11 +295,20 @@ export default function Notificatoins() {
           <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-              <div class="image">
+              <div
+                class="image"
+                style={{
+                  display: "flex",
+                  paddingLeft: "0.8rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <img
                   src={localStorage.getItem("profilepic")}
                   class="img-circle elevation-2"
-                  alt="User"
+                  alt="Profile"
+                  style={{ width: "2.1rem", height: "2.1rem" }}
                 />
               </div>
               <div class="info">
@@ -340,7 +349,7 @@ export default function Notificatoins() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-search"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
@@ -361,7 +370,8 @@ export default function Notificatoins() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-envelope"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -381,7 +391,7 @@ export default function Notificatoins() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -392,7 +402,7 @@ export default function Notificatoins() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
                     <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -403,8 +413,24 @@ export default function Notificatoins() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
@@ -416,7 +442,9 @@ export default function Notificatoins() {
                   >
                     <i class="nav-icon fas fa-user"></i>
                     <p>Notifications</p>
-                    <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge>
+                    <MDBBadge color="danger" className="ml-2">
+                      {inviteslength}
+                    </MDBBadge>
                   </Link>
                 </li> */}
               </ul>
@@ -619,11 +647,13 @@ export default function Notificatoins() {
           {/* <!-- /.content --> */}
         </div>
         {/* <!-- /.content-wrapper --> */}
+      
         <footer class="main-footer">
           <strong>
-            Copyright &copy; 2021 <a href="www.quellxcode.com"> QuellxCode</a>.
+            Copyright &copy; 2021{" "}
+            <a href=""> Easyrishta</a>.
           </strong>
-          All rights reserved.
+      
         </footer>
 
         {/*   <!-- Control Sidebar --> */}

@@ -157,8 +157,8 @@ export default function Preferences() {
             />
           </a>
 
-          {/*  <!-- Sidebar --> */}
-          <div class="sidebar">
+           {/*  <!-- Sidebar --> */}
+           <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div
@@ -215,10 +215,11 @@ export default function Preferences() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-search"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
+
                 <li class="nav-item">
                   <Link
                     to={"/search"}
@@ -235,7 +236,8 @@ export default function Preferences() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-envelope"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -255,7 +257,7 @@ export default function Preferences() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -266,7 +268,7 @@ export default function Preferences() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
                     <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -277,7 +279,8 @@ export default function Preferences() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -1068,13 +1071,14 @@ export default function Preferences() {
           {/* <!-- /.content --> */}
         </div>
         {/* <!-- /.content-wrapper --> */}
+       
         <footer class="main-footer">
           <strong>
-            Copyright &copy; 2021 <a href="www.quellxcode.com"> QuellxCode</a>.
+            Copyright &copy; 2021{" "}
+            <a href=""> Easyrishta</a>.
           </strong>
-          All rights reserved.
+      
         </footer>
-
         {/*   <!-- Control Sidebar --> */}
         <aside class="control-sidebar control-sidebar-dark">
           {/* <!-- Control sidebar content goes here --> */}

@@ -83,80 +83,135 @@ class membership extends React.Component {
             />
           </a>
 
-            {/*  <!-- Sidebar --> */}
-            <div class="sidebar">
-              {/* <!-- Sidebar user (optional) --> */}
-              <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div
-                  class="image"
-                  style={{
-                    display: "flex",
-                    paddingLeft: "0.8rem",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <img src={localStorage.getItem("profilepic")} class="img-circle elevation-2" alt="Profile" style={{ width: "2.1rem", height: "2.1rem" }} />
-                </div>
-                <div class="info">
-                  <Link to={"/profile"} class="d-block" style={{ color: "black" }}>
-                    {localStorage.getItem("username")}
-                  </Link>
-                </div>
+             {/*  <!-- Sidebar --> */}
+          <div class="sidebar">
+            {/* <!-- Sidebar user (optional) --> */}
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+              <div
+                class="image"
+                style={{
+                  display: "flex",
+                  paddingLeft: "0.8rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src={localStorage.getItem("profilepic")}
+                  class="img-circle elevation-2"
+                  alt="Profile"
+                  style={{ width: "2.1rem", height: "2.1rem" }}
+                />
               </div>
+              <div class="info">
+                <Link
+                  to={"/profile"}
+                  class="d-block"
+                  style={{ color: "black" }}
+                >
+                  {localStorage.getItem("username")}
+                </Link>
+              </div>
+            </div>
 
-              {/* <!-- Sidebar Menu --> */}
-              <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                  {/* <!-- Add icons to the links using the .nav-icon class
+            {/* <!-- Sidebar Menu --> */}
+            <nav class="mt-2">
+              <ul
+                class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+              >
+                {/* <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library --> */}
 
-                  <li class="nav-item">
-                    <Link to={"/profile"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-user"></i>
-                      <p>My Profile</p>
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link to={"/MatchMaking"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-search"></i>
-                      <p>Find Match</p>
-                    </Link>
-                  </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/profile"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>My Profile</p>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/MatchMaking"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
+                    <p>Find Match</p>
+                  </Link>
+                </li>
 
-                  <li class="nav-item">
-                    <Link to={"/search"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-search"></i>
-                      <p>Search</p>
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link to={"/chat"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-envelope"></i>
-                      <p>Chat</p>
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link to={"/preferences"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-envelope"></i>
-                      <p>Set Preferences</p>
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link to={"/register"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-user"></i>
-                      <p>Update Pofile</p>
-                      {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
-                    </Link>
-                  </li>
-                  <li class="nav-item">
-                    <Link to={"/membership"} class="nav-link" style={{ color: "black" }}>
-                      <i class="nav-icon fas fa-user"></i>
-                      <p>Membership</p>
-                      {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
-                    </Link>
-                  </li>
-                  <li class="nav-item mt-2">
+                <li class="nav-item">
+                  <Link
+                    to={"/search"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-search"></i>
+                    <p>Search</p>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/chat"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
+                    <p>Chat</p>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/preferences"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-envelope"></i>
+                    <p>Set Preferences</p>
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/register"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                   <i class="nav-icon fas fa-refresh"></i>
+                    <p>Update Pofile</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/friends"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
+                    <p>Friends</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/membership"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
+                    <p>Membership</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item mt-2">
                   <Link
                     // to={"/home"}
                     to={{pathname:"/home"}}
@@ -171,7 +226,7 @@ class membership extends React.Component {
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-                  {/* <li class="nav-item">
+                {/* <li class="nav-item">
                   <Link
                     to={"/notifications"}
                     class="nav-link"
@@ -184,11 +239,11 @@ class membership extends React.Component {
                     </MDBBadge>
                   </Link>
                 </li> */}
-                </ul>
-              </nav>
-              {/*  <!-- /.sidebar-menu --> */}
-            </div>
-            {/* <!-- /.sidebar --> */}
+              </ul>
+            </nav>
+            {/*  <!-- /.sidebar-menu --> */}
+          </div>
+          {/*  <!-- /.sidebar --> */}
           </aside>
 
           {/* <!-- Content Wrapper. Contains page content --> */}
@@ -519,12 +574,14 @@ class membership extends React.Component {
           </div>
           {/* <!-- /.content-wrapper --> */}
 
+     
           <footer class="main-footer">
-            <strong>
-              Copyright &copy; 2021 <a href="www.quellxcode.com"> QuellxCode</a>.
-            </strong>
-            All rights reserved.
-          </footer>
+          <strong>
+            Copyright &copy; 2021{" "}
+            <a href=""> Easyrishta</a>.
+          </strong>
+      
+        </footer>
 
           {/* <!-- Control Sidebar --> */}
           <aside class="control-sidebar control-sidebar-dark">{/*  <!-- Control sidebar content goes here --> */}</aside>

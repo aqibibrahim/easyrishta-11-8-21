@@ -183,15 +183,24 @@ export default function Friends() {
             />
           </a>
 
-          {/* <!-- Sidebar --> */}
-          <div class="sidebar">
+            {/*  <!-- Sidebar --> */}
+            <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-              <div class="image">
+              <div
+                class="image"
+                style={{
+                  display: "flex",
+                  paddingLeft: "0.8rem",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
                 <img
-                  src={logo1}
+                  src={localStorage.getItem("profilepic")}
                   class="img-circle elevation-2"
-                  alt="User Image"
+                  alt="Profile"
+                  style={{ width: "2.1rem", height: "2.1rem" }}
                 />
               </div>
               <div class="info">
@@ -200,7 +209,7 @@ export default function Friends() {
                   class="d-block"
                   style={{ color: "black" }}
                 >
-                  Nina Mcintire
+                  {localStorage.getItem("username")}
                 </Link>
               </div>
             </div>
@@ -232,7 +241,7 @@ export default function Friends() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-heart"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
@@ -253,7 +262,8 @@ export default function Friends() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-comment"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -273,8 +283,19 @@ export default function Friends() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-refresh"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/friends"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
+                    <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
@@ -284,7 +305,8 @@ export default function Friends() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -304,11 +326,24 @@ export default function Friends() {
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
+                {/* <li class="nav-item">
+                  <Link
+                    to={"/notifications"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>Notifications</p>
+                    <MDBBadge color="danger" className="ml-2">
+                      {inviteslength}
+                    </MDBBadge>
+                  </Link>
+                </li> */}
               </ul>
             </nav>
-            {/* <!-- /.sidebar-menu --> */}
+            {/*  <!-- /.sidebar-menu --> */}
           </div>
-          {/* <!-- /.sidebar --> */}
+          {/*  <!-- /.sidebar --> */}
         </aside>
 
         {/* <!-- Content Wrapper. Contains page content --> */}
@@ -370,9 +405,9 @@ export default function Friends() {
                             <img
                               src={val.userpic}
                               alt=""
-                              class="img-circle "
-                              width="140px"
-                              height="100px"
+                              class="img-circle mt-4"
+                              width="60px"
+                              height="60px"
                             />
                           </div>
                         </div>
@@ -460,12 +495,13 @@ export default function Friends() {
         </div>
         {/* <!-- /.content-wrapper --> */}
 
+       
         <footer class="main-footer">
           <strong>
             Copyright &copy; 2021{" "}
-            <a href="https://quellxcode.com/"> QuellxCode</a>.
+            <a href=""> Easyrishta</a>.
           </strong>
-          All rights reserved.
+      
         </footer>
 
         {/* <!-- Control Sidebar --> */}
