@@ -91,8 +91,8 @@ mega menu --> */}
               <div class="col-md-12">
                 <div class="section-title wow fadeIn">
                   <h1
-                    class="position-relative divider"
-                    style={{ color: "white", justifyContent: "center" }}
+                    class="position-relative dividess"
+                    style={{ color: "white", justifyContent: "center", marginTop:"20%" }}
                   >
                     About Us
                   </h1>
@@ -130,7 +130,7 @@ mega menu --> */}
                   {" "}
                   Best Matrimonial Website{" "}
                 </h1>
-                <p class="mb-1  lead" style={{ color: "black" }}>
+                <p class="mb-1  " style={{  }}>
                   EasyRishta brings you Pakistan and abroad’s most trusted
                   matchmakers at your service. The precious bond of marriage
                   between two individuals is what brings the peace and happiness
@@ -351,8 +351,7 @@ mega menu --> */}
                   </div>
 
                   <div class="col-md-4">
-                    <div class="address-block">
-                      <i class="fa fa-home" aria-hidden="true"></i>
+                    <div class="address-block"><i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad

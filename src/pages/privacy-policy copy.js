@@ -423,7 +423,7 @@ mega menu -->
 
         <div class="container-fluid footer-bottom">
           <div class="justify-content-center">
-            <p class="text-white">© 2019 - Shadeeghar All Right Reserved</p>
+            <p class="text-white">© 2019 - EasyAll Right Reserved</p>
           </div>
         </div>
       </div>

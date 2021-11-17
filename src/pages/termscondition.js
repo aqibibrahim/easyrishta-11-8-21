@@ -94,7 +94,7 @@ mega menu --> */}
                 <div class="section-title wow fadeIn" style={{marginTop:"120px"}}>
                   <h1
                     class="position-relative dividers mt-5"
-                    style={{ color: "white" }}
+                    style={{ color: "white", justifyContent: "center", marginTop:"20%" }}
                   >
                     {/* Terms &amp; Conditions */}
                     <span class="sub-title">Terms &amp; Conditions</span>
@@ -213,8 +213,7 @@ mega menu --> */}
                   </div>
 
                   <div class="col-md-4">
-                    <div class="address-block">
-                      <i class="fa fa-home" aria-hidden="true"></i>
+                    <div class="address-block"><i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad

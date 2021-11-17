@@ -88,8 +88,8 @@ mega menu --> */}
             <div class="row intro-title text-center">
               <div class="col-md-12">
                 <div class="section-title wow fadeIn">
-                  <h1 class="position-relative divider">
-                    Contact Us<span class="sub-title">Contact Us</span>
+                  <h1 class="position-relative dividers">
+                    <span class="sub-title text-white mt-5 pt-5">Contact Us</span>
                   </h1>
                 </div>
               </div>
@@ -106,110 +106,7 @@ mega menu --> */}
         {/* <!--=================================
  banner --> */}
 
-        <section
-          class="page-section-ptb contact-section text-center"
-          style={{ background: "url(assets/images/pattern/01.png)" }}
-        >
-          <div class="container wow fadeInUp" data-wow-delay=".2s">
-            <div class="row justify-content-center ">
-              <div class="col-md-10">
-                <div class="row mb-5">
-                  <div class="col-md-12">
-                    <h2 class="title divider mb-3" style={{ color: "#ed225c" }}>
-                      Contact Us
-                    </h2>
-                    <p class="lead" style={{ color: "black" }}>
-                      Contact the best matrimonial website for any queries,
-                      issues or concerns you have.
-                    </p>
-                  </div>
-                </div>
-                <div class="row mb-5 sm-mb-2 ">
-                  <div class="col-md-4">
-                    <div class="address-block">
-                      {" "}
-                      <i class="fa fa-desktop" aria-hidden="true"></i>{" "}
-                      <a
-                        href="mailto:info@shaadeeghar.com "
-                        style={{ color: "black" }}
-                      >
-                        info@easyrishta.com{" "}
-                      </a>{" "}
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="address-block">
-                      {" "}
-                      <i class="fa fa-home" aria-hidden="true"></i>
-                      <a href="/" style={{ color: "black" }}>
-                        EasyRishta, 369 D, Street 17 <br />
-                        PWD Housing Society, Islamabad
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="address-block">
-                      {" "}
-                      <i class="fa fa-phone" aria-hidden="true"></i>{" "}
-                      <a href="tel:+923111 222 541" style={{ color: "black" }}>
-                        +92 331 338 7710
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                {/* <!--
-        <div class="row">
-          <div class="col-md-12 mb-3">
-            <h4 class="title divider-3">We Love Talking</h4>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div id="formmessage" style="display:none">Success/Error Message Goes Here</div>
-            <form id="contactform" class="main-form" method="post" action="">
-              <div class=" form-group half-group">
-              <div class="input-group">
-                <input id="name" required placeholder="Your name here" class="form-control" name="name" type="text">
-              </div>
-          </div>
-          <div class="form-group half-group">
-            <div class="input-group">
-              <input placeholder="Your mail here" class="form-control" required name="email" type="email">
-            </div>
-          </div>
-          <div class=" form-group half-group">
-              <div class="input-group">
-                <input id="subject" required placeholder="Your Subject" class="form-control" name="subject" type="text">
-              </div>
-          </div>
-          <div class="form-group half-group">
-            <div class="input-group">
-              <input placeholder="Your Phone" class="form-control" required name="phone" type="text">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <textarea class="form-control input-message" required placeholder="Your message here*" rows="7"
-                name="message"></textarea>
-            </div>
-          </div>
-          <div class="form-group sm-mb-0">
-            <input type="hidden" name="action" value="sendEmail" required />
-            <button id="submit" name="submit" type="submit" value="Send"
-              class="button btn-lg btn-theme full-rounded animated right-icn"><span>Submit Now<i
-                  class="glyph-icon flaticon-hearts text-white" aria-hidden="true"></i></span></button>
-          </div>
-          </form>
-
-          </div>
-        </div> --> */}
-              </div>
-            </div>
-          </div>
-        </section>
-
+        
         <section>
           <div class="container-fluid gray-bg">
             <div class="row row-eq-height no-gutter">
@@ -348,8 +245,7 @@ mega menu --> */}
                   </div>
 
                   <div class="col-md-4">
-                    <div class="address-block">
-                      <i class="fa fa-home" aria-hidden="true"></i>
+                    <div class="address-block"><i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad

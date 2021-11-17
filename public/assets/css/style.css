@@ -781,9 +781,9 @@ h1.title.divider {
 }
 .section-title .sub-title {
   left: 50%;
-  opacity: 0.3;
+  /* opacity: 0.3; */
   position: absolute;
-  top: 35%;
+  top: 100px;
   transform: translateX(-50%) translateY(-50%);
   -moz-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
@@ -792,7 +792,13 @@ h1.title.divider {
   font-size: 60px;
   margin: 0;
 }
-
+.sign-btn {
+  text-transform: uppercase;
+  font-size: 14px !important;
+  font-weight: 600;
+    width: 110px;
+    text-align: center;
+}
 /*---------------------------------------------------------------------
   Footer
 ---------------------------------------------------------------------*/

@@ -29,8 +29,8 @@ class Home extends React.Component {
       isSidebarOpen: false,
       showRegisterModal : false,
       signInPreloader : false
-    };
-
+    }; 
+ 
     this.showPreloader = this.showPreloader.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -287,7 +287,7 @@ class Home extends React.Component {
     const { isSidebarOpen } = this.state;
     const mystyle = {
       color: "black",
-      backgroundColor: "#006600",
+      backgroundColor: "#f5336d",
       // padding: "10px",
       // fontFamily: "Arial"
     };
@@ -299,73 +299,77 @@ class Home extends React.Component {
             <img src={preloader} alt="Preloader" />
           </div>
         </div>
+
+
         <header id="header" class="dark">
-          {/* <!--=================================
- mega menu --> */}
+        
 
-          <div>
-            {/* <!-- menu start --> */}
-            <nav id="menu" class="mega-menu-custom">
-              {/* <!-- menu list items container --> */}
-              <section class="menu-list-items">
-                <div class="container">
-                  <div class=" ">
-                    <div class="d-flex justify-content-between">
-                      {/* <!-- menu logo --> */}
-                      <div className="col-md-6 col-4">
-                      <ul class="menu-logo">
-                        <li>
-                          <a href="/">
-                            <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
-                          </a>
-                        </li>
-                      </ul>
-                      </div>
-                      
-                      <div className="col-md-6 col-4 ">
-                   
-                      <div class="menu-links ">
-                        {/* <!-- active class --> */}
+        <div>
+          {/* <!-- menu start --> */}
+          <nav id="menu" class="mega-menu-custom">
+            {/* <!-- menu list items container --> */}
+            <section class="menu-list-items">
+              <div class="container">
+                <div class=" ">
+                  <div class="d-flex justify-content-between">
+                    {/* <!-- menu logo --> */}
+                    <div className="col-md-6 col-4">
+                    <ul class="menu-logo">
+                      <li>
+                        <a href="/">
+                          <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+                    
+                    <div className="col-md-6 col-4 ">
+                 
+                    <div class="menu-links ">
+                      {/* <!-- active class --> */}
 
+                    
+                        <button
+                          onClick={this.htmlModal}
+                          style={mystyle}
+                          class="registerMenuButton sign-btn button btn-lg btn-colored mr-2 full-rounded "
+                          style={{
+                            color: "white",
+                            backgroundColor: "rgb(237, 34, 92)",
+                          }}
+                        >
+                          Register
+                        </button>
                       
+                        
                           <button
-                            onClick={this.htmlModal}
-                            style={mystyle}
-                            class="registerMenuButton button btn-lg btn-colored mr-2 full-rounded "
+                          //   onClick={this.openModal}
+                          onClick={this.openModal}
+                            // style={mystyle}
+                            className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
                             style={{
                               color: "white",
-                              backgroundColor: "#D96C94",
+                              backgroundColor: "rgb(237, 34, 92)",
                             }}
                           >
-                            Register
+                            Login
                           </button>
-                        
-                          
-                            <button
-                            //   onClick={this.openModal}
-                            onClick={this.openModal}
-                              // style={mystyle}
-                              className="loginMenuButton button btn-lg btn-colored full-rounded "
-                              style={{
-                                color: "white",
-                                backgroundColor: "#D96C94",
-                              }}
-                            >
-                              Login
-                            </button>
-                            {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
+                          {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
 
-                          
-                      </div>
-                      </div>
+                        
+                    </div>
                     </div>
                   </div>
                 </div>
-              </section>
-            </nav>
-            {/* <!-- menu end --> */}
-          </div>
-        </header>
+              </div>
+            </section>
+          </nav>
+          {/* <!-- menu end --> */}
+        </div>
+      </header>
+
+
+
 
 
 
@@ -908,7 +912,7 @@ class Home extends React.Component {
                 <h4 class="title divider-3 mb-3" style={{ color: "#00bcd5" }}>
                   PERFECT MATCH
                 </h4>
-                <p style={{ color: "black" }}>Our website uses an algorithm to match you with the profile having most similarities to your profile. Whatever you requirements are, we make sure to match you with nothing but the best.</p>
+                <p style={{ color: "black" }}>Our website uses an algorithm to match you with the profile having most similarities to your profile. Whatever your  requirements are, we make sure to match you with nothing but the best.</p>
               </div>
               <div class="col-md-4">
                 <div class="timeline-badge mb-2">
@@ -1038,7 +1042,7 @@ class Home extends React.Component {
                   <h2 class="title divider-2" style={{ color: "#00bcd5" }}>
                     Success Stories
                   </h2>
-                  <p class="lead m-0">The stories of love that started right at our Easyrishta.</p>
+                  <p class="lead m-0">The stories of love that started right here at  Easyrishta.</p>
                 </div>
               </div>
         <div className="carousel-inner">
@@ -1051,14 +1055,14 @@ class Home extends React.Component {
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>For finding a Rishta via mobile application, why not attempt online matchmaking? You can meet the guy as an adult because there is no social baggage, says Haris. Married for 2 years, we are grateful for the Easy Rishta platform to have found each other.</p>
+                    <p>For finding a rishta via mobile application, why not attempt online matchmaking? You can meet the guy as an adult because there is no social baggage, says Haris. Married for 2 years, we are grateful for the Easy Rishta platform to have found each other.</p>
                     <img src={avatar} alt="" className="img-fluid" />
                     <div id="image-caption">Haris and Shumaila </div>
                 </div>
             </div>
             <div className="carousel-item">
                 <div className="carousel-caption">
-                    <p>Being 28 but divorced made Rishta hunt impossible for me. Easy Rishta made it easier for me to find a perfect match even after my divorce I found my perfect soulmate </p>
+                    <p>Being 28 but divorced made rishta hunt impossible for me. Easy Rishta made it easier for me to find a perfect match even after my divorce, I found my perfect soulmate </p>
                     <img src={avatar} alt="" className="img-fluid" />
                     <div id="image-caption">Faisal and Alina </div>
                 </div>
@@ -1104,7 +1108,7 @@ class Home extends React.Component {
                     <img class="img-center" src="../../assets/images/icons/advisor.png" alt="" />
                   </div>
                   <h4 class="title divider-3 mb-3">Personal Advisor</h4>
-                  <p>Here at easy Rishta, we provide a personal advisor to you to help you find an appropriate match.
+                  <p>Here at Easy Rishta, we provide a personal advisor to you to help you find an appropriate match.
                      Our advisor makes sure to arrange proposals keeping in mind your specific wants and needs.
                       There will be no more wasted time and no more uncomfortable or awkward meetings anymore.
                       Your personal advisor has you covered for finding a perfect match!</p>
