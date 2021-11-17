@@ -308,13 +308,14 @@ class Home extends React.Component {
 
           <div>
             {/* <!-- menu start --> */}
-            <nav id="menu" class="mega-menu">
+            <nav id="menu" class="mega-menu-custom">
               {/* <!-- menu list items container --> */}
               <section class="menu-list-items">
-                <div class="container ">
-                  <div class="row ">
-                    <div class="col-md-12">
+                <div class="container">
+                  <div class=" ">
+                    <div class="d-flex justify-content-between">
                       {/* <!-- menu logo --> */}
+                      <div className="col-md-6 col-4">
                       <ul class="menu-logo">
                         <li>
                           <a href="/">
@@ -322,18 +323,18 @@ class Home extends React.Component {
                           </a>
                         </li>
                       </ul>
-                      {/* <!-- menu links --> */}
-                      {/* <Modal show={this.state.show} handleClose={this.hideModal}>
-                        <p>Modal</p>
-                      </Modal> */}
-                      <ul class="menu-links">
+                      </div>
+                      
+                      <div className="col-md-6 col-4 ">
+                   
+                      <div class="menu-links ">
                         {/* <!-- active class --> */}
 
-                        <li>
+                      
                           <button
                             onClick={this.htmlModal}
                             style={mystyle}
-                            class="registerMenuButton button btn-lg btn-colored full-rounded "
+                            class="registerMenuButton button btn-lg btn-colored mr-2 full-rounded "
                             style={{
                               color: "white",
                               backgroundColor: "#D96C94",
@@ -341,11 +342,8 @@ class Home extends React.Component {
                           >
                             Register
                           </button>
-                        </li>
-
-
-
-                          <li>
+                        
+                          
                             <button
                             //   onClick={this.openModal}
                             onClick={this.openModal}
@@ -360,11 +358,9 @@ class Home extends React.Component {
                             </button>
                             {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
 
-                          </li>
-                          {/* <li><button onClick={()=>alert("That is")}>Click Me!</button></li>
-                          <p id="demo" onClick={this.selectSection}>Click me to change my text color.</p> */}
-                      </ul>
-
+                          
+                      </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -948,12 +944,12 @@ class Home extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <div>
                 <img class="img-fluid" src="../../assets/images/story/website-add.png" alt="" />
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <div>
                 <img class="img-fluid" src="../../assets/images/story/blue.png" alt="" />
               </div>
