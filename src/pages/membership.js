@@ -65,7 +65,7 @@ class membership extends React.Component {
               </li>
               <li class="nav-item nav-item-mobile">
               <a class="nav-link" data-widget="pushmenu" href="#">
-                <i class="fas fa-bars"></i>
+                <i class="fas test fa-bars"></i>
               </a>
             </li>
             <li class="nav-items logout-btn">
