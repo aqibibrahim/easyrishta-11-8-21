@@ -65,6 +65,9 @@
         width: 79%;
         z-index: 99;
     }
+    .text-sm-screen {
+        
+    }
 }
 
 .carousel-caption img {

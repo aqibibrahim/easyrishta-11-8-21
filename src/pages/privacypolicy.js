@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../src/pages/images/350x150-logo.png";
-
+import "./privacypolicy.css";
 class privacy extends React.Component {
   render() {
     const mystyle = {
@@ -91,12 +91,12 @@ mega menu --> */}
           <div class="container">
             <div class="row intro-title text-center">
               <div class="col-md-12">
-                <div class="section-title wow fadeIn">
+                <div class="section-title section-privacy-title  mt-5 wow fadeIn">
                   <h1
-                    class="position-relative divider"
+                    class="position-relative dividesr mt-5 "
                     style={{ color: "white" }}
                   >
-                    Privacy Policy<span class="sub-title">Privacy Policy</span>
+                    <span class="sub-title">Privacy Policy</span>
                   </h1>
                 </div>
               </div>
@@ -115,133 +115,100 @@ mega menu --> */}
                   class="title divider mb-0 wow fadeInUp"
                   data-wow-offset="100"
                 >
-                  Privacy Policy
+                Easy Rishta Privacy Policy
+
                 </h2>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 termsParas">
                 <p class="text-justify">
-                  The Shaadeeghar.com team understands your right to privacy,
-                  and we have drawn have a privacy statement in place with
-                  regard to the information we collect from you.
+                Easy Rishta respects your right to privacy and has put in place a privacy statement for the information we gather from you.
                 </p>
                 <p class="text-justify">
-                  We use a secure server for credit card transactions to protect
-                  the credit card information of our clients and Cookies are
-                  used to store the login information.
+                To protect our clients' payment card information, we employ a secure server for credit card transactions, and cookies are used to store login information.
                 </p>
                 <p class="text-justify">
                   <span class="text-bold">
-                    1. What information does Shaadeeghar.com collect from you?
+                    1. What kind of information does Easy Rishta gather about you ?
                   </span>
                 </p>
                 <p class="text-justify">
-                  There are two types of user-submitted information we collect:
-                  Public and Private. We define Public information as personal
-                  information that may be displayed on the site at the behest of
-                  the member, such as gender, age, height, telephone number,
-                  photograph, etc. Private information is defined as any
-                  information that allows others to contact a user other than
-                  through Shaadeeghar.com or allows the collection of
-                  information about the user other than what is displayed on the
-                  site.
+                We at Easy Rishta collect two kinds of user-submitted data: public and private data. We define public information as personal information, such as gender, age, height, phone number, photograph, etc., that may be shown on the site at the member's request. Any information that allows others to contact a user other than through Easy Rishta or that permits the collection of information about the user other than what is visible on the site is considered private information.
+                </p>
+                <span class="text-bold">
+                Public: 
+                </span>
+                <p class="text-justify">
+                To achieve our goal of bringing people together who are compatible, we need to collect personal information, which may or may not include:
+
+                </p>
+
+                <span class="text-bold">
+                Private: 
+                </span>
+                <p class="text-justify">
+                This information is collected from members and visitors who apply for the various services available on our website. This data contains, but is not limited to, the following:
+                </p>
+
+                     <ul className="public-text">
+                       <li>Email address</li>
+                       <li>First name
+</li>
+                       <li>Last name
+ </li>
+                       <li>Credit card number or checking account information for payment
+</li>
+                       <li>A user-specified password
+ </li>
+                       <li>Mailing address
+</li>
+                       <li>Zip code
+</li>
+                       <li>Telephone number.
+</li>
+                      
+                       </ul>
+
+                <p class="text-justify">
+                Members of Easy Rishta can also post public and private information on behalf of others, such as their child or ward, sibling, or friend. If a child/ward, sibling, or friend does not want this information exposed, she or he can ask for it to be removed after giving proof that the information belongs to her or him.
+                </p>
+                <span class="text-bold">
+                What does Easy Rishta do with the data it collects?
+ 
+                </span>
+                <p class="text-justify">
+                We collect information from our members exclusively to ensure that we are able to match your expectations and provide a tailored experience.
+                </p>
+                <span class="text-bold">
+                Does Easy Rishta share the information it collects?
+ 
+                </span>
+                <p class="text-justify">
+                Only Easy Rishta members and partners have access to the information we collect from our members. Any information you provide to us is treated with extreme caution and security. We are likewise obligated to provide full cooperation if we are forced to divulge information on a client by law or legal process.
+                 </p>
+                <p class="text-justify">
+                  <span class="text-bold">
+                  What is the website’s policy on correcting, updating or removing personal information?
+                  </span>
                 </p>
                 <p class="text-justify">
-                  Public: To accomplish our goal of bringing compatible people
-                  together, we must gather personal information, which may or
-                  may not include: customer-specified Shaadeeghar.com username,
-                  gender, age, religion, income range, profession, telephone
-                  number, preference/lifestyle information, general geographic
-                  location, photograph and horoscope.
-                </p>
-                <p class="text-justify">
-                  Private: This information is gathered from members and guests
-                  who apply for the various services our site offers. This
-                  information includes, but is not limited to: email address,
-                  first name, last name, credit card number or checking account
-                  information for payment, a user-specified password, mailing
-                  address, zip code and telephone number.
-                </p>
-                <p class="text-justify">
-                  Shaadeeghar.com also allows members to submit public and
-                  private information on behalf of others - child/ward, sibling
-                  or friend. If such child/ward, sibling or friend does not wish
-                  this information to be displayed, she/he has the option to
-                  request removal of such information after providing the
-                  necessary evidence that the information pertains to her/him.
+                Both public and private information can be modified or removed from Easy Rishta's database. However, the user cannot update or erase private information such as financial details submitted during the course of a financial transaction or certain account-related information gathered at the time of registration.
                 </p>
                 <p class="text-justify">
                   <span class="text-bold">
-                    2. How does Shaadeeghar.com use the information it collects?
+                  Tell me about security of my personal information.
                   </span>
                 </p>
                 <p class="text-justify">
-                  We collect information from our members primarily to ensure
-                  that we are able to fulfill your requirements and to deliver
-                  personalized experience.
+                Easy Rishta takes every step to keep your personal information safe, both online and off.
                 </p>
-                <p class="text-justify">
-                  <span class="text-bold">
-                    3. Does the site share the information it collects?
-                  </span>
-                </p>
-                <p class="text-justify">
-                  The information collected from our members is shared only with
-                  members of Shaadeeghar.com or members of our partners. Any
-                  information you give us is held with the utmost care and
-                  security. We are also bound to cooperate fully should a
-                  situation arise where we are required by law or legal process
-                  to provide information about a customer.
-                </p>
-                <p class="text-justify">
-                  <span class="text-bold">
-                    4. What is the website’s policy on correcting, updating or
-                    removing personal information?
-                  </span>
-                </p>
-                <p class="text-justify">
-                  Shaadeeghar.com allows you to modify or remove both public and
-                  private information from our database. Private information
-                  such as financial details submitted during the process of a
-                  financial transaction &amp; certain account-related
-                  information collected at the time of registration however
-                  cannot be changed or removed by the user.
-                </p>
-                <p class="text-justify">
-                  <span class="text-bold">
-                    5. Tell me about security of my personal information.
-                  </span>
-                </p>
-                <p class="text-justify">
-                  Shaadeeghar.com takes every precaution to protect your
-                  information, both online and offline.
-                </p>
-                <p class="text-justify">
-                  When our registration/order process asks you to enter
-                  sensitive information (such as a credit card number), such
-                  information is encrypted and is protected with the best
-                  encryption software in the industry - SSL.
-                </p>
-                <p class="text-justify">
-                  While we use SSL encryption to protect sensitive information
-                  online, we also do everything in our power to protect your
-                  information offline. We follow generally accepted industry
-                  standards to protect the personal information submitted to us,
-                  both during transaction and once we receive it. All your
-                  information, not just the sensitive information mentioned
-                  above, is restricted in our offices. Only employees who need
-                  the information to perform a specific job (for example, a
-                  billing clerk or a customer service representative) are
-                  granted access to personally identifiable information.
-                </p>
-                <p class="text-justify">
-                  We have also done everything in our power to prevent misuse of
-                  photographs. Apart from not allowing photographs to be
-                  downloaded or copied, we have watermarked them with the
-                  Shaadeeghar.com logo. This acts as a further deterrent for
-                  illegal use elsewhere.
-                </p>
+                <p class="text-justify">  When you provide sensitive information (such as a credit card number) during the registration/order process, it is encrypted and secured.                </p>
+                <p class="text-justify"> We protect personal information supplied to us by following generally accepted industry standards, both during the transaction and after we receive it. In our offices, all of your information, not just the sensitive information mentioned above, is kept secure. Access to personally identifiable information is restricted to personnel who require it to perform a specific job (for example, a billing clerk or a customer care representative).</p>
+                <p class="text-justify"> We've also done everything we can to keep images from being misused. The inability to downlor copy images serves as a barrier to their illicit use elsewhere</p>
+              
+
+              
               </div>
             </div>
           </div>

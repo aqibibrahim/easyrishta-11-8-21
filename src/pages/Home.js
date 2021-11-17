@@ -954,7 +954,7 @@ class Home extends React.Component {
                 <img class="img-fluid" src="../../assets/images/story/blue.png" alt="" />
               </div>
               <div
-                className="ml-xl-n4 mt-5"
+                className="ml-xl-n4 text-sm-screen mt-5"
                 style={{
                   fontSize: "xx-large",
                   fontFamily: "Montserrat",

@@ -1,0 +1,9 @@
+.public-text li::before {content: "•"; color: black;
+    display: inline-block; width: 1em;
+}
+.public-text {
+    color: rgb(8, 7, 7);
+}
+.section-privacy-title {
+    margin-top: 33px;
+}
