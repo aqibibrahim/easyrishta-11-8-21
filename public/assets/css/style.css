@@ -799,6 +799,17 @@ h1.title.divider {
     width: 110px;
     text-align: center;
 }
+.nav-link-btn {
+  width:150px;
+   text-align:center;
+    vertical-align:middle;
+    border-radius: 142px;
+}
+.silver-card-radios .control_02 {
+
+  border: 2px solid #ff1810 !important;
+ 
+}
 /*---------------------------------------------------------------------
   Footer
 ---------------------------------------------------------------------*/

@@ -454,7 +454,7 @@ export default function MatchMaking(props) {
                                   src={val.data.profilepic || logo}
                                   alt=""
                                   class="img-circle img-fluid"
-                                  style={{ height: "100px", width: "100px" }}
+                                  style={{ height: "50px", width: "100px" }}
                                 />
                               </div>
                               <div className="mt-3">

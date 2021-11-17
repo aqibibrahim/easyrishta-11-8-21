@@ -1064,7 +1064,7 @@ export default function Search() {
                                 pathname: "/searchResults",
                                 state: { preferences },
                               }}
-                              class="d-block nav-link active  mx-auto"
+                              class="d-block nav-link nav-link-btn active  mx-auto"
                               style={{ backgroundColor: "#ed225c", color: "white",borderRadius:"4px" }}
                             >
                               Search

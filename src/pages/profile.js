@@ -244,7 +244,7 @@ export default function Profile() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -255,7 +255,7 @@ export default function Profile() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
                     <p>Friends</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -266,7 +266,8 @@ export default function Profile() {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
@@ -345,9 +346,9 @@ export default function Profile() {
                         />
                       </div>
 
-                      <h3 class="profile-username text-center">
+                      <h4 class="profile-username text-center">
                         {profiles.data.profile.fullname}
-                      </h3>
+                      </h4>
 
                       <p
                         class="text-muted text-center"

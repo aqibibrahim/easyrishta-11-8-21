@@ -242,9 +242,7 @@ class membership extends React.Component {
                                 <p class="price">
                                   PKR <span class="amount">1950</span>
                                 </p>
-                                <button type="button" class="btn btn-secondary" onClick={apple}>
-                                  Secondary
-                                </button>
+                            
                               </label>
                             </div>
                             <div class="col-lg-4 col-md-6">
