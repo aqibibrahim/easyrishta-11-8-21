@@ -17,7 +17,7 @@ export default function Otherprofile() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   var docsid = "";
-
+  var friends_status = false;
 
 
   // var inviteslength = 0;
@@ -30,31 +30,15 @@ export default function Otherprofile() {
 
 
 
-  // console.log(query.userid);
-  // const [state, setstate] = useState({
-  //   username: "",
-  //   profession: "",
-  //   education: "",
-  //   specialization: "",
-  //   address: "",
-  //   notificationlength: 0,
-  //   notificationdata: [],
-  //   gallery: [],
-  //   notificationid: "",
-  //   userid: "",
-  //   data: [],
-  // });
+  console.log(query);
+
 
   const Otherprofile = useQuery(
     "Otherprofile",
     () => {
-      // const email = localStorage.getItem("email");
-      //return db.collection("users").where("email", "==", email).get();
-      //return db.collection("users" + "/" + query.userid).get();
-      //return db.collection("users").doc(query.userid).get();
-      // console.log(query.userid);
+
       return db.doc(`users/${query.userid}`).get();
-      // return db.collection("users").doc(query.userid).();
+
     },
     {
       select: (querySnapshot) => {
@@ -72,21 +56,18 @@ export default function Otherprofile() {
   const profiles = useQuery(
     "profiles",
     () => {
-      // const email = localStorage.getItem("email");
-      // return db.collection("users").where("email", "==", email).get();
-      // return db.collection("users" + "/" + query.userid).get();
-      //return db.collection("users").doc(query.userid).get();
+
       console.log(query.userid);
-      return db.doc(`users/${loggedin_userid}`).get();
-      // return db.collection("users").doc(query.userid).();
+      return db.doc(`users/${localStorage.getItem("loggedin-userid")}`).get();
+
     },
     {
       select: (querySnapshot) => {
         console.log(querySnapshot);
-        const doc = querySnapshot.docs[0].data();
-        // docsid = querySnapshot.id;
+        const doc = querySnapshot.data();
+        const docsid = querySnapshot.id;
         console.log("ProfileDOC ::", doc);
-        // console.log("DOC ::", docsid);
+        console.log("DOC ::", docsid);
         return doc;
       },
       onError: (error) => console.log("Error getting documents: ", error),
@@ -156,35 +137,8 @@ export default function Otherprofile() {
         favrioutes: firebase.firestore.FieldValue.arrayRemove(data),
       });
   };
-  // $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-  //   event.preventDefault();
-  //   this.ekkoLightbox();
-  // });
 
 
-  //  function openModal() {
-  //   document.getElementById("myModal").style.display = "block";
-  // }
-
-  // function closeModal() {
-  //   document.getElementById("myModal").style.display = "none";
-  // }
-  var modal = document.getElementById("myModal");
-
-var btn = document.getElementById("myBtn");
-
-
-var span = document.getElementsByClassName("close")[0];
-
-
-var modal = document.getElementById("myModal");
-      
-     function test() {
-console.log(docsid);
-// console.log(localStorage.getItem("userid"));
-// console.log(Otherprofile.data);
-     }
-    
 
   if (!Otherprofile.data)
     return (
@@ -197,10 +151,21 @@ console.log(docsid);
     );
 
   // console.warn("Otherprofile ::  ", Otherprofile.data);
-  console.log( Otherprofile.data.users);
-
-  // console.log();
-  // console.log("Favrioutes Length", profiles.data.favrioutes);
+  console.log( Otherprofile.data.friends);
+      if(Otherprofile.data.friends){
+        console.log("Friends exist")
+        for(var i = 0;i<Otherprofile.data.friends.length;i++){
+            if(Otherprofile.data.friends[i].userid == localStorage.getItem("loggedin-userid")){
+              console.log("Logged in user exist");
+              friends_status = true;
+            }
+            else{
+              friends_status = false;
+            }
+        }
+      }
+  console.log("Profiler id",docsid);
+  console.log("Favrioutes Length", profiles.data);
   // console.warn("invites ::  ", invites.data);
 
   return (
@@ -221,7 +186,7 @@ console.log(docsid);
                 <i class="fas fa-bars"></i>
               </a>
             </li> */}
-            
+
           </ul>
 
 
@@ -420,7 +385,7 @@ console.log(docsid);
                     <div class="card-body box-profile">
                       <div class="text-center">
 
-                     
+
 
                   {Otherprofile.data.profilepic == "loading"  || Otherprofile.data.profilepic == ""  ?  <img
                       class="profile-user-img img-fluid img-circle  "
@@ -448,28 +413,29 @@ console.log(docsid);
                       >
                         {Otherprofile.data.registration_token}
                       </p>
-                      
-                      
+
+
                       {/* {console.log(Otherprofile.data.friends)} */}
-                              
+
                       {Otherprofile.data.friends ? (
                                     //  debugger
                           // Otherprofile.data.friends.filter( (row) => row.userid === localStorage.getItem("userid")  )
-                          Otherprofile.data.friends.filter( (item) => item.userid === localStorage.getItem("userid") ) ? (
+
+                          Otherprofile.data.friends.map((item) => item.userid === localStorage.getItem("loggedin-userid") ) ? (
                             // docsid === localStorage.getItem("userid") ? (
                           <button
                             onClick={sendChatInvites}
-                          
+
                             class="btn btn-primary btn-block"
                             style={{ backgroundColor: "#ed225c", fontSize: 10 }}
                           >
                             <b>Send Chat Request</b>
                           </button>
-                          
+
                         ) : (
                           <button
                             onClick={sendinvites}
-                           
+
                             class="btn btn-primary btn-block"
                             style={{ backgroundColor: "#ed225c", fontSize: 10 }}
                           >
@@ -485,8 +451,8 @@ console.log(docsid);
                           <b>Like</b>
                         </button>
                       )}
-                      {profiles.favrioutes ? (
-                        profiles.favrioutes.filter(
+                      {/* {profiles.data.favrioutes ? (
+                        profiles.data.favrioutes.filter(
                           (row) => row.userid === docsid
                         ) ? (
                           <button
@@ -513,7 +479,7 @@ console.log(docsid);
                         >
                           <b>Add to Favriote</b>
                         </button>
-                      )}
+                      )} */}
 
                       {/* <a
                         href=""

@@ -183,91 +183,14 @@ export default function MatchMaking(props) {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/* <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-         
+
           </ul>
 
-     
+
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
-            {/* <!-- Messages Dropdown Menu --> */}
-            {/* <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-comments"></i>
-                <span class="badge badge-danger navbar-badge">3</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 mr-3 img-circle"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        Brad Diesel
-                        <span class="float-right text-sm text-danger">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">Call me whenever you can...</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 img-circle mr-3"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        John Pierce
-                        <span class="float-right text-sm text-muted">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">I got your message bro</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
-                  <div class="media">
-                    <img
-                      src={userAvatar}
-                      alt="User Avatar"
-                      class="img-size-50 img-circle mr-3"
-                    />
-                    <div class="media-body">
-                      <h3 class="dropdown-item-title">
-                        Nora Silvester
-                        <span class="float-right text-sm text-warning">
-                          <i class="fas fa-star"></i>
-                        </span>
-                      </h3>
-                      <p class="text-sm">The subject goes here</p>
-                      <p class="text-sm text-muted">
-                        <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item dropdown-footer">
-                  See All Messages
-                </a>
-              </div>
-            </li> */}
+
             {/* <!-- Notifications Dropdown Menu --> */}
             <li class="nav-item dropdown">
               <a
@@ -282,40 +205,9 @@ export default function MatchMaking(props) {
                   {localStorage.getItem("inviteslength")}
                 </span>
               </a>
-              {/* <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <span class="dropdown-item dropdown-header">
-                  15 Notifications
-                </span>
-                <div class="dropdown-divider"></div>
-                <a  class="dropdown-item">
-                  <i class="fas fa-envelope mr-2"></i> 4 new messages
-                  <span class="float-right text-muted text-sm">3 mins</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item">
-                  <i class="fas fa-users mr-2"></i> 8 friend requests
-                  <span class="float-right text-muted text-sm">12 hours</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item">
-                  <i class="fas fa-file mr-2"></i> 3 new reports
-                  <span class="float-right text-muted text-sm">2 days</span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item dropdown-footer">
-                  See All Notifications
-                </a>
-              </div> */}
+
             </li>
-            {/* <li class="nav-item">
-              <a
-                class="nav-link"
-                data-widget="control-sidebar"
-                data-slide="true"
-              >
-                <i class="fas fa-th-large"></i>
-              </a>
-            </li> */}
+
               <li class="nav-item nav-item-mobile">
               <a class="nav-link" data-widget="pushmenu" href="#">
                 <i class="fas fa-bars"></i>
@@ -378,8 +270,7 @@ export default function MatchMaking(props) {
                 role="menu"
                 data-accordion="false"
               >
-                {/* <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library --> */}
+
 
                 <li class="nav-item">
                   <Link
@@ -475,24 +366,10 @@ export default function MatchMaking(props) {
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
                     <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/home"}} >Logout</a>
-                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
-                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-                {/* <li class="nav-item">
-                  <Link
-                    to={"/notifications"}
-                    class="nav-link"
-                    style={{ color: "black" }}
-                  >
-                    <i class="nav-icon fas fa-user"></i>
-                    <p>Notifications</p>
-                    <MDBBadge color="danger" className="ml-2">
-                      {inviteslength}
-                    </MDBBadge>
-                  </Link>
-                </li> */}
+
               </ul>
             </nav>
             {/* <!-- /.sidebar-menu --> */}
@@ -508,7 +385,7 @@ export default function MatchMaking(props) {
               <div class="row mb-2">
                 <div class="col-sm-6">
                   <h1>Match Making</h1>
-               
+
                 </div>
                 <div class="col-sm-6">
                   <ol class="breadcrumb float-sm-right">
@@ -661,14 +538,14 @@ export default function MatchMaking(props) {
                           </div>
                           <div class="card-footer">
                             <div class="d-flex justify-content-between">
-                                     
+
                                   {
                                        val.match > 30  ?<div class="progress-circle">
                                        <span class="title timerd" data-from="0" data-to="85" data-speed="1800">{val.match}%</span>
-                                    
+
                                    </div> : <div class="progress-circle-green">
                                                       <span class="title timerd" data-from="0" data-to="85" data-speed="1800">{val.match}%</span>
-                                                   
+
                                                   </div>
                                   }
                               {/* <b className="pr-8">{val.match}%</b> */}

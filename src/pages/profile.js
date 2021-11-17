@@ -14,7 +14,7 @@ export default function Profile() {
     "profile",
     () => {
       const email = localStorage.getItem("email");
-      console.log(localStorage.getItem("userid"));
+      console.log(localStorage.getItem("loggedin-userid"));
       return db.collection("users").where("email", "==", email).get();
     },
     {
@@ -97,11 +97,11 @@ export default function Profile() {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-        
-       
+
+
           </ul>
 
-         
+
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
