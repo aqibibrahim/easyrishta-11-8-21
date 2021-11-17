@@ -60,34 +60,34 @@ export default function Notificatoins() {
       onError: (error) => console.log("Error getting documents: ", error),
     }
   );
-  useEffect(() => {
-    db.collection("invites")
-      .where("recieverid", "==", localStorage.getItem("loggedin-userid"))
-      .get()
-      .then((res) => {
-        console.log(res.docs.length);
-        const invite_array = [];
+  // useEffect(() => {
+  //   db.collection("invites")
+  //     .where("recieverid", "==", localStorage.getItem("loggedin-userid"))
+  //     .get()
+  //     .then((res) => {
+  //       console.log(res.docs.length);
+  //       const invite_array = [];
 
-        // console.log(querySnapshot.docs[0].data());
-        for (var i = 0; i < res.docs.length; i++) {
-          invite_array.push({
-            data: res.docs[i].data(),
-            userid: res.docs[i].id,
-          });
-        }
+  //       // console.log(querySnapshot.docs[0].data());
+  //       for (var i = 0; i < res.docs.length; i++) {
+  //         invite_array.push({
+  //           data: res.docs[i].data(),
+  //           userid: res.docs[i].id,
+  //         });
+  //       }
 
-        invites_array = invite_array;
-        // console.log(invite_array);
-        // inviteslength = invites_array.length;
-        console.log(invites_array.length);
-        console.log(invites_array);
-      });
-    ///---------- get login user prefernces End
-  }, []);
+  //       invites_array = invite_array;
+  //       // console.log(invite_array);
+  //       // inviteslength = invites_array.length;
+  //       console.log(invites_array.length);
+  //       console.log(invites_array);
+  //     });
+  //   ///---------- get login user prefernces End
+  // }, []);
   const invites = useQuery(
     "invites",
     () => {
-      return db.collection("invites").where("recieverid", "==", docsid).get();
+      return db.collection("invites").where("recieverid", "==", localStorage.getItem("loggedin-userid")).get();
     },
     {
       select: (querySnapshot) => {
@@ -113,7 +113,7 @@ export default function Notificatoins() {
     }
   );
 
-  if (!invites_array)
+  if (!invites_array){
     return (
       <div
         class="lds-heart"
@@ -122,6 +122,8 @@ export default function Notificatoins() {
         <div></div>
       </div>
     );
+  }
+
 
   console.warn("profiles ::  ", profiles.data);
   console.warn("invites ::  ", invites.data);
@@ -649,13 +651,13 @@ export default function Notificatoins() {
           {/* <!-- /.content --> */}
         </div>
         {/* <!-- /.content-wrapper --> */}
-      
+
         <footer class="main-footer">
           <strong>
             Copyright &copy; 2021{" "}
             <a href=""> Easyrishta</a>.
           </strong>
-      
+
         </footer>
 
         {/*   <!-- Control Sidebar --> */}

@@ -92,7 +92,7 @@ export default function Otherprofile() {
     db.collection("invites")
       .add(data)
       .then((res) => {
-        alert(res, "Photo resquest send succesfully");
+        console.log(res, "Photo resquest send succesfully");
       });
   };
   const photosend = () => {
@@ -666,8 +666,20 @@ export default function Otherprofile() {
                             <div class="row mb-3">
                               <div class="col-sm-12">
                                 {Otherprofile.data.profile.gender === "female"
-                                  ? Otherprofile.data.gallery.map((val) => <img class="img-fluid col-sm-6 image-blur" src={val || female} alt="pic" />)
-                                  : Otherprofile.data.gallery.map((val) =>
+                                  ? (
+                                    Otherprofile.data.accepted_photo_request === undefined ? (Otherprofile.data.gallery.map((val) => <img class="img-fluid col-sm-6 image-blur" src={val || female} alt="pic" />)):(
+                                     Otherprofile.data.accepted_photo_request.map(row=> row.accepted_user_id == localStorage.getItem("loggedin-userid"))
+                                     ?
+                                     (Otherprofile.data.gallery.map((val) => <img class="img-fluid col-sm-6" src={val || female} alt="pic" />))
+                                     :
+                                     (Otherprofile.data.gallery.map((val) => <img class="img-fluid col-sm-6 image-blur" src={val || female} alt="pic" />))
+
+                                    )
+
+                                    )
+                                  :
+                                  (
+                                    Otherprofile.data.gallery.map((val) =>
                                       Otherprofile.data.photo_status === true ? (
                                         <img class="img-fluid col-sm-6 image-blur" src={val || male} alt="Pic" />
                                       ) : (
@@ -675,7 +687,7 @@ export default function Otherprofile() {
                                           <img onClick={handleShow} class="img-fluid col-sm-6 " src={val || male} alt="Pic" />
                                         </div>
                                       )
-                                    )}
+                                    ))}
 
                                 {/* <button  onClick={myFunBtn}>Open Modal</button> */}
 
