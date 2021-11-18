@@ -866,13 +866,13 @@ export default function Otherprofile() {
           {/* <!-- /.content --> */}
         </div>
         {/* <!-- /.content-wrapper --> */}
-        <footer className="main-footer">
-          <strong>
-            Copyright &copy; 2021 <a href="www.quellxcode.com"> QuellxCode</a>.
-          </strong>
-          All rights reserved.
-        </footer>
+        <footer class="main-footer text-center">
+       <div class="">
+            
+            <h6 href="">Copyright &copy; 2021  Easyrishta All Right Reserved</h6>.
+            </div>
 
+        </footer>
         {/*   <!-- Control Sidebar --> */}
         <aside className="control-sidebar control-sidebar-dark">{/* <!-- Control sidebar content goes here --> */}</aside>
         {/* <!-- /.control-sidebar --> */}

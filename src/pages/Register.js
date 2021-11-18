@@ -989,10 +989,10 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label">
+                      <label class="col-lg-2 col-12 col-form-label">
                         Select Religion:
                       </label>
-                      <div class="col-lg-10">
+                      <div class="col-lg-10 col-12">
                         <select
                           name="religion"
                           class="form-control "
@@ -1008,8 +1008,8 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label">Sect:</label>
-                      <div class="col-lg-10">
+                      <label class="col-lg-2  col-12 col-form-label">Sect:</label>
+                      <div class="col-lg-10 ">
                         <select
                           name="sect"
                           class="form-control "
@@ -1101,7 +1101,7 @@ class register extends React.Component {
             <fieldset>
               <div class="fieldset-content">
                 <div class="row">
-                  <div class="col-lg-8 offset-lg-2">
+                  <div class="col-lg-8 col-12 offset-lg-2">
                     <div class="form-group form-radio row">
                       <label class="col-2 col-form-label">Marital Status</label>
                       <div class="col-10">
@@ -1585,7 +1585,7 @@ class register extends React.Component {
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-2 col-form-label">Job Location:</label>
+                      <label class="col-md-2 col-12 col-form-label">Job Location:</label>
                       <div class="col-10">
                         <input
                           type="text"
@@ -1673,12 +1673,12 @@ class register extends React.Component {
                     <div class="form-group row">
                       <label
                         for="example-date-input"
-                        class="col-2 col-form-label"
+                        class="col-12 col-md-2  col-form-label"
                       >
                         CNIC Images
                       </label>
 
-                      <div class="col-4">
+                      <div class="col-md-3 col-12">
                         <img
                           alt="User pic"
                           // src={
@@ -1703,16 +1703,9 @@ class register extends React.Component {
                           onChange={this.handleNicFrontChange}
                         />
                       </div>
-                      <div class="col-4">
+                      <div class="col-md-3 col-12">
                         <img
-                          alt="user pic"
-                          // src={
-                          //   this.state.nicBack
-                          //     ? window.URL.createObjectURL(this.state.nicBack)
-                          //     : "/assets/images/login-bg.png"
-                          // }
-
-                          src={
+                          alt="user pic" src={
                             this.state.nicBack !== 0 && this.state.nicBack !== 1
                               ? this.state.nicBack
                               : "http://www.ultimatesource.toys/wp-content/uploads/2013/11/dummy-image-landscape-1-300x171.jpg"
@@ -1748,7 +1741,7 @@ class register extends React.Component {
                       >
                         Galary Images
                       </label>
-                      <div class="col-3">
+                      <div class="col-12 col-md-3">
                         <img
                           alt="Gallery"
                           // src={
@@ -1777,7 +1770,7 @@ class register extends React.Component {
                           onChange={this.handleG1Change}
                         />
                       </div>
-                      <div class="col-3">
+                      <div class="col-12 col-md-4 " >
                         <img
                           alt="user imagpice"
                           // src={
@@ -1807,7 +1800,7 @@ class register extends React.Component {
                           onChange={this.handleG2Change}
                         />
                       </div>
-                      <div class="col-2">
+                      <div class="col-12 col-md-4">
                         <img
                           alt="user impicage"
                           // src={

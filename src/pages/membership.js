@@ -260,10 +260,10 @@ class membership extends React.Component {
                   </div>
                   <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                      <li class="breadcrumb-item">
+                      {/* <li class="breadcrumb-item">
                         <a href="index.html">Home</a>
                       </li>
-                      <li class="breadcrumb-item active">Membership</li>
+                      <li class="breadcrumb-item active">Membership</li> */}
                     </ol>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ class membership extends React.Component {
                           <div class="payment-card-radios">
                             <div class="col-lg-4 col-md-6">
                               <input type="radio" id="control_01" name="select" value="1" />
-                              <label for="control_01">
+                              <label style={{border:"2px solid blue"}} for="control_01">
                                 <h2>Basic</h2>
                                 <p class="duration">Access to 5 contacts from your favourites</p>
                                 <p class="duration">Direct Chat Facility (Self)</p>
@@ -305,7 +305,7 @@ class membership extends React.Component {
                             </div>
                             <div class="col-lg-4 col-md-6">
                               <input type="radio" id="control_02" name="select" value="2" />
-                              <label for="control_02">
+                              <label style={{border:"2px solid green"}} for="control_02">
                                 <h2> Silver </h2>
 
                                 <p class="duration">Access to 20 contacts from your favourites</p>
