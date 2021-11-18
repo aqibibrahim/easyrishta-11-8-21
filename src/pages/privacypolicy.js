@@ -226,8 +226,9 @@ mega menu --> */}
 
  */}
 
-         {/* <!--================================= Foote-Start --> */}
-         <footer
+       
+        {/* <!--================================= Foote-Start --> */}
+        <footer
           class="page-section-pt contact-section text-center"
           style={{
             backgroundColor: "white",
@@ -259,7 +260,7 @@ mega menu --> */}
 
                   <div class="col-md-4">
                     <div class="address-block">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                       <a href="www.google.com" style={{ color: "black" }}>
                         EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad
@@ -298,12 +299,12 @@ mega menu --> */}
                       <h4 style={{ color: "#ed225c" }}>Company</h4>
                       <ul class="list-unstyled">
                         <li>
-                          <Link to={"/"} style={{ color: "white" }}>
+                          <Link to={"/"} style={{ color: "#00bcd5" }}>
                             Home
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/About us"} style={{ color: "white" }}>
+                          <Link to={"/About us"} style={{ color: "#00bcd5" }}>
                             About Us
                           </Link>
                         </li>
@@ -321,12 +322,12 @@ mega menu --> */}
                       <h4 style={{ color: "#ed225c" }}>Policies</h4>
                       <ul class="list-unstyled">
                         <li>
-                          <Link to={"/privacypolicy"} style={{ color: "white" }}>
+                          <Link to={"/privacypolicy"} style={{ color: "#00bcd5" }}>
                             Privacy and Policy
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/termscondition"} style={{ color: "white" }}>
+                          <Link to={"/termscondition"} style={{ color: "#00bcd5" }}>
                             Terms & Conditions
                           </Link>
                         </li>
@@ -359,7 +360,7 @@ mega menu --> */}
                       <ul class="list-unstyled">
 
                         <li>
-                          <Link to={"/Contact"} style={{ color: "white" }}>
+                          <Link to={"/Contact"} style={{ color: "#00bcd5" }}>
                             Contact Us
                           </Link>
                         </li>
@@ -376,7 +377,7 @@ mega menu --> */}
                       <div class="footer-logo mb-2" style={{ marginTop: "15px" }}>
                         <img style={{ maxWidth: "180px", maxHeight: "75px" }} src={logo} alt="Logo" />
                       </div>
-                      <p style={{ color: "white" }}>
+                      <p style={{ color: "#00bcd5" }}>
                       EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad
                       </p>
@@ -418,7 +419,7 @@ mega menu --> */}
 
             <div class="container-fluid footer-bottom" style={{ backgroundColor: "#ed225c" }}>
               <div class="justify-content-center">
-              <p class="text-white">© 2021 - Easyrishta All Right Reserved </p>
+                <p class="text-white">© 2021 - Easyrishta All Right Reserved </p>
               </div>
             </div>
           </div>

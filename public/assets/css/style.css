@@ -890,7 +890,12 @@ width: 200px !important;
 .forcefield img {
   max-width: 160px;
 }
+.login-btn {
+  width: 120px !important;
 
+  background-color: rgb(237, 34, 92) !important;
+  border-radius: 25px !important;
+}
 /*--------------------------------------------------------------------
   Contact Us / Register Us Forms
 ---------------------------------------------------------------------*/

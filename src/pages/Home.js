@@ -87,7 +87,6 @@ class Home extends React.Component {
 
   // When the user clicks on the button, open the modal
    htmlModal = () => {
-
    this.setState({ isSidebarOpen: true });
   }
   registerModalClose = () => {
@@ -1220,12 +1219,12 @@ Get yourself registered with our system, either online or by visiting our office
                       <h4 style={{ color: "#ed225c" }}>Company</h4>
                       <ul class="list-unstyled">
                         <li>
-                          <Link to={"/"} style={{ color: "white" }}>
+                          <Link to={"/"} style={{ color: "#00bcd5" }}>
                             Home
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/About us"} style={{ color: "white" }}>
+                          <Link to={"/About us"} style={{ color: "#00bcd5" }}>
                             About Us
                           </Link>
                         </li>
@@ -1243,12 +1242,12 @@ Get yourself registered with our system, either online or by visiting our office
                       <h4 style={{ color: "#ed225c" }}>Policies</h4>
                       <ul class="list-unstyled">
                         <li>
-                          <Link to={"/privacypolicy"} style={{ color: "white" }}>
+                          <Link to={"/privacypolicy"} style={{ color: "#00bcd5" }}>
                             Privacy and Policy
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/termscondition"} style={{ color: "white" }}>
+                          <Link to={"/termscondition"} style={{ color: "#00bcd5" }}>
                             Terms & Conditions
                           </Link>
                         </li>
@@ -1281,7 +1280,7 @@ Get yourself registered with our system, either online or by visiting our office
                       <ul class="list-unstyled">
 
                         <li>
-                          <Link to={"/Contact"} style={{ color: "white" }}>
+                          <Link to={"/Contact"} style={{ color: "#00bcd5" }}>
                             Contact Us
                           </Link>
                         </li>
@@ -1298,7 +1297,7 @@ Get yourself registered with our system, either online or by visiting our office
                       <div class="footer-logo mb-2" style={{ marginTop: "15px" }}>
                         <img style={{ maxWidth: "180px", maxHeight: "75px" }} src={logo} alt="Logo" />
                       </div>
-                      <p style={{ color: "white" }}>
+                      <p style={{ color: "#00bcd5" }}>
                       EasyRishta, 369 D, Street 17 <br />
                         PWD Housing Society, Islamabad
                       </p>
@@ -1356,7 +1355,7 @@ Get yourself registered with our system, either online or by visiting our office
 
 <Modal  show={this.state.showModal} >
         <Modal.Header >
-        <Button variant="secondary"  size="lg" >Login </Button>
+   <h1></h1>
 
           <Button  variant="outline-light"  onClick={this.closeModal.bind(this)}>
            <img style={{width:"20px"}} src={crossIcon}></img>
@@ -1377,6 +1376,7 @@ Get yourself registered with our system, either online or by visiting our office
         ) : (
           
           <Form>
+        
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" id="email" placeholder="Enter email" />
@@ -1389,9 +1389,11 @@ Get yourself registered with our system, either online or by visiting our office
           </Form.Group>
           
           {/* onClick={this.onLogin.bind(this)} */}
-          <Button  style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.showPreloader}>
-          Submit
+          <div className="text-center">
+          <Button className="login-btn" type="button"   onClick={this.showPreloader}>
+        Login
           </Button>
+          </div>
           </Form>
         )
         }
@@ -1411,7 +1413,7 @@ Get yourself registered with our system, either online or by visiting our office
 
 <Modal  show={this.state.isSidebarOpen} >
         <Modal.Header >
-          <Button variant="secondary" size="lg"  > Register</Button>
+          <h1></h1>
           <Button  variant="outline-light"  onClick={this.registerModalClose}>
            <img style={{width:"20px"}} src={crossIcon}></img>
           </Button>
@@ -1440,9 +1442,11 @@ Get yourself registered with our system, either online or by visiting our office
   </Form.Group>
 
 
-  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.showRegisterPreloader}>
-    Submit
+ <div className="text-center">
+ <Button className="login-btn" type="button"   onClick={this.showRegisterPreloader}>
+    Register
   </Button>
+ </div>
         </Form>  ) }
         </Modal.Body>
         <Modal.Footer>
