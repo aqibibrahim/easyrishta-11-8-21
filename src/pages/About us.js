@@ -2,8 +2,50 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../src/pages/images/350x150-logo.png";
 import about1 from "./../../src/pages/images/pic1.png";
-
+import crossIcon from "./images/cross-icons.png";
+import { Modal, Button ,Form} from 'react-bootstrap';
 class about extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+      loading: false,
+      error: null,
+      hidediv: false,
+      LoginTab: false,
+      isSidebarOpen: false,
+      showRegisterModal : false,
+      signInPreloader : false,
+      registerPreloader : false
+    };
+
+    // this.showPreloader = this.showPreloader.bind(this);
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
+    // this.startLoading = this.startLoading.bind(this);
+    // this.finishLoading = this.finishLoading.bind(this);
+    // this.selectSection = this.selectSection.bind(this)
+  }
+  openModal() {
+
+    this.setState({
+      showModal: true,
+    });
+    //this.handleRegisterClick()
+  }
+
+  closeModal() {
+    this.setState({
+      showModal: false,
+      error: null,
+    });
+  }
+  showModal = () => {
+    this.setState({ show: true });
+  };
+  // ----------------------
   render() {
     const mystyle = {
       color: "white",
@@ -1134,7 +1176,116 @@ mega menu --> */}
         </div>
 
         {/* Html-modal */}
+{/* Custom-modal */}
 
+<Modal  show={this.state.showModal} >
+        <Modal.Header >
+   <h1></h1>
+
+          <Button  variant="outline-light"  onClick={this.closeModal.bind(this)}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button>
+        </Modal.Header>
+        <div>
+
+        </div>
+        <Modal.Body className="model-content-wrapper">
+
+        {this.state.signInPreloader ? (
+
+ <div className="spinner-wrapper text-center" >
+ <div className="spinner-border" role="status">
+ <span className="sr-only">Loading...</span>
+</div>
+</div>
+        ) : (
+          
+          <Form>
+        
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" id="email" placeholder="Enter email" />
+          
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" id="password" placeholder="Password" />
+          </Form.Group>
+          
+          {/* onClick={this.onLogin.bind(this)} */}
+          <div className="text-center">
+          <Button className="login-btn" type="button"   onClick={this.showPreloader}>
+        Login
+          </Button>
+          </div>
+          </Form>
+        )
+        }
+       </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
+{/* Custom-register-modal */}
+
+<Modal  show={this.state.isSidebarOpen} >
+        <Modal.Header >
+          <h1></h1>
+          <Button  variant="outline-light"  onClick={this.registerModalClose}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button>
+        </Modal.Header>
+
+        <Modal.Body className="model-content-wrapper">
+        {this.state.registerPreloader  ? (
+
+<div className="spinner-wrapper text-center" >
+<div className="spinner-border" role="status">
+<span className="sr-only">Loading...</span>
+</div>
+</div>
+       ) : (
+        <Form>
+
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" id="email" placeholder="Enter email" />
+
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" id="password" placeholder="Password" />
+  </Form.Group>
+   
+ 
+
+ <div className="text-center">
+ <Button className="login-btn" type="button"   onClick={this.showRegisterPreloader}>
+    Register
+  </Button>
+ </div>
+        </Form>  ) }
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
       </div>
     );
   }

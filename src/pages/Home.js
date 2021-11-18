@@ -54,12 +54,6 @@ class Home extends React.Component {
     //this.handleRegisterClick()
   }
 
-  selectSection(){
-
-    this.setState({
-        showModal: true,
-      });
-  }
   closeModal() {
     this.setState({
       showModal: false,
@@ -69,6 +63,15 @@ class Home extends React.Component {
   showModal = () => {
     this.setState({ show: true });
   };
+  // ----------------------
+
+  selectSection(){
+
+    this.setState({
+        showModal: true,
+      });
+  }
+ 
 
   openRegisterModal() {
     this.setState({  showRegisterModal: true });
