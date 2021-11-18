@@ -30,8 +30,8 @@ class Home extends React.Component {
       showRegisterModal : false,
       signInPreloader : false,
       registerPreloader : false
-    }; 
- 
+    };
+
     this.showPreloader = this.showPreloader.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -53,7 +53,7 @@ class Home extends React.Component {
     });
     //this.handleRegisterClick()
   }
- 
+
   selectSection(){
 
     this.setState({
@@ -105,7 +105,7 @@ class Home extends React.Component {
   //   }
   // }
 
-  
+
   showPreloader = () => {
     this.onLogin();
     this.setState({ signInPreloader: true});
@@ -121,7 +121,7 @@ class Home extends React.Component {
     console.log("email: " + document.querySelector("#email").value);
     console.log("password: " + document.querySelector("#password").value);
     // this.setState({ loading: true });
-  
+
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     await auth.signInWithEmailAndPassword(email, password);
@@ -165,7 +165,7 @@ class Home extends React.Component {
 
 
   async onRegister() {
-    
+
     console.log("__onRegister__");
     // console.log("login: " + document.querySelector("#login").value);
     console.log("email: " + document.querySelector("#email").value);
@@ -311,7 +311,7 @@ class Home extends React.Component {
 
 
         <header id="header" class="dark">
-        
+
 
         <div>
           {/* <!-- menu start --> */}
@@ -331,13 +331,13 @@ class Home extends React.Component {
                       </li>
                     </ul>
                     </div>
-                    
+
                     <div className="col-md-6 col-4 ">
-                 
+
                     <div class="menu-links ">
                       {/* <!-- active class --> */}
 
-                    
+
                         <button
                           onClick={this.htmlModal}
                           style={mystyle}
@@ -349,8 +349,8 @@ class Home extends React.Component {
                         >
                           Register
                         </button>
-                      
-                        
+
+
                           <button
                           //   onClick={this.openModal}
                           onClick={this.openModal}
@@ -365,7 +365,7 @@ class Home extends React.Component {
                           </button>
                           {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
 
-                        
+
                     </div>
                     </div>
                   </div>
@@ -1196,7 +1196,8 @@ Get yourself registered with our system, either online or by visiting our office
                     <div class="address-block">
                       <i class="fa fa-phone" aria-hidden="true"></i>
                       <a href="tel:+923111 222 541" style={{ color: "black" }}>
-                        +92 331 338 7710
+                        +92 336 922 9390
+                        051 271 2604
                       </a>
                     </div>
                   </div>
@@ -1378,20 +1379,20 @@ Get yourself registered with our system, either online or by visiting our office
 </div>
 </div>
         ) : (
-          
+
           <Form>
         
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" id="email" placeholder="Enter email" />
-          
+
           </Form.Group>
-          
+
           <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" id="password" placeholder="Password" />
           </Form.Group>
-          
+
           {/* onClick={this.onLogin.bind(this)} */}
           <div className="text-center">
           <Button className="login-btn" type="button"   onClick={this.showPreloader}>
