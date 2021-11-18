@@ -214,7 +214,9 @@ class Home extends React.Component {
             //   pathname: "/register",
             // });
             window.location.href = '/register';
-          } catch (error) {}
+          } catch (error) {
+            alert(error)
+          }
         }
         // this.openModal();
         // veriry data
