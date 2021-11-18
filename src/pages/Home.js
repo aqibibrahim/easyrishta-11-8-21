@@ -176,6 +176,7 @@ class Home extends React.Component {
     const password = document.querySelector("#password").value;
 
     if (!email || !password) {
+    
       this.setState({
         error: true,
       });
@@ -215,7 +216,7 @@ class Home extends React.Component {
             window.location.href = '/register';
           } catch (error) {}
         }
-        this.openModal();
+        // this.openModal();
         // veriry data
 
         db.collection("users")
@@ -255,6 +256,7 @@ class Home extends React.Component {
 
 
   onLoginFail(method, response) {
+    alert("The email address is already in use by another account");
     console.log("logging failed with " + method);
     this.setState({
       error: response,
@@ -1440,7 +1442,8 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" id="password" placeholder="Password" />
   </Form.Group>
-
+   
+ 
 
  <div className="text-center">
  <Button className="login-btn" type="button"   onClick={this.showRegisterPreloader}>
