@@ -19,33 +19,66 @@ class about extends React.Component {
 mega menu --> */}
 
           <div>
-            {/* <!-- menu start --> */}
-            <nav id="menu" class="mega-menu">
-              {/*  <!-- menu list items container --> */}
-              <section class="menu-list-items">
-                <div class="container ">
-                  <div class="row">
-                    <div class="col-md-12">
-                      {/*  <!-- menu logo --> */}
-                      <ul class="menu-logo">
-                        <li>
-                          <a href="/">
-                            <img
-                              src={logo}
-                              alt="Logo"
-                              style={{ maxHeight: "100px" }}
-                            />
-                          </a>
-                        </li>
-                      </ul>
-                      {/* <!-- menu links --> */}
-                     
+             {/* <!-- menu start --> */}
+          <nav id="menu" class="mega-menu-custom">
+            {/* <!-- menu list items container --> */}
+            <section class="menu-list-items">
+              <div class="container">
+                <div class=" ">
+                  <div class="d-flex justify-content-between">
+                    {/* <!-- menu logo --> */}
+                    <div className="col-md-6 col-4">
+                    <ul class="menu-logo">
+                      <li>
+                        <a href="/">
+                          <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+                    
+                    <div className="col-md-6 col-4 ">
+                 
+                    <div class="menu-links ">
+                      {/* <!-- active class --> */}
+
+                    
+                        <button
+                          onClick={this.htmlModal}
+                          style={mystyle}
+                          class="registerMenuButton sign-btn button btn-lg btn-colored mr-2 full-rounded "
+                          style={{
+                            color: "white",
+                            backgroundColor: "rgb(237, 34, 92)",
+                          }}
+                        >
+                          Register
+                        </button>
+                      
+                        
+                          <button
+                          //   onClick={this.openModal}
+                          onClick={this.openModal}
+                            // style={mystyle}
+                            className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
+                            style={{
+                              color: "white",
+                              backgroundColor: "rgb(237, 34, 92)",
+                            }}
+                          >
+                            Login
+                          </button>
+                          {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
+
+                        
+                    </div>
                     </div>
                   </div>
                 </div>
-              </section>
-            </nav>
-            {/*  <!-- menu end --> */}
+              </div>
+            </section>
+          </nav>
+          {/* <!-- menu end --> */}
           </div>
         </header>
 
@@ -1099,6 +1132,9 @@ mega menu --> */}
             </div>
           </div>
         </div>
+
+        {/* Html-modal */}
+
       </div>
     );
   }

@@ -290,9 +290,7 @@ export default function Char() {
                 <i class="fas fa-bars"></i>
               </a>
             </li> */}
-          <li class="nav-items logout-btn">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
-            </li>
+         
           </ul>
 
           {/* <!-- SEARCH FORM --> */}
@@ -349,7 +347,9 @@ export default function Char() {
                 </a>
               </div> */}
             </li>
-           
+            <li class="nav-items logout-btn">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            </li>
           </ul>
         </nav>
         {/* <!-- /.navbar -->

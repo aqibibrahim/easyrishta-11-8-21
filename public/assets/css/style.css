@@ -2278,6 +2278,7 @@ footer .footer-middle .list-unstyled a {
   color: white;
   text-decoration: underline;
   text-align: center;
+  font-weight: 600;
 }
 
 footer .footer-middle h4 {
