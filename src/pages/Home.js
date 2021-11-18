@@ -179,10 +179,11 @@ class Home extends React.Component {
     const password = document.querySelector("#password").value;
 
     if (!email || !password) {
-    
-      this.setState({
-        error: true,
-      });
+        alert("Please enter data")
+        this.setState({ registerPreloader: false});
+      // this.setState({
+      //   error: true,
+      // });
     } else {
       //    ------------- Faizan's Code Start  -----------------
       ////////////// ---------------------   52PCT3d9zlT8FpAhourLZCsCmuB2
@@ -213,16 +214,14 @@ class Home extends React.Component {
             });
             localStorage.setItem("email", email);
             localStorage.setItem("userid", user.uid);
-            // this.props.history.push({
-            //   pathname: "/register",
-            // });
+            this.setState({ registerPreloader: false});
+
             window.location.href = '/register';
           } catch (error) {
-            alert(error)
+
           }
         }
-        // this.openModal();
-        // veriry data
+
 
         db.collection("users")
           .doc(user.uid)
@@ -230,7 +229,13 @@ class Home extends React.Component {
           .then((querySnapshot) => {
             console.log({ VarifyData: querySnapshot });
           });
-      });
+      }).catch((error)=>{
+        alert(error.message)
+        this.setState({ registerPreloader: false});
+      }
+
+
+      );
 
       // Verify is ueser save or not
 
@@ -1200,8 +1205,13 @@ Get yourself registered with our system, either online or by visiting our office
                       <i class="fa fa-phone" aria-hidden="true"></i>
                       <a href="tel:+923111 222 541" style={{ color: "black" }}>
                         +92 336 922 9390
-                        051 271 2604
+
                       </a>
+                      <a href="tel:+923111 222 541" style={{ color: "black" }}>
+                      051 271 2604
+
+                      </a>
+
                     </div>
                   </div>
                 </div>
@@ -1300,7 +1310,7 @@ Get yourself registered with our system, either online or by visiting our office
                   <div class="col-lg-2 col-sm-12">
 
                     <div class="footer-pad">
-                      <h4 style={{ color: "#ed225c" }}>Contact Us</h4>
+                      <h4 style={{ color: "#ed225c" , fontWeight:"bold" }}>Contact Us</h4>
 
                       <div class="footer-logo mb-2" style={{ marginTop: "15px" }}>
                         <img style={{ maxWidth: "180px", maxHeight: "75px" }} src={logo} alt="Logo" />
@@ -1384,7 +1394,7 @@ Get yourself registered with our system, either online or by visiting our office
         ) : (
 
           <Form>
-        
+
           <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" id="email" placeholder="Enter email" />
@@ -1448,8 +1458,8 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Label>Password</Form.Label>
     <Form.Control type="password" id="password" placeholder="Password" />
   </Form.Group>
-   
- 
+
+
 
  <div className="text-center">
  <Button className="login-btn" type="button"   onClick={this.showRegisterPreloader}>
