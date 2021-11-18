@@ -39,32 +39,7 @@ mega menu --> */}
                         </li>
                       </ul>
                       {/* <!-- menu links --> */}
-                      <ul class="menu-links">
-                        {/*   <!-- active class --> */}
-
-                        <li>
-                          <Link
-                            to={"/registeration"}
-                            class="registerMenuButton button btn-lg btn-colored full-rounded "
-                            style={{
-                              color: "white",
-                              backgroundColor: "#ed225c",
-                            }}
-                          >
-                            Register{" "}
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link
-                            to={"/login"}
-                            style={mystyle}
-                            class="loginMenuButton button btn-lg btn-colored full-rounded "
-                          >
-                            Login
-                          </Link>
-                        </li>
-                      </ul>
+                     
                     </div>
                   </div>
                 </div>
@@ -83,7 +58,7 @@ mega menu --> */}
         <section
           class="inner-intro intro-page-top bg bg-fixed bg-overlay-black-60"
           style={{
-            backgroundImage: "url(assets/images/inner-banners/office.jpg)",
+            backgroundImage: "url(assets/images/inner-banners/about.jpg)",
           }}
         >
           <div class="container">

@@ -39,34 +39,7 @@ mega menu --> */}
                         </li>
                       </ul>
                       {/* <!-- menu links --> */}
-                      <ul class="menu-links  ">
-                        {/*   <!-- active class --> */}
-
-                        <li>
-                          <Link
-                            to={"/registeration"}
-                            // style={mystyle}
-                            class="registerMenuButton button btn-lg btn-colored full-rounded "
-                            style={{
-                              color: "white",
-                              backgroundColor: "#ed225c",
-                            }}
-                          >
-                            Register{" "}
-                          </Link>
-                        </li>
-
-                        <li>
-                          <Link
-                            to={"/login"}
-                            style={mystyle}
-                            class="loginMenuButton button btn-lg btn-colored full-rounded "
-                          >
-                            {" "}
-                            Login{" "}
-                          </Link>
-                        </li>
-                      </ul>
+                    
                     </div>
                   </div>
                 </div>

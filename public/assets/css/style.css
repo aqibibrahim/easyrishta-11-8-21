@@ -824,10 +824,14 @@ h1.title.divider {
 /*---------------------------------------------------------------------
   Footer
 ---------------------------------------------------------------------*/
+.footer .footer-content {
+width: 200px !important;
+}
 .footer {
   background: url(../images/pattern/pattern2.html) no-repeat 0 0;
   color: #c5c5c5;
 }
+
 .footer .title {
   position: relative;
   color: #fff;

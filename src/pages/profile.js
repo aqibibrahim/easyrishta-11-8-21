@@ -1100,12 +1100,12 @@ export default function Profile() {
         </div>
         {/* <!-- /.content-wrapper --> */}
        
-        <footer class="main-footer">
-          <strong>
-            Copyright &copy; 2021{" "}
-            <a href=""> Easyrishta</a>.
-          </strong>
-      
+        <footer class="main-footer text-center">
+       <div class="">
+            
+            <h6 href="">Copyright &copy; 2021  Easyrishta All Right Reserved</h6>.
+            </div>
+
         </footer>
         {/*   <!-- Control Sidebar --> */}
         <aside class="control-sidebar control-sidebar-dark">

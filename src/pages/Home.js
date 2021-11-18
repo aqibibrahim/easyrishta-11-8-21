@@ -28,7 +28,8 @@ class Home extends React.Component {
       LoginTab: false,
       isSidebarOpen: false,
       showRegisterModal : false,
-      signInPreloader : false
+      signInPreloader : false,
+      registerPreloader : false
     }; 
  
     this.showPreloader = this.showPreloader.bind(this);
@@ -110,6 +111,10 @@ class Home extends React.Component {
     this.onLogin();
     this.setState({ signInPreloader: true});
    }
+  showRegisterPreloader = () => {
+    this.setState({ registerPreloader: true});
+    this.onRegister();
+   }
 
   async onLogin() {
     // this.showPreloader();
@@ -160,7 +165,8 @@ class Home extends React.Component {
   }
 
 
-  async onRegister() {  
+  async onRegister() {
+    
     console.log("__onRegister__");
     // console.log("login: " + document.querySelector("#login").value);
     console.log("email: " + document.querySelector("#email").value);
@@ -1411,14 +1417,17 @@ Get yourself registered with our system, either online or by visiting our office
           </Button>
         </Modal.Header>
 
-        <Modal.Body>
+        <Modal.Body className="model-content-wrapper">
+        {this.state.registerPreloader  ? (
 
+<div className="spinner-wrapper text-center" >
+<div className="spinner-border" role="status">
+<span className="sr-only">Loading...</span>
+</div>
+</div>
+       ) : (
         <Form>
-  {/* <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Username</Form.Label>
-    <Form.Control type="email" id="username" placeholder="Enter Username" />
 
-  </Form.Group> */}
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label>Email address</Form.Label>
     <Form.Control type="email" id="email" placeholder="Enter email" />
@@ -1430,11 +1439,11 @@ Get yourself registered with our system, either online or by visiting our office
     <Form.Control type="password" id="password" placeholder="Password" />
   </Form.Group>
 
-  {/* onClick={this.onLogin.bind(this)} */}
-  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.onRegister}>
+
+  <Button style={{backgroundColor:"#d96c94"}} type="button"   onClick={this.showRegisterPreloader}>
     Submit
   </Button>
-</Form>
+        </Form>  ) }
         </Modal.Body>
         <Modal.Footer>
           {/* <Button variant="secondary" onClick={}>
