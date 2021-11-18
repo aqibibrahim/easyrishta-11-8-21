@@ -41,7 +41,7 @@ mega menu --> */}
                     <div class="menu-links ">
                       {/* <!-- active class --> */}
 
-                    
+{/*                     
                         <button
                           onClick={this.htmlModal}
                           style={mystyle}
@@ -52,13 +52,12 @@ mega menu --> */}
                           }}
                         >
                           Register
-                        </button>
+                        </button> */}
                       
-                        
+{/*                         
                           <button
-                          //   onClick={this.openModal}
                           onClick={this.openModal}
-                            // style={mystyle}
+                      
                             className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
                             style={{
                               color: "white",
@@ -66,7 +65,7 @@ mega menu --> */}
                             }}
                           >
                             Login
-                          </button>
+                          </button> */}
                           {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
 
                         

@@ -4,6 +4,7 @@ import logo from "./../../src/pages/images/350x150-logo.png";
 import about1 from "./../../src/pages/images/pic1.png";
 import crossIcon from "./images/cross-icons.png";
 import { Modal, Button ,Form} from 'react-bootstrap';
+import { auth, db } from "../../src/pages/firebase-config";
 class about extends React.Component {
 
   constructor(props) {
@@ -46,6 +47,227 @@ class about extends React.Component {
     this.setState({ show: true });
   };
   // ----------------------
+
+  selectSection(){
+
+    this.setState({
+        showModal: true,
+      });
+  }
+ 
+
+  openRegisterModal() {
+    this.setState({  showRegisterModal: true });
+  }
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+
+  // let modal = document.getElementById("myModal");
+
+  // // Get the button that opens the modal
+  // var btn = document.getElementById("myBtn");
+
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the button, open the modal
+   htmlModal = () => {
+   this.setState({ isSidebarOpen: true });
+  }
+  registerModalClose = () => {
+    this.setState({ isSidebarOpen: false });
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   modal.style.display = "none";
+  // }
+
+  // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function(event) {
+  //   if (event.target == modal) {
+  //     modal.style.display = "none";
+  //   }
+  // }
+
+
+  showPreloader = () => {
+    this.onLogin();
+    this.setState({ signInPreloader: true});
+   }
+  showRegisterPreloader = () => {
+    this.setState({ registerPreloader: true});
+    this.onRegister();
+   }
+
+  async onLogin() {
+    // this.showPreloader();
+    console.log("__onLogin__");
+    console.log("email: " + document.querySelector("#email").value);
+    console.log("password: " + document.querySelector("#password").value);
+    // this.setState({ loading: true });
+
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    await auth.signInWithEmailAndPassword(email, password);
+    console.log(auth.currentUser);
+    db.collection("users")
+      .where("email", "==", email)
+      .get()
+      .then((querySnapshot) => {
+
+
+
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // this.setState({ loading: false });
+          console.log(doc.id, " => ", doc.data());
+          localStorage.setItem("email", email);
+          window.location.href = '/profile';
+          // this.props.history.push({
+          //   pathname: "/profile",
+          //   //data: doc.data() // your data array of objects
+          // });
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
+    //  getprofile(email);
+    if (!email || !password) {
+      this.setState({
+        error: true,
+      });
+    }
+    //  else {
+    //   this.onLoginSuccess("form");
+    // }
+  }
+  onLoginSuccess(method, response) {
+    console.log("logged successfully with " + method);
+  }
+
+
+  async onRegister() {
+
+    console.log("__onRegister__");
+    // console.log("login: " + document.querySelector("#login").value);
+    console.log("email: " + document.querySelector("#email").value);
+    console.log("password: " + document.querySelector("#password").value);
+
+    // const login = document.querySelector("#login").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+
+    if (!email || !password) {
+    
+      this.setState({
+        error: true,
+      });
+    } else {
+      //    ------------- Faizan's Code Start  -----------------
+      ////////////// ---------------------   52PCT3d9zlT8FpAhourLZCsCmuB2
+      await auth.createUserWithEmailAndPassword(email, password).then(async (res) => {
+        let user = res.user;
+
+        // await db.collection('users').doc(user.uid).delete();
+
+        const userRef = db.doc(`users/${user.uid}`);
+
+        // Go and fetch a document from that location.
+        const snapshot = await userRef.get();
+
+        // If there isn't a document for that user. Let's use information
+        // that we got from either Google or our sign up form.
+        if (!snapshot.exists) {
+          const createdAt = new Date();
+          const token = "ER-" + Math.floor(Math.random() * (100000 - 101) + 101);
+          try {
+            await userRef.set({
+              email,
+              password,
+              plan: "basic",
+              playerstatus: "available",
+              registration_token: token,
+              source: "custom",
+              createdAt,
+            });
+            localStorage.setItem("email", email);
+            localStorage.setItem("userid", user.uid);
+            // this.props.history.push({
+            //   pathname: "/register",
+            // });
+            window.location.href = '/register';
+          } catch (error) {
+            alert(error)
+          }
+        }
+        // this.openModal();
+        // veriry data
+
+        db.collection("users")
+          .doc(user.uid)
+          .get()
+          .then((querySnapshot) => {
+            console.log({ VarifyData: querySnapshot });
+          });
+      });
+
+      // Verify is ueser save or not
+
+      //    ------------- Faizan Code End  -----------------
+
+      // this.onLoginSuccess("form");
+    }
+  }
+
+  onRecoverPassword() {
+    console.log("__onFotgottenPassword__");
+    console.log("email: " + document.querySelector("#email").value);
+
+    const email = document.querySelector("#email").value;
+
+    if (!email) {
+      this.setState({
+        error: true,
+        recoverPasswordSuccess: false,
+      });
+    } else {
+      this.setState({
+        error: null,
+        recoverPasswordSuccess: true,
+      });
+    }
+  }
+
+
+  onLoginFail(method, response) {
+    alert("The email address is already in use by another account");
+    console.log("logging failed with " + method);
+    this.setState({
+      error: response,
+    });
+  }
+
+  startLoading() {
+    this.setState({ loading: true, });
+  }
+
+  finishLoading() {
+    this.setState({
+      loading: false,
+    });
+  }
+
+  afterTabsChange() {
+    this.setState({
+      error: null,
+    });
+  }
+
+  // ----------------------
   render() {
     const mystyle = {
       color: "white",
@@ -81,8 +303,8 @@ mega menu --> */}
                     
                     <div className="col-md-6 col-4 ">
                  
-                    <div class="menu-links ">
-                      {/* <!-- active class --> */}
+                    {/* <div class="menu-links ">
+            
 
                     
                         <button
@@ -99,9 +321,9 @@ mega menu --> */}
                       
                         
                           <button
-                          //   onClick={this.openModal}
+                        
                           onClick={this.openModal}
-                            // style={mystyle}
+                      
                             className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
                             style={{
                               color: "white",
@@ -110,10 +332,12 @@ mega menu --> */}
                           >
                             Login
                           </button>
-                          {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
+             
 
                         
-                    </div>
+                    </div> */}
+
+                    
                     </div>
                   </div>
                 </div>
