@@ -1366,8 +1366,8 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-2 col-form-label">Height:</label>
-                      <div class="col-10">
+                      <label class="col-12 col-md-2 col-form-label">Height:</label>
+                      <div class="col-12 col-md-10">
                         <select
                           name="height"
                           class="form-control "
@@ -1409,8 +1409,8 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-2 col-form-label">Profession:</label>
-                      <div class="col-10">
+                      <label class=" col-12 col-md-2 col-form-label">Profession:</label>
+                      <div class="col-12 col-md-10">
                         <select
                           name="profession"
                           class="form-control "
@@ -1430,10 +1430,10 @@ class register extends React.Component {
                       </div>
                     </div>
                     <div class="form-group form-radio row">
-                      <label for="gender" class="col-2 col-form-label">
+                      <label for="gender" class="col-12 col-md-2 col-form-label">
                         Gender
                       </label>
-                      <div class="col-10">
+                      <div class="col-12 col-md-2">
                         <div class="form-radio-flex form-flex">
                           <input
                             type="radio"
@@ -1486,7 +1486,7 @@ class register extends React.Component {
                       <label class="col-12  col-md-2 col-form-label">
                         Higher Education:
                       </label>
-                      <div class="col-10">
+                      <div class="col-12  col-md-10">
                         <select
                           name="education"
                           class="form-control"
@@ -1545,8 +1545,8 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-2 col-form-label"> Interest </label>
-                      <div class="col-10">
+                      <label class="col-12 col-md-2 col-form-label"> Interest </label>
+                      <div class="col-12 col-md-2">
                         <select
                           name="hobbies"
                           class="form-control"
@@ -1563,8 +1563,8 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-2 col-form-label">Nationality:</label>
-                      <div class="col-10">
+                      <label class="col-12 col-md-2 col-form-label">Nationality:</label>
+                      <div class="col-12 col-md-2">
                         <select
                           name="nationality"
                           class="form-control"
@@ -1583,8 +1583,8 @@ class register extends React.Component {
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label class="col-md-2 col-12 col-form-label">Job Location:</label>
-                      <div class="col-10">
+                      <label class="col-12 col-md-2 col-form-label">Job Location:</label>
+                      <div class="col-12 col-md-2">
                         <input
                           type="text"
                           class="form-control"
@@ -1677,7 +1677,7 @@ class register extends React.Component {
                         CNIC Images
                       </label>
 
-                      <div class="col-md-3 col-12">
+                      <div class="col-md-4 col-12">
                         <img
                           alt="User pic"
                           // src={
@@ -1702,7 +1702,7 @@ class register extends React.Component {
                           onChange={this.handleNicFrontChange}
                         />
                       </div>
-                      <div class="col-md-3 col-12">
+                      <div class="col-md-4 col-12">
                         <img
                           alt="user pic" src={
                             this.state.nicBack !== 0 && this.state.nicBack !== 1
