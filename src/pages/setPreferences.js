@@ -785,11 +785,11 @@ export default function Preferences() {
                         >
                           <label
                             for="example-date-input"
-                            class="col-2 col-form-label"
+                            class="col-md-2 col-12 col-form-label"
                           >
                             Gender
                           </label>
-                          <div class="col-10">
+                          <div class="col-md-10 col-12">
                             <div class="form-radio-flex form-flex">
                               <input
                                 type="radio"
@@ -816,10 +816,10 @@ export default function Preferences() {
                         </div>
 
                         <div class="form-group row">
-                          <label class="col-2 col-form-label">
+                          <label class="col-12 col-md-2 col-form-label">
                             Minimum Height:
                           </label>
-                          <div class="col-10">
+                          <div class="col-12 col-md-10">
                             <select
                               name="minmumheight"
                               class="form-control "
@@ -864,10 +864,10 @@ export default function Preferences() {
                         </div>
 
                         <div class="form-group row">
-                          <label class="col-2 col-form-label">
+                          <label class="col-12 col-md-2 col-form-label">
                             Maximum Height:
                           </label>
-                          <div class="col-10">
+                          <div class="col-12 col-md-10">
                             <select
                               name="maximumheight"
                               class="form-control "
@@ -994,10 +994,10 @@ export default function Preferences() {
                           </div>
                         </div>
                         <div class="form-group row">
-                          <label class="col-2 col-form-label">
+                          <label class="col-12 col-md-2 col-form-label">
                             Higher Education:
                           </label>
-                          <div class="col-10">
+                          <div class="col-12 col-md-10">
                             <select
                               name="education"
                               class="form-control"
@@ -1027,10 +1027,10 @@ export default function Preferences() {
                         </div>
 
                         <div class="form-group row">
-                          <label class="col-2 col-form-label">
+                          <label class="col-12 col-md-2  col-form-label">
                             Nationality:
                           </label>
-                          <div class="col-10">
+                          <div class="col-md-10 col-12">
                             <select
                               name="nationality"
                               class="form-control"
