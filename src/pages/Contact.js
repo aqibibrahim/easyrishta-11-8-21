@@ -1,7 +1,245 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./../../src/pages/images/350x150-logo.png";
+
+import crossIcon from "./images/cross-icons.png";
+import { Modal, Button ,Form} from 'react-bootstrap';
+import { auth, db } from "../../src/pages/firebase-config";
 class Contact extends React.Component {
+
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+      loading: false,
+      error: null,
+      hidediv: false,
+      LoginTab: false,
+      isSidebarOpen: false,
+      showRegisterModal : false,
+      showLoginModal : false,
+      signInPreloader : false,
+      registerPreloader : false
+    };
+    
+    this.showPreloader = this.showPreloader.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.startLoading = this.startLoading.bind(this);
+    this.finishLoading = this.finishLoading.bind(this);
+    this.selectSection = this.selectSection.bind(this)
+  }
+
+
+  closeModal() {
+    this.setState({
+      showLoginModal: false,
+      error: null,
+    });
+  }
+ 
+
+  selectSection(){
+
+    this.setState({
+        showModal: true,
+      });
+  }
+ 
+
+  openRegisterModal() {
+    this.setState({  showRegisterModal: true });
+  }
+  hideModal = () => {
+    this.setState({ show: false });
+  };
+  openModal() {
+    this.setState({  showLoginModal: true });
+      }
+      htmlModal = () => {
+        this.setState({ isSidebarOpen: true });
+       }
+       registerModalClose = () => {
+         this.setState({ isSidebarOpen: false });
+       }
+     
+     
+       showPreloader = () => {
+         this.onLogin();
+         this.setState({ signInPreloader: true});
+        }
+       showRegisterPreloader = () => {
+         this.setState({ registerPreloader: true});
+         this.onRegister();
+        }
+     
+       async onLogin() {
+         // this.showPreloader();
+         console.log("__onLogin__");
+         console.log("email: " + document.querySelector("#email").value);
+         console.log("password: " + document.querySelector("#password").value);
+         // this.setState({ loading: true });
+     
+         const email = document.querySelector("#email").value;
+         const password = document.querySelector("#password").value;
+         await auth.signInWithEmailAndPassword(email, password);
+         console.log(auth.currentUser);
+         db.collection("users")
+           .where("email", "==", email)
+           .get()
+           .then((querySnapshot) => {
+     
+     
+     
+             querySnapshot.forEach((doc) => {
+               // doc.data() is never undefined for query doc snapshots
+               // this.setState({ loading: false });
+               console.log(doc.id, " => ", doc.data());
+               localStorage.setItem("email", email);
+               window.location.href = '/profile';
+               // this.props.history.push({
+               //   pathname: "/profile",
+               //   //data: doc.data() // your data array of objects
+               // });
+             });
+           })
+           .catch((error) => {
+             console.log("Error getting documents: ", error);
+           });
+     
+         //  getprofile(email);
+         if (!email || !password) {
+           this.setState({
+             error: true,
+           });
+         }
+         //  else {
+         //   this.onLoginSuccess("form");
+         // }
+       }
+       onLoginSuccess(method, response) {
+         console.log("logged successfully with " + method);
+       }
+     
+     
+       async onRegister() {
+     
+         console.log("__onRegister__");
+         // console.log("login: " + document.querySelector("#login").value);
+         console.log("email: " + document.querySelector("#email").value);
+         console.log("password: " + document.querySelector("#password").value);
+     
+         // const login = document.querySelector("#login").value;
+         const email = document.querySelector("#email").value;
+         const password = document.querySelector("#password").value;
+     
+         if (!email || !password) {
+         
+           this.setState({
+             error: true,
+           });
+         } else {
+           //    ------------- Faizan's Code Start  -----------------
+           ////////////// ---------------------   52PCT3d9zlT8FpAhourLZCsCmuB2
+           await auth.createUserWithEmailAndPassword(email, password).then(async (res) => {
+             let user = res.user;
+     
+             // await db.collection('users').doc(user.uid).delete();
+     
+             const userRef = db.doc(`users/${user.uid}`);
+     
+             // Go and fetch a document from that location.
+             const snapshot = await userRef.get();
+     
+             // If there isn't a document for that user. Let's use information
+             // that we got from either Google or our sign up form.
+             if (!snapshot.exists) {
+               const createdAt = new Date();
+               const token = "ER-" + Math.floor(Math.random() * (100000 - 101) + 101);
+               try {
+                 await userRef.set({
+                   email,
+                   password,
+                   plan: "basic",
+                   playerstatus: "available",
+                   registration_token: token,
+                   source: "custom",
+                   createdAt,
+                 });
+                 localStorage.setItem("email", email);
+                 localStorage.setItem("userid", user.uid);
+                 // this.props.history.push({
+                 //   pathname: "/register",
+                 // });
+                 window.location.href = '/register';
+               } catch (error) {
+                 alert(error)
+               }
+             }
+             // this.openModal();
+             // veriry data
+     
+             db.collection("users")
+               .doc(user.uid)
+               .get()
+               .then((querySnapshot) => {
+                 console.log({ VarifyData: querySnapshot });
+               });
+           });
+     
+           // Verify is ueser save or not
+     
+           //    ------------- Faizan Code End  -----------------
+     
+           // this.onLoginSuccess("form");
+         }
+       }
+     
+       onRecoverPassword() {
+         console.log("__onFotgottenPassword__");
+         console.log("email: " + document.querySelector("#email").value);
+     
+         const email = document.querySelector("#email").value;
+     
+         if (!email) {
+           this.setState({
+             error: true,
+             recoverPasswordSuccess: false,
+           });
+         } else {
+           this.setState({
+             error: null,
+             recoverPasswordSuccess: true,
+           });
+         }
+       }
+     
+     
+       onLoginFail(method, response) {
+         alert("The email address is already in use by another account");
+         console.log("logging failed with " + method);
+         this.setState({
+           error: response,
+         });
+       }
+     
+       startLoading() {
+         this.setState({ loading: true, });
+       }
+     
+       finishLoading() {
+         this.setState({
+           loading: false,
+         });
+       }
+     
+       afterTabsChange() {
+         this.setState({
+           error: null,
+         });
+       }
   render() {
     const mystyle = {
       color: "white",
@@ -12,8 +250,8 @@ class Contact extends React.Component {
 
     return (
       <div>
-        <header id="header" class="dark">
-          {/* <!--=================================
+          <header id="header" class="dark">
+          {/*  <!--=================================
 mega menu --> */}
 
           <div>
@@ -29,7 +267,7 @@ mega menu --> */}
                     <ul class="menu-logo">
                       <li>
                         <a href="/">
-                          <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
+                          <img src={logo} alt="Logo" className="logo-img" />
                         </a>
                       </li>
                     </ul>
@@ -38,37 +276,39 @@ mega menu --> */}
                     <div className="col-md-6 col-4 ">
                  
                     <div class="menu-links ">
-                      
+            
 
                     
-                        {/* <button
-                          onClick={this.htmlModal}
-                          style={mystyle}
-                          class="registerMenuButton sign-btn button btn-lg btn-colored mr-2 full-rounded "
-                          style={{
-                            color: "white",
-                            backgroundColor: "rgb(237, 34, 92)",
-                          }}
-                        >
-                          Register
-                        </button>
-                      
-                        
-                          <button
-                          onClick={this.openModal}
-                           
-                            className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
-                            style={{
-                              color: "white",
-                              backgroundColor: "rgb(237, 34, 92)",
-                            }}
-                          >
-                            Login
-                          </button> */}
-                          {/* <input type="button" onClick={()=> console.log("input button clicked")}/> */}
+            <button
+              onClick={this.htmlModal}
+              style={mystyle}
+              class="registerMenuButton sign-btn button btn-lg btn-colored mr-2 full-rounded "
+              style={{
+                color: "white",
+                backgroundColor: "rgb(237, 34, 92)",
+              }}
+            >
+              Register
+            </button>
+          
+            
+              <button
+            
+              onClick={this.openModal}
+          
+                className="loginMenuButton sign-btn button btn-lg btn-colored full-rounded "
+                style={{
+                  color: "white",
+                  backgroundColor: "rgb(237, 34, 92)",
+                }}
+              >
+                Login
+              </button>
+ 
 
-                        
-                    </div>
+            
+        </div>
+
                     </div>
                   </div>
                 </div>
@@ -1012,6 +1252,116 @@ mega menu --> */}
             </div>
           </div>
         </div>
+        {/* Custom-modal */}
+
+<Modal  show={this.state.showLoginModal} >
+        <Modal.Header >
+   <h1></h1>
+
+          <Button  variant="outline-light"  onClick={this.closeModal}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button>
+        </Modal.Header>
+        <div>
+
+        </div>
+        <Modal.Body className="model-content-wrapper">
+
+        {this.state.signInPreloader ? (
+
+ <div className="spinner-wrapper text-center" >
+ <div className="spinner-border" role="status">
+ <span className="sr-only">Loading...</span>
+</div>
+</div>
+        ) : (
+          
+          <Form>
+        
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" id="email" placeholder="Enter email" />
+          
+          </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" id="password" placeholder="Password" />
+          </Form.Group>
+          
+          {/* onClick={this.onLogin.bind(this)} */}
+          <div className="text-center">
+          <Button className="login-btn" type="button"   onClick={this.showPreloader}>
+        Login
+          </Button>
+          </div>
+          </Form>
+        )
+        }
+       </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
+{/* Custom-register-modal */}
+
+<Modal  show={this.state.isSidebarOpen} >
+        <Modal.Header >
+          <h1></h1>
+          <Button  variant="outline-light"  onClick={this.registerModalClose}>
+           <img style={{width:"20px"}} src={crossIcon}></img>
+          </Button>
+        </Modal.Header>
+
+        <Modal.Body className="model-content-wrapper">
+        {this.state.registerPreloader  ? (
+
+<div className="spinner-wrapper text-center" >
+<div className="spinner-border" role="status">
+<span className="sr-only">Loading...</span>
+</div>
+</div>
+       ) : (
+        <Form>
+
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label>Email address</Form.Label>
+    <Form.Control type="email" id="email" placeholder="Enter email" />
+
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Label>Password</Form.Label>
+    <Form.Control type="password" id="password" placeholder="Password" />
+  </Form.Group>
+   
+ 
+
+ <div className="text-center">
+ <Button className="login-btn" type="button"   onClick={this.showRegisterPreloader}>
+    Register
+  </Button>
+ </div>
+        </Form>  ) }
+        </Modal.Body>
+        <Modal.Footer>
+          {/* <Button variant="secondary" onClick={}>
+            Close
+            </Button>
+          */}
+
+        </Modal.Footer>
+      </Modal>
+
+
+{/* Custom-modal */}
       </div>
     );
   }

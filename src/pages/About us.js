@@ -18,35 +18,27 @@ class about extends React.Component {
       LoginTab: false,
       isSidebarOpen: false,
       showRegisterModal : false,
+      showLoginModal : false,
       signInPreloader : false,
       registerPreloader : false
     };
-
-    // this.showPreloader = this.showPreloader.bind(this);
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
-    // this.startLoading = this.startLoading.bind(this);
-    // this.finishLoading = this.finishLoading.bind(this);
-    // this.selectSection = this.selectSection.bind(this)
+    
+    this.showPreloader = this.showPreloader.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.startLoading = this.startLoading.bind(this);
+    this.finishLoading = this.finishLoading.bind(this);
+    this.selectSection = this.selectSection.bind(this)
   }
-  openModal() {
 
-    this.setState({
-      showModal: true,
-    });
-    //this.handleRegisterClick()
-  }
 
   closeModal() {
     this.setState({
-      showModal: false,
+      showLoginModal: false,
       error: null,
     });
   }
-  showModal = () => {
-    this.setState({ show: true });
-  };
-  // ----------------------
+ 
 
   selectSection(){
 
@@ -62,7 +54,9 @@ class about extends React.Component {
   hideModal = () => {
     this.setState({ show: false });
   };
-
+  openModal() {
+    this.setState({  showLoginModal: true });
+      }
   // let modal = document.getElementById("myModal");
 
   // // Get the button that opens the modal
@@ -78,18 +72,6 @@ class about extends React.Component {
   registerModalClose = () => {
     this.setState({ isSidebarOpen: false });
   }
-
-  // When the user clicks on <span> (x), close the modal
-  // span.onclick = function() {
-  //   modal.style.display = "none";
-  // }
-
-  // When the user clicks anywhere outside of the modal, close it
-  // window.onclick = function(event) {
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // }
 
 
   showPreloader = () => {
@@ -303,7 +285,7 @@ mega menu --> */}
                     
                     <div className="col-md-6 col-4 ">
                  
-                    {/* <div class="menu-links ">
+                    <div class="menu-links ">
             
 
                     
@@ -335,7 +317,7 @@ mega menu --> */}
              
 
                         
-                    </div> */}
+                    </div>
 
                     
                     </div>
@@ -348,11 +330,7 @@ mega menu --> */}
           </div>
         </header>
 
-        {/* <!--=================================
- header --> 
-
-<!--=================================
- banner --> */}
+  
 
         <section
           class="inner-intro intro-page-top bg bg-fixed bg-overlay-black-60"
@@ -1402,11 +1380,11 @@ mega menu --> */}
         {/* Html-modal */}
 {/* Custom-modal */}
 
-<Modal  show={this.state.showModal} >
+<Modal  show={this.state.showLoginModal} >
         <Modal.Header >
    <h1></h1>
 
-          <Button  variant="outline-light"  onClick={this.closeModal.bind(this)}>
+          <Button  variant="outline-light"  onClick={this.closeModal}>
            <img style={{width:"20px"}} src={crossIcon}></img>
           </Button>
         </Modal.Header>

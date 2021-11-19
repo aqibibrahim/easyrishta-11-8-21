@@ -1768,6 +1768,10 @@ Comming soon Page
 .professional-information {
   height: 700px;
 }
+.section-title .sub-title {
+  top: 0px;
+
+}
 
   .play-store-section {
     height: 950px;
@@ -1790,7 +1794,7 @@ Comming soon Page
     line-height: 40px;
   }
   .intro-title .section-title .sub-title {
-    font-size: 40px !important;
+    font-size: 20px !important;
   }
   .inner-intro .container {
     width: 100%;
