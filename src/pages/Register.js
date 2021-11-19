@@ -444,15 +444,11 @@ class register extends React.Component {
               Create Your New EasyRishta Profile
             </h2>
 
-            {/* <div class="progress" style={{ height:"27px" }}>
-        <div id="progressBar" class="progress-bar progress-bar-striped progress-bar-animated"
-          style={{ width:"20%", fontWeight: "500" }}> 20% </div>
-      </div> */}
-            {/* <form class="signup-form" id="signup-form"> */}
             <h3>
               <span class="title_text">Basic Information</span>
             </h3>
-            <fieldset>
+          <div className="basic-information">
+          <fieldset>
               <div class="fieldset-content">
                 <div class="row">
                   <div class="col-lg-8 offset-lg-2">
@@ -1094,7 +1090,8 @@ class register extends React.Component {
                 <span>Step 1 of 5</span>
               </div>
             </fieldset>
-
+          </div>
+          <div className="personal-information">
             <h3>
               <span class="title_text">Personal Information</span>
             </h3>
@@ -1103,7 +1100,7 @@ class register extends React.Component {
                 <div class="row">
                   <div class="col-lg-8 col-12 offset-lg-2">
                     <div class="form-group form-radio row">
-                      <label class="col-2 col-form-label">Marital Status</label>
+                      <label class="col-12  col-md-2  col-form-label">Marital Status</label>
                       <div class="col-10">
                         <div class="form-radio-flex form-flex">
                           <input
@@ -1198,7 +1195,7 @@ class register extends React.Component {
                     {/* style={{ display: 'none' }} */}
 
                     <div class="form-group form-radio row">
-                      <label class="col-2 col-form-label">
+                      <label class="col-12  col-md-2 col-form-label">
                         No. Of Children
                       </label>
                       <div class="col-10">
@@ -1277,7 +1274,7 @@ class register extends React.Component {
                     </div>
 
                     <div class="form-group row">
-                      <label class="col-lg-2 col-form-label">Siblings:</label>
+                      <label class="col-12  col-md-2 col-form-label">Siblings:</label>
                       <div class="col-lg-10">
                         <input
                           type="text"
@@ -1293,7 +1290,7 @@ class register extends React.Component {
                     <div class="form-group form-radio row " id="parentstatus">
                       <label
                         for="example-date-input"
-                        class="col-2 col-form-label"
+                        class="col-12  col-md-2 col-form-label"
                       >
                         Parent Status
                       </label>
@@ -1476,7 +1473,8 @@ class register extends React.Component {
                 <span>Step 2 of 5</span>
               </div>
             </fieldset>
-
+              </div>
+ <div className="professional-information">
             <h3>
               <span class="title_text">Professional Details</span>
             </h3>
@@ -1485,7 +1483,7 @@ class register extends React.Component {
                 <div class="row">
                   <div class="col-lg-8 offset-lg-2">
                     <div class="form-group row">
-                      <label class="col-2 col-form-label">
+                      <label class="col-12  col-md-2 col-form-label">
                         Higher Education:
                       </label>
                       <div class="col-10">
@@ -1628,12 +1626,13 @@ class register extends React.Component {
               <input type="text" name="name_of_card" id="name_of_card" />
             </div> --> */}
               </div>
+             
 
               <div class="fieldset-footer">
                 <span>Step 3 of 5</span>
               </div>
             </fieldset>
-
+            </div>
             <h3>
               <span class="title_text">About Yourself</span>
             </h3>
@@ -1644,7 +1643,7 @@ class register extends React.Component {
                     <div class="form-group row">
                       <label
                         for="example-date-input"
-                        class="col-2 col-form-label"
+                        class="col-12  col-md-2 col-form-label"
                       >
                         About Yourself:
                       </label>
@@ -1737,7 +1736,7 @@ class register extends React.Component {
                     <div class="form-group row">
                       <label
                         for="example-date-input"
-                        class="col-2 col-form-label"
+                        class="col-12  col-md-2 col-form-label"
                       >
                         Galary Images
                       </label>
@@ -1770,7 +1769,7 @@ class register extends React.Component {
                           onChange={this.handleG1Change}
                         />
                       </div>
-                      <div class="col-12 col-md-4 " >
+                      <div class="col-12 col-md-3 " >
                         <img
                           alt="user imagpice"
                           // src={
@@ -1800,7 +1799,7 @@ class register extends React.Component {
                           onChange={this.handleG2Change}
                         />
                       </div>
-                      <div class="col-12 col-md-4">
+                      <div class="col-12 col-md-3">
                         <img
                           alt="user impicage"
                           // src={
@@ -1870,10 +1869,12 @@ class register extends React.Component {
             {/* <Link to={"/"} style = {mystyle} class="registerMenuButton button btn-lg btn-colored full-rounded ">
                             Save Profile{" "}
                           </Link> */}
+
+
             <div className="row">
-              <div className="col-2"></div>
-              <div className="col-4"></div>
-              <div className="col-6">
+              <div className="col-0 col-md-2"></div>
+              <div className="col-0 col-md-4"></div>
+              <div className="col-12 col-md-6 update-btns">
                 <button
                   class="registerMenuButton button btn-lg btn-colored full-rounded  mr-2"
                   style={{ left: "43%" }}
@@ -1881,13 +1882,7 @@ class register extends React.Component {
                 >
                   {this.state.userUpdate ? "Update Profile" : "Save Profile"}
                 </button>
-                {/* <button
-                class="registerMenuButton button btn-lg btn-colored full-rounded"
-                style={{ left: "43%" }}
-                onClick={this.cancelclick}
-              >
-                Cancel
-              </button> */}
+               
                 <Link
                   to={"/profile"}
                   style={{ left: "43%" }}
