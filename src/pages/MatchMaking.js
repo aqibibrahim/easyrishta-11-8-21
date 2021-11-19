@@ -179,10 +179,13 @@ export default function MatchMaking(props) {
   return (
     <div>
       <div class="wrapper">
-        {/* <!-- Navbar --> */}
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-          {/* <!-- Left navbar links --> */}
+       {/*  <!-- Navbar --> */}
+       <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+          {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
+          <li class="nav-items logout-btn nav-logout-mobile">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            </li>
 
           </ul>
 
@@ -190,12 +193,12 @@ export default function MatchMaking(props) {
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
+            {/* <!-- Messages Dropdown Menu --> */}
 
             {/* <!-- Notifications Dropdown Menu --> */}
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
-                // data-toggle="dropdown"
                 href="/notifications"
                 rel="noreferrer noopener"
                 target="_blank"
@@ -207,20 +210,21 @@ export default function MatchMaking(props) {
               </a>
 
             </li>
-
-              <li class="nav-item nav-item-mobile">
+           
+           
+            <li class="nav-item nav-item-mobile">
               <a class="nav-link" data-widget="pushmenu" href="#">
                 <i class="fas fa-bars"></i>
               </a>
             </li>
-            <li class="nav-items logout-btn">
+            <li class="nav-items logout-btn nav-logout-desk">
             <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
             </li>
           </ul>
         </nav>
-        {/* <!-- /.navbar -->
+        {/*  <!-- /.navbar --> */}
 
-  <!-- Main Sidebar Container --> */}
+
         <aside
           class="main-sidebar sidebar-dark-primary elevation-4"
           style={{ background: "#EDCBBD " }}

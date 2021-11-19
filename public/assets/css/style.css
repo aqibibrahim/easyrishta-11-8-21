@@ -43,6 +43,9 @@
   color: black !important;
   /* box-shadow: 0 0 20px hsl(150deg 100% 50% / 75%); */
 }
+.chat-wrapper {
+  width: 500px;
+}
 .basic-information {
   height: auto;
 }
@@ -1575,7 +1578,24 @@ hr {
 #back-to-top .top:hover {
   color: #3d3d3d !important;
 }
+ .chat-tab {
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin: 3%;
+    border-radius: 10px;
+    padding: 18px;
+}
 
+ .chat-text {
+    width: fit-content;
+    border: 3px solid green;
+    color: black;
+    background-color: grey;
+    padding: 8px;
+    border-radius: 15px;
+    max-width: 350px;
+    font-size: 14px;
+}
 /*==================================================================================*/
 /* Responsive CSS */
 /*==================================================================================*/
@@ -1749,9 +1769,17 @@ Comming soon Page
 .basic-information {
   height: 1100px;
 }
+.chat-wrapper {
+  width: 300px;
+}
 .update-btns {
   margin-top: 130px;
   height: 140px;
+
+}
+.chat-tab {
+
+  margin: 1%;
 
 }
   .fa-arrow-left-custom, .fa-arrow-right-custom {
@@ -2910,11 +2938,22 @@ footer .footer-middle h4 {
 .nav-item-mobile {
   display: none;
 }
-
+.nav-logout-mobile {
+  display: none;
+}
+.nav-logout-desk {
+  display: block;
+}
 
 @media (max-width: 480px) { 
   .nav-item-mobile {
     display: block;
+  }
+  .nav-logout-mobile {
+    display: block;
+  }
+  .nav-logout-desk {
+    display: none;
   }
   .progress-circle {
     border: unset;
