@@ -32,7 +32,9 @@ class Contact extends React.Component {
     this.selectSection = this.selectSection.bind(this)
   }
 
-
+  componentDidMount() {
+    window.scrollTo(0, 0);
+ }
   closeModal() {
     this.setState({
       showLoginModal: false,

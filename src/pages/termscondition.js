@@ -30,7 +30,9 @@ class terms extends React.Component {
     this.finishLoading = this.finishLoading.bind(this);
     this.selectSection = this.selectSection.bind(this)
   }
-
+  componentDidMount() {
+    window.scrollTo(0, 0);
+ }
 
   closeModal() {
     this.setState({

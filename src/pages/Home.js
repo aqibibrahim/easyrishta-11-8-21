@@ -46,6 +46,10 @@ class Home extends React.Component {
   //      LoginTab: true
   //    });
   //  }
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+ }
   openModal() {
 
     this.setState({
@@ -1242,7 +1246,7 @@ Get yourself registered with our system, either online or by visiting our office
                           </Link>
                         </li>
                         <li>
-                          <Link to={"/About us"} style={{ color: "#00bcd5" }}>
+                          <Link  to={"/About us"} style={{ color: "#00bcd5" }}>
                             About Us
                           </Link>
                         </li>
