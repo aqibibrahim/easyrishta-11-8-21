@@ -179,20 +179,42 @@ export default function Otherprofile() {
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
-            {/* <li class="nav-item">
-              <a class="nav-link" data-widget="pushmenu" href="#">
-                <i class="fas fa-bars"></i>
-              </a>
-            </li> */}
+          <li class="nav-items logout-btn nav-logout-mobile">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            </li>
+
           </ul>
+
+
 
           {/* <!-- Right navbar links --> */}
           <ul class="navbar-nav ml-auto">
+            {/* <!-- Messages Dropdown Menu --> */}
+
+            {/* <!-- Notifications Dropdown Menu --> */}
             <li class="nav-item dropdown">
-              <a class="nav-link" href="/notifications" rel="noreferrer noopener" target="_blank">
+              <a
+                class="nav-link"
+                href="/notifications"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
                 <i class="far fa-bell"></i>
-                <span class="badge badge-warning navbar-badge">{localStorage.getItem("inviteslength")}</span>
+                <span class="badge badge-warning navbar-badge">
+                  {localStorage.getItem("inviteslength")}
+                </span>
               </a>
+
+            </li>
+           
+           
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link" data-widget="pushmenu" href="#">
+                <i class="fas fa-bars"></i>
+              </a>
+            </li>
+            <li class="nav-items logout-btn nav-logout-desk">
+            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
             </li>
           </ul>
         </nav>
