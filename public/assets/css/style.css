@@ -43,6 +43,12 @@
   color: black !important;
   /* box-shadow: 0 0 20px hsl(150deg 100% 50% / 75%); */
 }
+.play-store-section {
+  /* height: 650px; */
+}
+.logo-img {
+ width: 300px;
+}
 #preloader {
   /* background:#343434 !important;  */
   background: rgb(235, 225, 229) !important;
@@ -1727,6 +1733,16 @@ Comming soon Page
 }
 
 @media screen and (max-width: 767px) {
+
+  .fa-arrow-left-custom, .fa-arrow-right-custom {
+    background-color: rgb(223, 56, 89);
+    padding: 0.1rem;
+    font-size: 12px;
+}
+
+  .play-store-section {
+    height: 950px;
+  } 
   .section-title p {
     padding: 0;
   }
@@ -1857,9 +1873,40 @@ Comming soon Page
   .mega-menu .menu-links > li > a {
     border: none;
   }
+  .logo-img {
+    width: 150px;
+   }
+   .menu-links {
+    width: 166px;
+    margin-left: auto;
+    margin-right: 132px;
+    margin-top: 12px;
+}
 }
 
 @media screen and (max-width: 479px) {
+  .menu-links {
+    width: 166px;
+    margin-left: auto;
+    margin-right: 132px;
+    margin-top: 12px;
+}
+
+.fa-arrow-left-custom, .fa-arrow-right-custom {
+  background-color: rgb(223, 56, 89);
+  padding: 0.1rem;
+  font-size: 12px;
+}
+.sign-btn {
+  text-transform: uppercase;
+  font-size: 10px !important;
+  font-weight: 600;
+  width: 74px;
+  /* text-align: center; */
+}
+  .logo-img {
+    width: 150px;
+   }
   h2.title2 {
     font-size: 24px;
     line-height: 30px;

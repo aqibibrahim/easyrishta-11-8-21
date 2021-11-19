@@ -334,7 +334,7 @@ class Home extends React.Component {
                     <ul class="menu-logo">
                       <li>
                         <a href="/">
-                          <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
+                          <img src={logo} className="logo-img" alt="Logo"  style={{ }} />
                         </a>
                       </li>
                     </ul>
@@ -948,7 +948,7 @@ class Home extends React.Component {
 
 
 
-        <section className="container"  style={{ height: 650 }}>
+        <section className="container play-store-section"  >
           <div className="row">
             <div
               className="col-12 font-weight-bolder size-50 text-center mt-5 mb-5"

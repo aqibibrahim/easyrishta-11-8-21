@@ -295,7 +295,7 @@ mega menu --> */}
                     <ul class="menu-logo">
                       <li>
                         <a href="/">
-                          <img src={logo} alt="Logo" style={{ maxHeight: "100px" }} />
+                          <img src={logo} alt="Logo" className="logo-img" />
                         </a>
                       </li>
                     </ul>
