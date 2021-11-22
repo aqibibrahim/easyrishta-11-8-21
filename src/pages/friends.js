@@ -54,7 +54,10 @@ export default function Friends() {
   );
   console.warn("invites ::  ", profiles.data.friends);
   users_array = profiles.data.friends;
-
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
 
   return (
     <div>
@@ -64,7 +67,7 @@ export default function Friends() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
 
           </ul>
@@ -98,7 +101,7 @@ export default function Friends() {
               </a>
             </li>
             <li class="nav-items logout-btn nav-logout-desk">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
           </ul>
         </nav>

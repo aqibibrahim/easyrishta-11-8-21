@@ -70,6 +70,10 @@ export default function Preferences() {
       }
     }
   };
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
   return (
     <div>
       <body class="hold-transition sidebar-mini" />
@@ -79,7 +83,7 @@ export default function Preferences() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
 
           </ul>
@@ -113,7 +117,7 @@ export default function Preferences() {
               </a>
             </li>
             <li class="nav-items logout-btn nav-logout-desk">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
           </ul>
         </nav>

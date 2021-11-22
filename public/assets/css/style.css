@@ -846,9 +846,7 @@ h1.title.divider {
   cursor: pointer;
   padding: 2px 12px;
 }
-.nav-link-custom {
 
-}
 /*---------------------------------------------------------------------
   Footer
 ---------------------------------------------------------------------*/
@@ -1769,6 +1767,9 @@ Comming soon Page
 .basic-information {
   height: 1100px;
 }
+.nav-link-custom {
+display: none;
+} 
 .chat-wrapper {
   width: 300px;
 }
@@ -2950,7 +2951,7 @@ footer .footer-middle h4 {
     display: block;
   }
   .nav-logout-mobile {
-    display: block;
+    display: none;
   }
   .nav-logout-desk {
     display: none;

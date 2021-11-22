@@ -278,6 +278,11 @@ export default function Char() {
   //     return hours + ":" + minutes + ":" + seconds; // Return is HH : MM : SS
   //   }
   // };
+
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
   return (
     <div>
       <div class="wrapper">
@@ -286,7 +291,7 @@ export default function Char() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
 
           </ul>
@@ -320,7 +325,7 @@ export default function Char() {
               </a>
             </li>
             <li class="nav-items logout-btn nav-logout-desk">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
           </ul>
         </nav>

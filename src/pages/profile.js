@@ -280,7 +280,7 @@ export default function Profile() {
                   >
                    <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
 
-                    <p>Membership test</p>
+                    <p>Membership </p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>

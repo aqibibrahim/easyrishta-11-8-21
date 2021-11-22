@@ -105,7 +105,10 @@ export default function Search() {
   const handleChange = async (e) => {
     setPreferences({ ...preferences, [e.target.name]: e.target.value });
   };
-
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
   // const handleClick = async () => {
   //   return <Redirect to="matchMaking" />;
   // };
@@ -118,7 +121,7 @@ export default function Search() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
 
           </ul>

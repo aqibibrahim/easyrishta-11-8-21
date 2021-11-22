@@ -175,7 +175,10 @@ export default function MatchMaking(props) {
   //     onError: (error) => console.log("Error getting documents: ", error),
   //   }
   // );
-
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
   return (
     <div>
       <div class="wrapper">
@@ -184,7 +187,7 @@ export default function MatchMaking(props) {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout}  >Logout</h6>
             </li>
 
           </ul>
@@ -375,7 +378,7 @@ export default function MatchMaking(props) {
                     refresh="true"
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
-                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+                    <a class="nav-link active  mx-auto" onClick={Logout}  >Logout</a>
                     {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}

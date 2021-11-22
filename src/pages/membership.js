@@ -4,11 +4,12 @@ import logo from "./images/150X150-LOGO.png";
 import swal from "sweetalert";
 
 class membership extends React.Component {
+  
   render() {
-    function apple() {
-      // alert("calle");
-      swal("Hello world!");
-    }
+    function Logout () {
+      localStorage.clear();
+      window.location.href = "/";
+     }
     return (
       <div>
         <body class="hold-transition sidebar-mini" />
@@ -19,7 +20,7 @@ class membership extends React.Component {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={this.Logout} >Logout</h6>
             </li>
 
           </ul>
@@ -53,7 +54,7 @@ class membership extends React.Component {
               </a>
             </li>
             <li class="nav-items logout-btn nav-logout-desk">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={this.Logout}  >Logout</h6>
             </li>
           </ul>
         </nav>
