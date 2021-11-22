@@ -418,7 +418,7 @@ class Home extends React.Component {
           </div>
           {/* <!-- ++++++++++++++++++++++ END BOOTSTRAP CAROUSEL +++++++++++++++++++++++ --> */}
         </section>
-        ;
+        
         {/* <!--=================================
  banner -->
 
@@ -1117,7 +1117,7 @@ class Home extends React.Component {
                 <h2 class="title divider wow fadeInLeft" style={{ color: "#00bcd5" }}>
                   Personalized Services
                 </h2>
-                <h5 class="text-center mt-4"> Personalized matchmaking services Easyrishta.com provides you.</h5>
+                <h5 class="text-center mt-4"> Personalized matchmaking services Easyrishta.pk provides you.</h5>
               </div>
             </div>
             {/* </div> */}
@@ -1188,8 +1188,8 @@ Get yourself registered with our system, either online or by visiting our office
                   <div class="col-md-4">
                     <div class="address-block">
                       <i class="fa fa-desktop" aria-hidden="true"></i>
-                      <a href="mailto:info@Easyrishta.com " style={{ color: "black" }}>
-                        info@easyrishta.com
+                      <a href="mailto:info@Easyrishta.pk " style={{ color: "black" }}>
+                        info@easyrishta.pk
                       </a>
                     </div>
                   </div>

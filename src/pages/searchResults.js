@@ -145,8 +145,8 @@ export default function SearchResults(props) {
             />
           </a>
 
-          {/* <!-- Sidebar --> */}
-          <div class="sidebar">
+           {/*  <!-- Sidebar --> */}
+           <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div
@@ -203,10 +203,11 @@ export default function SearchResults(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-search"></i>
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
+
                 <li class="nav-item">
                   <Link
                     to={"/search"}
@@ -223,7 +224,8 @@ export default function SearchResults(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-envelope"></i>
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
@@ -243,8 +245,46 @@ export default function SearchResults(props) {
                     class="nav-link"
                     style={{ color: "black" }}
                   >
-                    <i class="nav-icon fas fa-user"></i>
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/friends"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
+                    <p>Friends</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/membership"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
+                    <p>Membership</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
@@ -263,9 +303,9 @@ export default function SearchResults(props) {
                 </li> */}
               </ul>
             </nav>
-            {/* <!-- /.sidebar-menu --> */}
+            {/*  <!-- /.sidebar-menu --> */}
           </div>
-          {/* <!-- /.sidebar --> */}
+          {/*  <!-- /.sidebar --> */}
         </aside>
 
         {/* <!-- Content Wrapper. Contains page content --> */}
@@ -278,12 +318,7 @@ export default function SearchResults(props) {
                   <h1>Match Making</h1>
                 </div>
                 <div class="col-sm-6">
-                  <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">
-                      <a href="index.html">Home</a>
-                    </li>
-                    <li class="breadcrumb-item active">Find Match</li>
-                  </ol>
+              
                 </div>
               </div>
             </div>

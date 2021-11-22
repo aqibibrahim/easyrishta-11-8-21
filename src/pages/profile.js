@@ -74,7 +74,7 @@ export default function Profile() {
 
   console.warn("profiles ::  ", profiles.data.favrioutes);
   console.warn("profiles ::  ", profiles.data);
-
+   
   if(profiles.data.favrioutes == undefined){
     favriouteslength = 0;
   }
@@ -88,7 +88,10 @@ export default function Profile() {
     friendslength = profiles.data.friends.length;
   }
   console.warn("invites ::  ", invites.data);
-
+ function Logout() {
+      localStorage.clear();
+      window.location.href = "/";
+     }
   return (
     <div>
       <body class="hold-transition sidebar-mini" />
@@ -98,7 +101,8 @@ export default function Profile() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            {/* <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a> */}
+            <a class="nav-link-custom  mx-auto" onClick={Logout} >Logout</a>
             </li>
 
           </ul>
@@ -276,7 +280,7 @@ export default function Profile() {
                   >
                    <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
 
-                    <p>Membership</p>
+                    <p>Membership test</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
@@ -289,7 +293,8 @@ export default function Profile() {
                     refresh="true"
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
-                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+                    {/* <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a> */}
+                    <h6 class="nav-link active  mx-auto" onClick={Logout} >Logout</h6>
                     {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}

@@ -1771,7 +1771,7 @@ class register extends React.Component {
                       </div>
                       <div class="col-12 col-md-3 " >
                         <img
-                          alt="user imagpice"
+                          alt="Upload Image"
                           // src={
                           //   this.state.galaryImage2
                           //     ? window.URL.createObjectURL(
