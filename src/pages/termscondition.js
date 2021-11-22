@@ -335,10 +335,10 @@ mega menu --> */}
           <div class="container">
             <div class="row intro-title text-center">
               <div class="col-md-12">
-                <div class="section-title wow fadeIn" style={{marginTop:"120px"}}>
+                <div class="section-title wow fadeIn" style={{marginTop:"100px"}}>
                   <h1
-                    class="position-relative dividers mt-5"
-                    style={{ color: "white", justifyContent: "center", marginTop:"20%" }}
+                    class="position-relative dividers "
+                    style={{ color: "white", justifyContent: "center",  }}
                   >
                     {/* Terms &amp; Conditions */}
                     <span class="sub-title">Terms &amp; Conditions</span>

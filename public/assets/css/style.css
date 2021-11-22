@@ -1819,8 +1819,8 @@ display: none;
     line-height: 30px;
   }
   .intro-title h1 {
-    font-size: 30px !important;
-    line-height: 40px;
+    /* font-size: 30px !important;
+    line-height: 40px; */
   }
   .intro-title .section-title .sub-title {
     font-size: 20px !important;
