@@ -310,8 +310,8 @@ export default function Friends() {
             {/* <!-- Default box --> */}
             {/* <div class="card card-solid">
         <div class="card-body pb-0"> */}
-            <div class="row d-flex align-items-stretch">
-              <div class="d-flex align-items-stretch flex-wrap justify-content-center">
+            <div class="row ">
+             
                 {users_array.length > 0 ? (
                   users_array.map((val) => (
                     <div
@@ -369,7 +369,7 @@ export default function Friends() {
                 ) : (
                   <h1>No Record Found</h1>
                 )}
-              </div>
+            
             </div>
             {/* </div> */}
             {/* <!-- /.card-body --> */}

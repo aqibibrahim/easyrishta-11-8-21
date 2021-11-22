@@ -155,7 +155,7 @@ export default function Search() {
               </a>
             </li>
             <li class="nav-items logout-btn nav-logout-desk">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout} >Logout</h6>
             </li>
           </ul>
         </nav>
