@@ -225,6 +225,10 @@ export default function Notificatoins() {
         });
     }
   };
+  function Logout() {
+    localStorage.clear();
+    window.location.href = "/";
+   }
 
   const handleReject = async (inviteId) => {
     db.collection("invites").doc(inviteId).delete();
@@ -248,7 +252,7 @@ export default function Notificatoins() {
           {/*   <!-- Left navbar links --> */}
           <ul class="navbar-nav">
           <li class="nav-items logout-btn nav-logout-mobile">
-            <a class="nav-link-custom  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+            <h6 class="nav-link-custom  mx-auto" onClick={Logout} >Logout</h6>
             </li>
 
           </ul>
@@ -441,7 +445,7 @@ export default function Notificatoins() {
                     refresh="true"
                   >
                     {/* <i class="nav-icon fas fa-user"></i> */}
-                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+                    <h6 class="nav-link active  mx-auto" onClick={Logout} >Logout</h6>
                     {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
 
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
@@ -536,10 +540,10 @@ export default function Notificatoins() {
                             <b>{val.data.type} Request: </b>
                             {val.data.requestperson}
                             {val.data.type === "photo"
-                              ? " Wants to access your photos"
+                              ? " wants to access your photos"
                               : val.data.type === "intrest"
-                              ? " Shows some interest in your profile"
-                              : " Wants to build to relation with you"}
+                              ? " shows some interest in your profile"
+                              : " wants to build a relationship with you"}
                           </p>
                         </div>
                         <div

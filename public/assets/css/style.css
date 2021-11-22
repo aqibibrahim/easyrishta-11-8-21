@@ -1767,6 +1767,14 @@ Comming soon Page
 .basic-information {
   height: 1100px;
 }
+.fa-li {
+  top: 0px;
+  left: -3.142857em !important; 
+  
+}
+.fa-li {
+  
+}
 .nav-link-custom {
 display: none;
 } 

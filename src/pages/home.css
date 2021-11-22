@@ -135,7 +135,8 @@
 
 @media(max-width:767px) {
     i {
-        padding: 0.8rem
+            padding: 0.4rem 0.9rem;
+        
     }
     .menu-links {
         width: 160px;
