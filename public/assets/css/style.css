@@ -121,7 +121,13 @@
 .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
   cursor: url(../images/close.png) 25 25, pointer;
 }
-
+.text-wrapper {
+  white-space: nowrap; 
+  width: 90px !important; 
+  overflow: hidden;
+  text-overflow: "----"; 
+  /* border: 1px solid #000000; */
+}
 /*---------------------------------------------------------------------
   Header 
 ---------------------------------------------------------------------*/
@@ -2114,7 +2120,7 @@ background: -webkit-linear-gradient(350deg, rgba(142,193,254,1) 0%,  rgba(0,86,1
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  /* will-change:transform;  */
+  will-change:transform; 
   margin-bottom: 25px;
   height: 98%;
 }
@@ -2140,7 +2146,7 @@ background: -webkit-linear-gradient(350deg, rgba(142,193,254,1) 0%,  rgba(0,86,1
 .card:hover {
   -webkit-box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 20px 35px 0 rgba(0, 0, 0, 0.08);
-  /* transform:scale(1.02) translateY(-3px);  */
+  transform:scale(1.02) translateY(-3px); 
   transform: scale(1.001) translateY(-3px);
 }
 

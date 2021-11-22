@@ -500,10 +500,10 @@ export default function MatchMaking(props) {
                                         {" "}
                                         Address:
                                       </span>{" "}
-                                      <span style={{ fontWeight: "600" }}>
+                                      <div className="text-wrapper" style={{ fontWeight: "600" }}>
                                         {" "}
                                         {val.data.profile.address}
-                                      </span>
+                                      </div>
                                     </span>
                                   </li>
                                   <li class="mt-2">

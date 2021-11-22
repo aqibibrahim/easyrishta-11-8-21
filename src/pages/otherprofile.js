@@ -221,14 +221,21 @@ export default function Otherprofile() {
         {/*  <!-- /.navbar --> */}
 
         {/*  <!-- Main Sidebar Container --> */}
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style={{ background: "#EDCBBD " }}>
+        <aside
+          class="main-sidebar sidebar-dark-primary elevation-4"
+          style={{ background: "#EDCBBD " }}
+        >
           {/* <!-- Brand Logo --> */}
           <a href="index.html" class="brand-link">
-            <img src={logo} alt="AdminLTE" style={{ height: "auto", width: "70%", paddingLeft: "30%" }} />
+            <img
+              src={logo}
+              alt="AdminLTE Logo"
+              style={{ height: "auto", width: "70%", paddingLeft: "30%" }}
+            />
           </a>
 
-          {/*  <!-- Sidebar --> */}
-          <div class="sidebar">
+           {/*  <!-- Sidebar --> */}
+           <div class="sidebar">
             {/* <!-- Sidebar user (optional) --> */}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
               <div
@@ -240,10 +247,19 @@ export default function Otherprofile() {
                   alignItems: "center",
                 }}
               >
-                <img src={localStorage.getItem("profilepic")} class="img-circle elevation-2" alt="Profile" style={{ width: "2.1rem", height: "2.1rem" }} />
+                <img
+                  src={localStorage.getItem("profilepic")}
+                  class="img-circle elevation-2"
+                  alt="Profile"
+                  style={{ width: "2.1rem", height: "2.1rem" }}
+                />
               </div>
               <div class="info">
-                <Link to={"/profile"} class="d-block" style={{ color: "black" }}>
+                <Link
+                  to={"/profile"}
+                  class="d-block"
+                  style={{ color: "black" }}
+                >
                   {localStorage.getItem("username")}
                 </Link>
               </div>
@@ -251,60 +267,129 @@ export default function Otherprofile() {
 
             {/* <!-- Sidebar Menu --> */}
             <nav class="mt-2">
-              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <ul
+                class="nav nav-pills nav-sidebar flex-column"
+                data-widget="treeview"
+                role="menu"
+                data-accordion="false"
+              >
                 {/* <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library --> */}
 
                 <li class="nav-item">
-                  <Link to={"/profile"} class="nav-link" style={{ color: "black" }}>
+                  <Link
+                    to={"/profile"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
                     <i class="nav-icon fas fa-user"></i>
-                    <p>My Profile </p>
+                    <p>My Profile</p>
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to={"/MatchMaking"} class="nav-link" style={{ color: "black" }}>
-                    <i class="nav-icon fas fa-search"></i>
+                  <Link
+                    to={"/MatchMaking"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fa fa-list" aria-hidden="true"></i>
                     <p>Find Match</p>
                   </Link>
                 </li>
 
                 <li class="nav-item">
-                  <Link to={"/search"} class="nav-link" style={{ color: "black" }}>
+                  <Link
+                    to={"/search"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
                     <i class="nav-icon fas fa-search"></i>
                     <p>Search</p>
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to={"/chat"} class="nav-link" style={{ color: "black" }}>
-                    <i class="nav-icon fas fa-envelope"></i>
+                  <Link
+                    to={"/chat"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fa fa-comments-o" aria-hidden="true"></i>
+
                     <p>Chat</p>
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to={"/preferences"} class="nav-link" style={{ color: "black" }}>
+                  <Link
+                    to={"/preferences"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
                     <i class="nav-icon fas fa-envelope"></i>
                     <p>Set Preferences</p>
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to={"/register"} class="nav-link" style={{ color: "black" }}>
-                    <i class="nav-icon fas fa-user"></i>
+                  <Link
+                    to={"/register"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                   <i class="nav-icon fas fa-refresh"></i>
                     <p>Update Pofile</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
                 <li class="nav-item">
-                  <Link to={"/membership"} class="nav-link" style={{ color: "black" }}>
-                    <i class="nav-icon fas fa-user"></i>
+                  <Link
+                    to={"/friends"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class=" nav-icon fa fa-users" aria-hidden="true"></i>
+                    <p>Friends</p>
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link
+                    to={"/membership"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                   <i class=" nav-icon  fa fa-medium" aria-hidden="true"></i>
+
                     <p>Membership</p>
                     {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
                   </Link>
                 </li>
-                <li class="nav-item nav-item-mobile">
-                  <a class="nav-link" data-widget="pushmenu" href="#">
-                    <i class="fas fa-bars"></i>
-                  </a>
+                <li class="nav-item mt-2">
+                  <Link
+                    // to={"/home"}
+                    to={{pathname:"/home"}}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                    refresh="true"
+                  >
+                    {/* <i class="nav-icon fas fa-user"></i> */}
+                    <a class="nav-link active  mx-auto" onClick={()=> {window.location.href="/"}} >Logout</a>
+                    {/* <button onClick={ refreshPage } variant="secondary" size="sm" className="nav-link active  mx-auto">Logout</button> */}
+
+                    {/* <MDBBadge color="danger" className="ml-2">{inviteslength}</MDBBadge> */}
+                  </Link>
                 </li>
+                {/* <li class="nav-item">
+                  <Link
+                    to={"/notifications"}
+                    class="nav-link"
+                    style={{ color: "black" }}
+                  >
+                    <i class="nav-icon fas fa-user"></i>
+                    <p>Notifications</p>
+                    <MDBBadge color="danger" className="ml-2">
+                      {inviteslength}
+                    </MDBBadge>
+                  </Link>
+                </li> */}
               </ul>
             </nav>
             {/*  <!-- /.sidebar-menu --> */}
