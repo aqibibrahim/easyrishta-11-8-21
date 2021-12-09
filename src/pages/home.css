@@ -46,7 +46,17 @@
     background-color: rgb(223, 56, 89);
     padding: 1.4rem
 }
+.page-section-h h6 {
+line-height: 2;
+font-family: 'Montserrat'
+}
+.page-section-h {
+    height: 500px;
+}
 @media(max-width:767px) {
+    .page-section-h {
+        height: 1000px;
+    }
     .carousel-caption {
         position: initial;
         z-index: 10;

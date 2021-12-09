@@ -949,7 +949,37 @@ class Home extends React.Component {
           </div>
         </section>
 
-
+        <section
+          class="page-section-ptb page-section-h bg-overlay-black-60 text-white"
+          style={{
+            background: "url(../../assets/images/inner-Banners/14.jpg) no-repeat 0 0",
+            backgroundSize: "cover",
+            position: "relative",
+          }}
+        >
+          <div class="container wow pulse" data-wow-delay=".3s" data-wow-offset="100">
+            <div class="row justify-content-center mb-5 sm-mb-3">
+              <div class="col-md-8 text-center">
+                <h2 class="title divider  " style={{ color: "#00bcd5" }}>
+                  Most trusted Matrimonial  Application
+                </h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <h6 class="title text-center ">
+                Easy Rishta knows no boundaries and helps you find your special someone. 
+                Happily, ever after actually begins with Easy Rishta that is the best matchmaking service working 
+                exclusively in Pakistan. Easy Rishta believes marriage is like a single soul inhibiting two bodies,
+                 two hearts which beat together! The key to happy marriage is holding onto each other no matter what
+                  the circumstances are. Your spouse hunt ends here! Find all of the verified profiles at your fingertips.
+                   'Easy Rishta' knows no boundaries when it comes to assisting you in finding your special someone. 
+                Join the most efficient Pakistani matrimonial app today to find your perfect match.
+                </h6>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
         <section className="container play-store-section"  >
@@ -960,6 +990,7 @@ class Home extends React.Component {
                 fontFamily: "cursive",
                 fontSize: "xx-large",
                 color: "#ed2d93",
+                marginBottom:"120px"
               }}
             >
               Introducing Easy Rishta App
@@ -1007,6 +1038,10 @@ class Home extends React.Component {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="row">
+        
           </div>
         </section>
         {/* <section>

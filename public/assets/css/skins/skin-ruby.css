@@ -472,6 +472,20 @@ blockquote::before,
   -webkit-text-fill-color: transparent;
 }
 
+.divider-custom:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  left: 50%;
+  margin-left: -118px;
+}
+.divider-custom:before {
+  background: url(../../images/divider-customizer/divider-skin-ruby2.png)
+    no-repeat 0 0 ;
+    width: 236px;
+    height: 18px;
+}
 .divider:before {
   background: url(../../images/divider-customizer/divider-skin-ruby.png)
     no-repeat 0 0;
